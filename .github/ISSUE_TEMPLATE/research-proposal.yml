@@ -1,0 +1,65 @@
+name: New research proposal
+description: 새로운 연구의 질문, 방법과 예상 결과물을 제안합니다.
+title: "[Research Proposal] "
+labels:
+  - proposal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        공개 저장소입니다. 이메일, 학교 내부 정보와 동의받지 않은 개인정보는 작성하지 마십시오.
+  - type: input
+    id: title
+    attributes:
+      label: 연구 제목
+      placeholder: 연구의 임시 제목도 가능합니다.
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: 주요 분야
+      options:
+        - 철학·윤리
+        - 교육·사회
+        - 과학·공학
+        - 언어·문학
+        - 융합 연구
+        - 기타
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 연구 질문
+      description: 연구가 답하려는 질문을 한두 문장으로 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 배경과 목적
+      description: 이 질문이 왜 중요한지 설명합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: 방법과 자료
+      description: 사용할 문헌, 데이터, 분석 방법 또는 실험 방법을 적습니다.
+    validations:
+      required: true
+  - type: input
+    id: output
+    attributes:
+      label: 예상 결과물
+      placeholder: 연구 보고서, 발표 자료, 코드, 데이터 등
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 공개 확인
+      options:
+        - label: 개인정보와 비공개 자료를 포함하지 않았습니다.
+          required: true

@@ -1,0 +1,14 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Editor and office temporary files
+*.tmp
+*.temp
+~$*
+*.autosave
+
+# Secrets and local-only material
+.env
+.env.*
+private/

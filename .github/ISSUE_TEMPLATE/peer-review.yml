@@ -1,0 +1,61 @@
+name: Peer review
+description: 연구의 논리, 근거, 인용과 가독성을 검토합니다.
+title: "[Peer Review] "
+labels:
+  - peer-review
+body:
+  - type: input
+    id: research
+    attributes:
+      label: 검토 대상
+      description: 연구 제목과 버전을 적습니다.
+      placeholder: 연구 제목, v1.0
+    validations:
+      required: true
+  - type: checkboxes
+    id: areas
+    attributes:
+      label: 검토 영역
+      options:
+        - label: 연구 질문과 목적
+        - label: 논리 구조
+        - label: 근거와 자료
+        - label: 인용과 연구 윤리
+        - label: 문장과 가독성
+  - type: textarea
+    id: summary
+    attributes:
+      label: 전체 평가
+      description: 연구의 핵심 주장과 전반적인 완성도를 간단히 정리합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: strengths
+    attributes:
+      label: 강점
+      description: 유지하거나 발전시킬 부분을 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: issues
+    attributes:
+      label: 주요 문제
+      description: 위치와 이유를 구체적으로 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: 수정 제안
+      description: 실제로 반영할 수 있는 수정 방향을 제시합니다.
+    validations:
+      required: true
+  - type: checkboxes
+    id: ethics
+    attributes:
+      label: 검토 확인
+      options:
+        - label: 연구자가 아니라 연구 내용을 대상으로 평가했습니다.
+          required: true
+        - label: 개인정보와 비공개 자료를 포함하지 않았습니다.
+          required: true

@@ -1,0 +1,45 @@
+projects:
+  - id: spacetime-study
+    title: "시·공간 연구"
+    field:
+      - "과학철학"
+    status: published
+    version: "1.0"
+    zenodo_url: "https://zenodo.org/records/22270214"
+
+  - id: camel-hierarchy-ressentiment
+    title: "낙타의 서열화와 르상티망: 현대 교육 시스템 내 무한 경쟁 고찰"
+    field:
+      - "교육철학"
+      - "니체"
+    status: revision
+    version: "2.0-preparation"
+    zenodo_url: null
+
+  - id: foundation-of-equality-education-of-greatness
+    title: "평등의 토대, 위대함의 교육: 롤스와 니체의 시선으로 본 현대 교육의 모순"
+    field:
+      - "교육철학"
+      - "롤스"
+      - "니체"
+    status: revision
+    version: "2.0-preparation"
+    zenodo_url: null
+
+  - id: rawls-theory-of-justice-reading
+    title: "롤스 『정의론』 독서 탐구"
+    field:
+      - "정치철학"
+      - "윤리"
+    status: drafting
+    version: null
+    zenodo_url: null
+
+  - id: naca2412-uam-ethics
+    title: "NACA 2412 익형과 UAM 쿼드콥터의 성능·윤리 연구"
+    field:
+      - "공학"
+      - "윤리"
+    status: drafting
+    version: null
+    zenodo_url: null
