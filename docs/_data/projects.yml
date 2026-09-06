@@ -1,0 +1,112 @@
+- id: spacetime-study
+  title: "시·공간은 실재하는가"
+  subtitle: "과학과 철학, 두 시선에서 본 그 본질"
+  researcher_id: yoon-s
+  researcher: "Yoon, Sunho"
+  fields:
+    - "과학철학"
+  keywords:
+    - "시·공간"
+    - "과학철학"
+    - "상대성 이론"
+    - "칸트"
+    - "선험적 직관"
+  stage: published
+  status_label: "v1.0 공개 · v2.0 준비"
+  description: "시·공간의 실재성과 상대성 이론을 과학과 철학의 관점에서 탐구합니다."
+  zenodo_url: "https://doi.org/10.5281/zenodo.22270214"
+  featured: false
+
+- id: camel-hierarchy-ressentiment
+  title: "낙타의 서열화와 르상티망"
+  subtitle: "현대 교육 시스템 내 무한 경쟁에 관한 고찰"
+  researcher_id: yoon-s
+  researcher: "Yoon, Sunho"
+  fields:
+    - "교육철학"
+  keywords:
+    - "니체"
+    - "교육"
+    - "능력주의"
+    - "르상티망"
+    - "교육적 이원론"
+  stage: published
+  status_label: "v1.0 공개 · v2.0 준비"
+  description: "현대 교육 시스템의 무한 경쟁과 성적 서열화를 니체의 철학을 통해 고찰합니다."
+  zenodo_url: "https://doi.org/10.5281/zenodo.21222993"
+  featured: false
+
+- id: foundation-of-equality-education-of-greatness
+  title: "평등의 토대, 위대함의 교육"
+  subtitle: "롤스와 니체의 관점에서 본 한국 중등교육의 모순"
+  researcher_id: yoon-s
+  researcher: "Yoon, Sunho"
+  fields:
+    - "교육철학"
+  keywords:
+    - "롤스"
+    - "니체"
+    - "한국 중등교육"
+    - "교육적 공정성"
+    - "자기초극"
+  stage: published
+  status_label: "v1.0 공개 · v2.0 준비"
+  description: "롤스와 니체의 관점으로 한국 중등교육의 평등과 자기초극 사이의 모순을 분석합니다."
+  zenodo_url: "https://doi.org/10.5281/zenodo.22306643"
+  featured: true
+
+- id: glp1-obesity-treatment
+  title: "GLP-1 수용체 작용체가 불러온 비만 치료의 변화 ver.1"
+  subtitle: "GLP-1의 생리적 기능과 약리학적 비만 치료 전략"
+  researcher_id: ho-yejin
+  researcher: "Ho, Yejin"
+  fields:
+    - "생명과학"
+    - "약리학"
+  keywords:
+    - "비만"
+    - "비만 치료제"
+    - "GLP-1 수용체 작용제"
+  stage: published
+  status_label: "v1.0 공개"
+  description: "GLP-1의 생리학적 기능과 수용체 작용제를 중심으로 비만 치료 전략의 발전을 탐구합니다."
+  zenodo_url: "https://doi.org/10.5281/zenodo.22538005"
+  featured: false
+
+- id: rawls-theory-of-justice-reading
+  title: "롤스 『정의론』 독서 탐구"
+  subtitle: "공정으로서의 정의와 완전성의 원리를 중심으로"
+  researcher_id: yoon-s
+  researcher: "Yoon, Sunho"
+  fields:
+    - "정치철학"
+    - "윤리"
+  keywords:
+    - "롤스"
+    - "정의론"
+    - "공정으로서의 정의"
+    - "완전성의 원리"
+  stage: drafting
+  status_label: "집필 중"
+  description: "공정으로서의 정의와 완전성의 원리를 중심으로 자유와 평등의 관계를 검토합니다."
+  zenodo_url:
+  featured: false
+
+- id: naca2412-uam-ethics
+  title: "NACA 2412 익형과 UAM 쿼드콥터"
+  subtitle: "공력 특성과 소재별 질량 변화가 비행 성능에 미치는 영향"
+  researcher_id: yoon-s
+  researcher: "Yoon, Sunho"
+  fields:
+    - "공학"
+    - "윤리"
+  keywords:
+    - "NACA 2412"
+    - "UAM"
+    - "쿼드콥터"
+    - "공학윤리"
+  stage: drafting
+  status_label: "집필 중 · 가제"
+  description: "익형과 소재가 비행 성능에 미치는 영향 및 효율·안전·환경의 설계 기준을 함께 분석합니다."
+  zenodo_url:
+  featured: false

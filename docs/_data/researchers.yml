@@ -1,0 +1,15 @@
+- id: yoon-s
+  display_name: "Yoon, Sunho"
+  role: "KSI Owner · Researcher"
+  fields:
+    - "철학"
+    - "교육"
+    - "과학철학"
+    - "공학 윤리"
+
+- id: ho-yejin
+  display_name: "Ho, Yejin"
+  role: "KSI Researcher"
+  fields:
+    - "생명과학"
+    - "약리학"

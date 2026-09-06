@@ -4,6 +4,9 @@ title: Home
 description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개본을 연결하는 연구 허브입니다.
 ---
 
+{% assign published_projects = site.data.projects | where: "stage", "published" %}
+{% assign drafting_projects = site.data.projects | where: "stage", "drafting" %}
+
 <section class="intro" aria-labelledby="intro-title">
   <div class="intro-copy">
     <p class="eyebrow">Student Research Infrastructure · 2026</p>
@@ -11,9 +14,9 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
     <p class="lead">KSI 구성원의 연구 질문, 동료평가, 개정 기록과 Zenodo 영구 공개본을 한곳에서 탐색합니다.</p>
   </div>
   <dl class="overview" aria-label="연구 현황 요약">
-    <div><dt>공개 연구</dt><dd>4</dd></div>
-    <div><dt>진행 연구</dt><dd>2</dd></div>
-    <div><dt>발급 DOI</dt><dd>4</dd></div>
+    <div><dt>공개 연구</dt><dd>{{ published_projects | size }}</dd></div>
+    <div><dt>진행 연구</dt><dd>{{ drafting_projects | size }}</dd></div>
+    <div><dt>연구자</dt><dd>{{ site.data.researchers | size }}</dd></div>
   </dl>
 </section>
 
@@ -26,49 +29,42 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
     <p>최종 성과는 Zenodo에 보존되며, 각 DOI는 해당 버전의 영구 주소입니다.</p>
   </header>
 
-  <div class="project-grid">
-    <article class="project-card published">
-      <div class="card-topline"><span class="status">v1.0 공개</span><span class="field">과학철학</span></div>
-      <h3>시·공간 연구</h3>
-      <p>시·공간의 실재성과 상대성 이론을 과학철학의 관점에서 탐구합니다.</p>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.22270214">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
-    </article>
-
-    <article class="project-card published">
-      <div class="card-topline"><span class="status">v1.0 공개 · v2.0 준비</span><span class="field">교육철학 · 니체</span></div>
-      <h3>낙타의 서열화와 르상티망</h3>
-      <p>현대 교육 시스템의 무한 경쟁을 니체의 정신 변화와 르상티망을 통해 고찰합니다.</p>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.21222993">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
-    </article>
-
-    <article class="project-card published feature-card">
-      <div class="card-topline"><span class="status">v1.0 공개 · v2.0 개정</span><span class="field">교육철학</span></div>
-      <h3>평등의 토대,<br>위대함의 교육</h3>
-      <p>롤스와 니체의 시선으로 현대 교육의 평등과 탁월성 사이의 모순을 분석합니다.</p>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.22306643">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
-    </article>
-
-    <article class="project-card published">
-      <div class="card-topline"><span class="status">v1.0 공개</span><span class="field">생명과학 · 약리학</span></div>
-      <h3>GLP-1 수용체 작용제가 불러온 비만 치료의 변화</h3>
-      <p>GLP-1의 생리학적 기능과 수용체 작용제를 중심으로 비만 치료 전략의 발전을 탐구합니다.</p>
-      <a class="doi-link" href="https://doi.org/10.5281/zenodo.22538005">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
-    </article>
-
-    <article class="project-card ongoing">
-      <div class="card-topline"><span class="status">집필 중</span><span class="field">정치철학 · 윤리</span></div>
-      <h3>롤스 『정의론』 독서 탐구</h3>
-      <p>공정으로서의 정의와 완전성의 원리를 중심으로 자유와 평등의 관계를 검토합니다.</p>
-      <span class="pending-link">공개 후 DOI 연결</span>
-    </article>
-
-    <article class="project-card ongoing">
-      <div class="card-topline"><span class="status">집필 중</span><span class="field">공학 · 윤리</span></div>
-      <h3>NACA 2412 익형과 UAM 쿼드콥터</h3>
-      <p>익형과 소재가 비행 성능에 미치는 영향 및 효율·안전·환경의 설계 기준을 함께 분석합니다.</p>
-      <span class="pending-link">공개 후 DOI 연결</span>
-    </article>
+  <div class="filter-bar" role="group" aria-label="연구 목록 필터">
+    <button class="filter-button active" type="button" data-project-filter="all">전체</button>
+    {% for researcher in site.data.researchers %}
+      <button class="filter-button" type="button" data-project-filter="{{ researcher.id }}">{{ researcher.display_name }}</button>
+    {% endfor %}
+    <button class="filter-button" type="button" data-project-filter="drafting">진행 연구</button>
   </div>
+
+  <p class="filter-result" aria-live="polite"><span id="visible-project-count">{{ site.data.projects | size }}</span>개의 연구</p>
+
+  <div class="project-grid" id="project-grid">
+    {% for project in site.data.projects %}
+    <article class="project-card {% if project.stage == 'published' %}published{% else %}ongoing{% endif %}{% if project.featured %} feature-card{% endif %}" data-researcher="{{ project.researcher_id }}" data-stage="{{ project.stage }}">
+      <div class="card-topline">
+        <span class="status">{{ project.status_label }}</span>
+        <span class="field">{{ project.fields | join: " · " }}</span>
+      </div>
+      <h3>{{ project.title }}</h3>
+      <p class="project-subtitle">{{ project.subtitle }}</p>
+      <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project.researcher }}</a>
+      <ul class="keyword-list" aria-label="핵심어">
+        {% for keyword in project.keywords %}
+          <li>{{ keyword }}</li>
+        {% endfor %}
+      </ul>
+      <p class="project-description">{{ project.description }}</p>
+      {% if project.zenodo_url %}
+        <a class="doi-link" href="{{ project.zenodo_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
+      {% else %}
+        <span class="pending-link">공개 후 DOI 연결</span>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+
+  <div class="empty-state" id="empty-state" hidden>조건에 맞는 연구가 없습니다.</div>
 </section>
 
 <section class="process-section" id="process" aria-labelledby="process-title">
@@ -88,13 +84,18 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   </ol>
 </section>
 
-<section class="participate" aria-labelledby="participate-title">
+<section class="participate" id="participate" aria-labelledby="participate-title">
   <div>
     <p class="section-index">03 / Participate</p>
     <h2 id="participate-title">새로운 질문과 검토를 기다립니다.</h2>
+    <p class="participate-copy">KSI는 연구 제안과 구성원 참여 신청을 Owner에게 이메일로 받고, 공개 연구의 수록 기준은 Zenodo KSI 커뮤니티 정책에 따라 운영합니다.</p>
   </div>
   <div class="participate-actions">
-    <a class="primary-action" href="https://github.com/SunhoYoon-Hub/KSI-Research-Hub/issues/new/choose">연구 제안하기 <span aria-hidden="true">→</span></a>
-    <a class="secondary-action" href="https://github.com/SunhoYoon-Hub/KSI-Research-Hub/blob/main/CONTRIBUTING.md">참여 기준 읽기</a>
+    <a class="primary-action" href="{{ '/contact/' | relative_url }}?type=proposal">연구 제안하기 <span aria-hidden="true">→</span></a>
+    <a class="secondary-action" href="{{ '/contact/' | relative_url }}?type=join">KSI 참여 신청하기 <span aria-hidden="true">→</span></a>
+    <a class="policy-action" href="https://zenodo.org/communities/ksi/curation-policy">KSI 참여·수록 기준 읽기 <span aria-hidden="true">↗</span></a>
+    <small>KSI Owner에게 연결됩니다.</small>
   </div>
 </section>
+
+<script src="{{ '/assets/js/project-filter.js' | relative_url }}" defer></script>

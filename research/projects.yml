@@ -1,42 +1,49 @@
 projects:
   - id: spacetime-study
-    title: "시·공간 연구"
+    title: "시·공간은 실재하는가"
+    subtitle: "과학과 철학, 두 시선에서 본 그 본질"
+    researcher: "Yoon, Sunho"
     field:
       - "과학철학"
     status: published
-    version: "1.0"
+    version: "v1.0 공개 · v2.0 준비"
     zenodo_url: "https://doi.org/10.5281/zenodo.22270214"
 
   - id: camel-hierarchy-ressentiment
-    title: "낙타의 서열화와 르상티망: 현대 교육 시스템 내 무한 경쟁 고찰"
+    title: "낙타의 서열화와 르상티망"
+    subtitle: "현대 교육 시스템 내 무한 경쟁에 관한 고찰"
+    researcher: "Yoon, Sunho"
     field:
       - "교육철학"
-      - "니체"
-    status: revision
-    version: "2.0-preparation"
+    status: published
+    version: "v1.0 공개 · v2.0 준비"
     zenodo_url: "https://doi.org/10.5281/zenodo.21222993"
 
   - id: foundation-of-equality-education-of-greatness
-    title: "평등의 토대, 위대함의 교육: 롤스와 니체의 시선으로 본 현대 교육의 모순"
+    title: "평등의 토대, 위대함의 교육"
+    subtitle: "롤스와 니체의 관점에서 본 한국 중등교육의 모순"
+    researcher: "Yoon, Sunho"
     field:
       - "교육철학"
-      - "롤스"
-      - "니체"
-    status: revision
-    version: "2.0-preparation"
+    status: published
+    version: "v1.0 공개 · v2.0 준비"
     zenodo_url: "https://doi.org/10.5281/zenodo.22306643"
 
   - id: glp1-obesity-treatment
-    title: "GLP-1 수용체 작용제가 불러온 비만 치료의 변화"
+    title: "GLP-1 수용체 작용체가 불러온 비만 치료의 변화 ver.1"
+    subtitle: "GLP-1의 생리적 기능과 약리학적 비만 치료 전략"
+    researcher: "Ho, Yejin"
     field:
       - "생명과학"
       - "약리학"
     status: published
-    version: "1.0"
+    version: "v1.0 공개"
     zenodo_url: "https://doi.org/10.5281/zenodo.22538005"
 
   - id: rawls-theory-of-justice-reading
     title: "롤스 『정의론』 독서 탐구"
+    subtitle: "공정으로서의 정의와 완전성의 원리를 중심으로"
+    researcher: "Yoon, Sunho"
     field:
       - "정치철학"
       - "윤리"
@@ -45,10 +52,12 @@ projects:
     zenodo_url: null
 
   - id: naca2412-uam-ethics
-    title: "NACA 2412 익형과 UAM 쿼드콥터의 성능·윤리 연구"
+    title: "NACA 2412 익형과 UAM 쿼드콥터"
+    subtitle: "공력 특성과 소재별 질량 변화가 비행 성능에 미치는 영향"
+    researcher: "Yoon, Sunho"
     field:
       - "공학"
       - "윤리"
     status: drafting
-    version: null
+    version: "가제"
     zenodo_url: null
