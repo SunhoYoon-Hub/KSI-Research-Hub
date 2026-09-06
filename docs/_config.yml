@@ -1,4 +1,6 @@
 title: KSI Research Hub
 description: Connecting student research, peer review, revision, and publication.
-theme: minima
 lang: ko-KR
+url: "https://sunhoyoon-hub.github.io"
+baseurl: "/KSI-Research-Hub"
+markdown: kramdown

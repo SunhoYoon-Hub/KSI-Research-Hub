@@ -5,7 +5,7 @@ projects:
       - "과학철학"
     status: published
     version: "1.0"
-    zenodo_url: "https://zenodo.org/records/22270214"
+    zenodo_url: "https://doi.org/10.5281/zenodo.22270214"
 
   - id: camel-hierarchy-ressentiment
     title: "낙타의 서열화와 르상티망: 현대 교육 시스템 내 무한 경쟁 고찰"
@@ -14,7 +14,7 @@ projects:
       - "니체"
     status: revision
     version: "2.0-preparation"
-    zenodo_url: null
+    zenodo_url: "https://doi.org/10.5281/zenodo.21222993"
 
   - id: foundation-of-equality-education-of-greatness
     title: "평등의 토대, 위대함의 교육: 롤스와 니체의 시선으로 본 현대 교육의 모순"
@@ -24,7 +24,16 @@ projects:
       - "니체"
     status: revision
     version: "2.0-preparation"
-    zenodo_url: null
+    zenodo_url: "https://doi.org/10.5281/zenodo.22306643"
+
+  - id: glp1-obesity-treatment
+    title: "GLP-1 수용체 작용제가 불러온 비만 치료의 변화"
+    field:
+      - "생명과학"
+      - "약리학"
+    status: published
+    version: "1.0"
+    zenodo_url: "https://doi.org/10.5281/zenodo.22538005"
 
   - id: rawls-theory-of-justice-reading
     title: "롤스 『정의론』 독서 탐구"
