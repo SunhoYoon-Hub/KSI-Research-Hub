@@ -54,7 +54,7 @@ description: KSI Owner에게 연구 제안 또는 참여 신청 이메일을 작
     <p class="section-index">Before sending</p>
     <h2>KSI 참여·수록 기준</h2>
     <p>제안이나 신청 전에 KSI가 어떤 연구를 수록하고 어떻게 검토하는지 확인할 수 있습니다.</p>
-    <a href="https://zenodo.org/communities/ksi/curation-policy">Zenodo KSI 정책 읽기 <span aria-hidden="true">↗</span></a>
+    <a href="https://zenodo.org/communities/sum-of-inquiries/curation-policy">Zenodo KSI 정책 읽기 <span aria-hidden="true">↗</span></a>
     <small>입력 내용은 이 사이트에 저장되지 않으며, 이메일 앱이 열린 뒤 직접 전송합니다.</small>
   </aside>
 </section>

@@ -93,7 +93,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   <div class="participate-actions">
     <a class="primary-action" href="{{ '/contact/' | relative_url }}?type=proposal">연구 제안하기 <span aria-hidden="true">→</span></a>
     <a class="secondary-action" href="{{ '/contact/' | relative_url }}?type=join">KSI 참여 신청하기 <span aria-hidden="true">→</span></a>
-    <a class="policy-action" href="https://zenodo.org/communities/ksi/curation-policy">KSI 참여·수록 기준 읽기 <span aria-hidden="true">↗</span></a>
+    <a class="policy-action" href="https://zenodo.org/communities/sum-of-inquiries/curation-policy">KSI 참여·수록 기준 읽기 <span aria-hidden="true">↗</span></a>
     <small>KSI Owner에게 연결됩니다.</small>
   </div>
 </section>

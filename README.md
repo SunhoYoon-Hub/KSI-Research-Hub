@@ -38,7 +38,7 @@
 ## 참여 방법
 
 - 새 연구를 제안하거나 KSI 참여를 신청하려면 [사이트의 제안·참여 화면](https://sunhoyoon-hub.github.io/KSI-Research-Hub/#participate)에서 Owner에게 이메일을 작성합니다.
-- KSI의 참여 및 수록 기준은 [Zenodo KSI 커뮤니티 정책](https://zenodo.org/communities/ksi/curation-policy)에서 확인합니다.
+- KSI의 참여 및 수록 기준은 [Zenodo KSI 커뮤니티 정책](https://zenodo.org/communities/sum-of-inquiries/curation-policy)에서 확인합니다.
 - 연구를 검토하려면 **Peer review** Issue를 작성합니다.
 - 문서 수정은 Pull Request로 제안합니다.
 - 개인정보, 학교 내부 정보, 이메일과 비공개 대화는 올리지 않습니다.
