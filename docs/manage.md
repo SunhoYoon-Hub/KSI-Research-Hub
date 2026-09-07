@@ -1,14 +1,14 @@
 ---
 layout: default
-title: 연구 목록 편집
+title: Owner 연구 관리
 permalink: /manage/
-description: KSI Research Hub 연구 항목을 추가하기 위한 편집 도구입니다.
+description: KSI Owner가 연구 항목 데이터를 만들고 반영하기 위한 관리 도구입니다.
 ---
 
 <section class="directory-hero manage-hero">
-  <p class="section-index">Manage</p>
-  <h1>연구 항목 만들기</h1>
-  <p>정보를 입력하면 연구 목록에 붙여넣을 데이터 조각을 만듭니다. 입력 내용은 전송되거나 자동 저장되지 않습니다.</p>
+  <p class="section-index">Owner tool</p>
+  <h1>Owner 연구 관리</h1>
+  <p>KSI Owner용 도구입니다. 정보를 입력하면 연구 목록에 붙여넣을 데이터 조각을 만듭니다. 입력 내용은 전송되거나 자동 저장되지 않습니다.</p>
 </section>
 
 <section class="editor-layout">
