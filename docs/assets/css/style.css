@@ -472,6 +472,8 @@ a:focus-visible {
   letter-spacing: -.045em;
 }
 
+.directory-hero h1 em { color: var(--gold-light); font-style: normal; }
+
 .directory-hero > p:last-child {
   max-width: 680px;
   margin: 1.4rem 0 0;
@@ -481,9 +483,29 @@ a:focus-visible {
 
 .researcher-directory {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 4rem max(2rem, calc((100vw - var(--max-width)) / 2)) 6rem;
 }
+
+.directory-section-heading {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 420px);
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: .4rem;
+}
+
+.directory-section-heading h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+.directory-section-heading > p { margin: 0 0 .25rem; color: var(--muted); }
+.public-researcher-list { display: grid; gap: 1.5rem; }
 
 .researcher-profile {
   scroll-margin-top: 6rem;
@@ -509,13 +531,76 @@ a:focus-visible {
   background: var(--night);
   border-radius: 50%;
   font-family: var(--serif);
-  font-size: 1.35rem;
+  font-size: 1rem;
+  letter-spacing: .06em;
 }
 
-.researcher-header p { margin: 0; color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
-.researcher-header h2 { margin: .1rem 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; }
+.researcher-role { margin: 0; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+.researcher-role span::before { content: " / "; color: #aeb5bf; }
+.researcher-header h2 { margin: .18rem 0 0; font-family: var(--serif); font-size: 2rem; font-weight: 500; line-height: 1.15; }
+.researcher-name-en { margin: .15rem 0 .55rem; color: var(--blue); font-family: var(--serif); font-size: 1rem; }
 .researcher-fields { color: var(--ink-soft); font-size: .82rem; }
+.researcher-fields-en { margin-top: .12rem; color: var(--muted); font-size: .73rem; }
 .project-count { color: var(--muted); font-size: .82rem; }
+
+.research-trajectory {
+  padding: 2rem;
+  color: #fff;
+  background:
+    radial-gradient(circle at 95% 5%, rgba(200, 167, 91, .18), transparent 30%),
+    var(--night-2);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.research-trajectory > header {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 400px);
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.research-trajectory .section-index { margin-bottom: .4rem; }
+.research-trajectory h3 { margin: 0; font-family: var(--serif); font-size: 1.65rem; font-weight: 500; }
+.research-trajectory > header > p { margin: 0; color: #b9c3d0; font-size: .85rem; }
+
+.trajectory-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(240, 223, 173, .35);
+}
+
+.trajectory-list li { position: relative; padding: 1.25rem 1.6rem 0 0; }
+.trajectory-list li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 2.9rem;
+  right: .7rem;
+  color: var(--gold);
+  font-size: 1.15rem;
+}
+
+.trajectory-list a { display: grid; gap: .35rem; color: #fff; text-decoration: none; }
+.trajectory-step { color: var(--gold-light); font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.trajectory-list strong { max-width: 17rem; font-family: var(--serif); font-size: 1.08rem; font-weight: 500; line-height: 1.35; }
+.trajectory-list small { color: #aeb8c7; font-size: .76rem; }
+.trajectory-list a:hover strong { color: var(--gold-light); }
+
+.researcher-work-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: .8rem 2rem;
+  color: var(--muted);
+  background: rgba(11, 22, 40, .035);
+  border-bottom: 1px solid var(--line);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
 .researcher-projects { margin: 0; padding: 0; list-style: none; }
 
@@ -535,7 +620,85 @@ a:focus-visible {
 .researcher-projects small { color: var(--muted); font-size: .8rem; }
 .researcher-projects a { flex: 0 0 auto; color: var(--blue); font-size: .82rem; font-weight: 800; text-decoration: none; }
 .researcher-projects a:hover { text-decoration: underline; }
-.researcher-projects .project-pending { flex: 0 0 auto; }
+.researcher-projects .project-pending { flex: 0 0 auto; color: var(--muted); }
+
+.anonymous-heading { margin-top: 2.8rem; }
+
+.anonymous-researcher-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--line);
+}
+
+.anonymous-researcher-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 1.7rem;
+  background: rgba(255, 255, 255, .72);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background .2s ease;
+}
+
+.anonymous-researcher-card:hover { background: #fff; }
+.anonymous-card-topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+.anonymous-monogram {
+  display: grid;
+  place-items: center;
+  min-width: 52px;
+  height: 52px;
+  padding: 0 .65rem;
+  color: var(--gold-light);
+  background: var(--night);
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: .78rem;
+  letter-spacing: .05em;
+}
+
+.privacy-badge {
+  padding: .25rem .5rem;
+  color: var(--blue);
+  border: 1px solid rgba(57, 94, 137, .25);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
+.anonymous-role { margin: 0; color: var(--muted); font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; }
+.anonymous-researcher-card h3 { margin: .55rem 0 0; font-family: var(--serif); font-size: 1.65rem; font-weight: 500; line-height: 1.25; }
+.anonymous-name-en { margin: .2rem 0 1.2rem; color: var(--blue); font-family: var(--serif); font-size: .94rem; line-height: 1.35; }
+.anonymous-fields { display: grid; gap: .08rem; color: var(--ink-soft); font-size: .8rem; }
+.anonymous-fields span[lang="en"] { color: var(--muted); font-size: .72rem; }
+
+.preparation-status {
+  display: grid;
+  gap: .05rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: #755b20;
+  border-top: 1px solid rgba(200, 167, 91, .45);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.preparation-status small { color: var(--muted); font-size: .68rem; font-weight: 600; }
+
+.consent-note {
+  display: grid;
+  grid-template-columns: minmax(190px, .35fr) 1fr;
+  gap: 1.5rem;
+  margin-top: .5rem;
+  padding: 1.2rem 1.4rem;
+  color: #463a22;
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+}
+
+.consent-note strong { font-family: var(--serif); font-weight: 600; }
+.consent-note p { margin: 0; font-size: .82rem; }
 
 .editor-layout {
   display: grid;
@@ -712,6 +875,9 @@ a:focus-visible {
   .site-footer { align-items: flex-start; flex-direction: column; padding: 2.2rem 1.4rem; }
   .footer-links { justify-content: flex-start; }
   .directory-hero, .researcher-directory, .editor-layout, .contact-layout { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .directory-section-heading, .research-trajectory > header { grid-template-columns: 1fr; gap: .8rem; }
+  .anonymous-researcher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .consent-note { grid-template-columns: 1fr; gap: .35rem; }
   .editor-layout, .contact-layout { grid-template-columns: 1fr; }
   .editor-output { position: static; }
 }
@@ -731,6 +897,12 @@ a:focus-visible {
   .researcher-header { grid-template-columns: auto 1fr; padding: 1.4rem; }
   .project-count { grid-column: 2; }
   .researcher-projects li { align-items: flex-start; padding: 1.2rem 1.4rem; }
+  .research-trajectory { padding: 1.5rem 1.4rem; }
+  .trajectory-list { grid-template-columns: 1fr; }
+  .trajectory-list li { padding: 1.2rem 0 2.1rem; }
+  .trajectory-list li:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: .35rem; left: 0; }
+  .anonymous-researcher-grid { grid-template-columns: 1fr; }
+  .anonymous-researcher-card { min-height: 290px; }
   .project-form, .contact-form { grid-template-columns: 1fr; padding: 1.4rem; }
   .full-field, .generate-button, .contact-form .generate-button, .contact-status { grid-column: auto; }
   .output-actions { grid-template-columns: 1fr; }
