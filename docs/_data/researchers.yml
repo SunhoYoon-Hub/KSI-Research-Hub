@@ -1,15 +1,78 @@
 - id: yoon-s
+  name_ko: "윤선호"
+  name_en: "Yoon, Sunho"
   display_name: "Yoon, Sunho"
-  role: "KSI Owner · Researcher"
+  role_ko: "KSI 운영자 · 연구자"
+  role_en: "KSI Owner · Researcher"
+  anonymous: false
+  monogram: "YS"
   fields:
     - "철학"
     - "교육"
     - "과학철학"
     - "공학 윤리"
+  fields_en:
+    - "Philosophy"
+    - "Education"
+    - "Philosophy of Science"
+    - "Engineering Ethics"
 
 - id: ho-yejin
+  name_ko: "호예진"
+  name_en: "Ho, Yejin"
   display_name: "Ho, Yejin"
-  role: "KSI Researcher"
+  role_ko: "KSI 연구자"
+  role_en: "KSI Researcher"
+  anonymous: false
+  monogram: "HY"
   fields:
     - "생명과학"
     - "약리학"
+  fields_en:
+    - "Life Sciences"
+    - "Pharmacology"
+
+- id: anonymous-engineering
+  name_ko: "공학 연구자"
+  name_en: "Engineering Researcher"
+  display_name: "공학 연구자"
+  role_ko: "KSI 연구자 · 익명"
+  role_en: "KSI Researcher · Anonymous"
+  anonymous: true
+  monogram: "ENG"
+  status_ko: "연구 준비 중"
+  status_en: "Research in Preparation"
+  fields:
+    - "공학"
+  fields_en:
+    - "Engineering"
+
+- id: anonymous-medical
+  name_ko: "의학·보건 연구자"
+  name_en: "Medicine & Health Researcher"
+  display_name: "의학·보건 연구자"
+  role_ko: "KSI 연구자 · 익명"
+  role_en: "KSI Researcher · Anonymous"
+  anonymous: true
+  monogram: "MED"
+  status_ko: "연구 준비 중"
+  status_en: "Research in Preparation"
+  fields:
+    - "의학·보건"
+  fields_en:
+    - "Medicine & Health"
+
+- id: anonymous-computer-engineering
+  name_ko: "컴퓨터공학 연구자"
+  name_en: "Computer Engineering Researcher"
+  display_name: "컴퓨터공학 연구자"
+  role_ko: "KSI 연구자 · 익명"
+  role_en: "KSI Researcher · Anonymous"
+  anonymous: true
+  monogram: "CE"
+  status_ko: "연구 준비 중"
+  status_en: "Research in Preparation"
+  fields:
+    - "컴퓨터공학"
+  fields_en:
+    - "Computer Engineering"
