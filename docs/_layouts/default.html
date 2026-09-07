@@ -7,7 +7,7 @@
     <meta name="description" content="{{ page.description | default: site.description }}">
     <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
     <link rel="icon" type="image/png" href="{{ '/assets/images/ksi-logo.png' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '20260907' }}">
   </head>
   <body>
     <a class="skip-link" href="#content">본문으로 건너뛰기</a>
