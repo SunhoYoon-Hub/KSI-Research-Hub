@@ -175,6 +175,7 @@ a:focus-visible {
 .overview dd { margin: .15rem 0 0; font-family: var(--serif); font-size: 2rem; }
 
 .research-section,
+.question-archive,
 .process-section,
 .participate,
 .document-page {
@@ -389,6 +390,133 @@ a:focus-visible {
 }
 
 [hidden] { display: none !important; }
+
+.question-archive {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  background: #e9e7df;
+  border-top: 1px solid var(--line);
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid #c9c7bd;
+}
+
+.question-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, .52);
+  border-right: 1px solid #c9c7bd;
+  border-bottom: 1px solid #c9c7bd;
+}
+
+.question-card::after {
+  content: "?";
+  position: absolute;
+  right: 1rem;
+  bottom: -3.6rem;
+  color: rgba(11, 22, 40, .035);
+  font-family: var(--serif);
+  font-size: 13rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.question-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.question-number {
+  color: #755b20;
+  font: 800 .76rem/1 var(--sans);
+  letter-spacing: .1em;
+}
+
+.question-state {
+  color: var(--blue);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.question-state::before {
+  content: "";
+  display: inline-block;
+  width: .42rem;
+  height: .42rem;
+  margin-right: .4rem;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.question-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 29rem;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
+
+.question-card > p {
+  position: relative;
+  z-index: 1;
+  max-width: 34rem;
+  margin: 1rem 0 1.5rem;
+  color: var(--ink-soft);
+  font-size: .9rem;
+}
+
+.question-keywords {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.question-keywords li {
+  padding: .27rem .55rem;
+  color: #5d4a20;
+  background: rgba(240, 223, 173, .32);
+  border: 1px solid rgba(117, 91, 32, .28);
+  font-size: .73rem;
+  line-height: 1.3;
+}
+
+.question-archive-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem 1.4rem;
+  color: #fff;
+  background: var(--night-2);
+}
+
+.question-archive-footer p { margin: 0; color: #c8d0dc; font-size: .85rem; }
+.question-archive-footer a { flex: 0 0 auto; color: var(--gold-light); font-size: .85rem; font-weight: 800; text-decoration: none; }
+.question-archive-footer a span { display: inline-block; margin-left: .4rem; transition: transform .18s ease; }
+.question-archive-footer a:hover span { transform: translateX(3px); }
 
 .process-section {
   padding-top: 5rem;
@@ -870,7 +998,7 @@ a:focus-visible {
   .site-nav { gap: 1rem; }
   .intro { grid-template-columns: 1fr; gap: 2.5rem; min-height: auto; padding: 4rem 1.4rem; }
   .section-heading, .participate { grid-template-columns: 1fr; }
-  .research-section, .process-section, .participate, .document-page { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .research-section, .question-archive, .process-section, .participate, .document-page { padding-left: 1.4rem; padding-right: 1.4rem; }
   .process-list { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
   .site-footer { align-items: flex-start; flex-direction: column; padding: 2.2rem 1.4rem; }
   .footer-links { justify-content: flex-start; }
@@ -890,6 +1018,9 @@ a:focus-visible {
   .intro h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
   .overview { max-width: 360px; }
   .project-grid { grid-template-columns: 1fr; }
+  .question-grid { grid-template-columns: 1fr; }
+  .question-card { min-height: 290px; padding: 1.5rem; }
+  .question-archive-footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
   .project-card { min-height: 410px; padding: 1.5rem; }
   .card-topline { margin-bottom: 1.5rem; }
   .process-list { grid-template-columns: repeat(2, 1fr); }
