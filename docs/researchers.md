@@ -31,8 +31,7 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
           <div class="researcher-monogram" aria-hidden="true">{{ researcher.monogram }}</div>
           <div class="researcher-identity">
             <p class="researcher-role">{{ researcher.role_ko }} <span lang="en">{{ researcher.role_en }}</span></p>
-            <h2>{{ researcher.name_ko }}</h2>
-            <p class="researcher-name-en" lang="en">{{ researcher.name_en }}</p>
+            <h2 lang="en">{{ researcher.name_en }}</h2>
             <div class="researcher-fields">{{ researcher.fields | join: " · " }}</div>
             <div class="researcher-fields-en" lang="en">{{ researcher.fields_en | join: " · " }}</div>
           </div>
@@ -130,6 +129,6 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
 
   <aside class="consent-note" aria-label="연구자 정보 공개 원칙">
     <strong>연구자 정보 공개 원칙</strong>
-    <p>실명과 영문명은 본인의 공개 동의를 확인한 뒤 추가합니다. 동의 전에는 분야와 연구 준비 상태만 표시합니다.</p>
+    <p>연구자 이름은 본인의 공개 동의를 확인한 뒤 영문명으로 표시합니다. 동의 전에는 분야와 연구 준비 상태만 표시합니다.</p>
   </aside>
 </section>
