@@ -105,10 +105,31 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   </footer>
 </section>
 
+<section class="affiliated-project" id="affiliated" aria-labelledby="affiliated-title">
+  <header class="section-heading">
+    <div>
+      <p class="section-index">03 / Affiliated Project</p>
+      <h2 id="affiliated-title">연계 프로젝트</h2>
+    </div>
+    <p>KSI의 연구 기록 방식을 공유하면서 각 공동체의 정체성과 운영 범위는 독립적으로 유지합니다.</p>
+  </header>
+  <a class="affiliated-card" href="{{ '/class-2-2/' | relative_url }}">
+    <div class="affiliated-logo">
+      <img src="{{ '/assets/images/2026-class-2-2-logo.png' | relative_url }}" alt="2026 2-2 Research Community 로고">
+    </div>
+    <div class="affiliated-copy">
+      <p><span aria-hidden="true"></span>KSI 연계 독립 프로젝트 · 2026</p>
+      <h3>2026 Class 2-2<br>Research Community</h3>
+      <small>현재 첫 연구 성과를 준비하고 있으며, 참여자 명단은 공개하지 않습니다.</small>
+      <b>2-2 Research Hub 열기 <span aria-hidden="true">↗</span></b>
+    </div>
+  </a>
+</section>
+
 <section class="process-section" id="process" aria-labelledby="process-title">
   <header class="section-heading light-heading">
     <div>
-      <p class="section-index">03 / Process</p>
+      <p class="section-index">04 / Process</p>
       <h2 id="process-title">연구가 공개되기까지</h2>
     </div>
     <p>GitHub는 과정을 기록하고, Zenodo는 완성된 버전을 보존합니다.</p>
@@ -124,7 +145,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 
 <section class="participate" id="participate" aria-labelledby="participate-title">
   <div>
-    <p class="section-index">04 / Participate</p>
+    <p class="section-index">05 / Participate</p>
     <h2 id="participate-title">새로운 질문과 검토를 기다립니다.</h2>
     <p class="participate-copy">KSI는 연구 제안과 구성원 참여 신청을 Owner에게 이메일로 받고, 공개 연구의 수록 기준은 Zenodo KSI 커뮤니티 정책에 따라 운영합니다.</p>
   </div>

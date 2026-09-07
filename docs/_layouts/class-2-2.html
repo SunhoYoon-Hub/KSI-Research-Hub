@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'ko-KR' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#071b36">
+    <meta name="description" content="{{ page.description }}">
+    <title>{{ page.title }}</title>
+    <link rel="icon" type="image/png" href="{{ '/assets/images/2026-class-2-2-logo.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/class-2-2.css' | relative_url }}?v={{ site.github.build_revision | default: '20260908' }}">
+  </head>
+  <body>
+    <a class="class-skip-link" href="#content">본문으로 건너뛰기</a>
+    <header class="class-header">
+      <a class="class-brand" href="{{ '/class-2-2/' | relative_url }}" aria-label="2026 Class 2-2 Research Hub 홈">
+        <img src="{{ '/assets/images/2026-class-2-2-logo.png' | relative_url }}" alt="">
+        <span>
+          <strong>2026 Class 2-2</strong>
+          <small>Research Community</small>
+        </span>
+      </a>
+      <nav class="class-nav" aria-label="2-2 주요 메뉴">
+        <a href="#about">소개</a>
+        <a href="#status">현재 단계</a>
+        <a href="#process">진행 방식</a>
+        <a class="ksi-link" href="{{ '/' | relative_url }}">KSI Research Hub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="content">
+      {{ content }}
+    </main>
+
+    <footer class="class-footer">
+      <div>
+        <strong>2026 Class 2-2 Research Community</strong>
+        <span>KSI와 연계된 독립 학급 연구 프로젝트</span>
+      </div>
+      <div class="class-footer-links">
+        <a href="{{ '/' | relative_url }}">KSI Research Hub</a>
+        <a href="{{ '/privacy/' | relative_url }}">개인정보 보호</a>
+        <span>2026</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -176,6 +176,7 @@ a:focus-visible {
 
 .research-section,
 .question-archive,
+.affiliated-project,
 .process-section,
 .participate {
   padding-left: max(2rem, calc((100vw - var(--max-width)) / 2));
@@ -516,6 +517,62 @@ a:focus-visible {
 .question-archive-footer a { flex: 0 0 auto; color: var(--gold-light); font-size: .85rem; font-weight: 800; text-decoration: none; }
 .question-archive-footer a span { display: inline-block; margin-left: .4rem; transition: transform .18s ease; }
 .question-archive-footer a:hover span { transform: translateX(3px); }
+
+.affiliated-project {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  background: var(--paper);
+}
+
+.affiliated-card {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  min-height: 430px;
+  color: #fff;
+  background: linear-gradient(135deg, #071b36, #0b2a4e);
+  text-decoration: none;
+  border-top: 4px solid var(--gold);
+}
+
+.affiliated-logo {
+  display: grid;
+  place-items: center;
+  padding: 2.2rem;
+  background: rgba(1, 12, 25, .28);
+  border-right: 1px solid rgba(255, 255, 255, .14);
+}
+
+.affiliated-logo img {
+  display: block;
+  width: min(100%, 300px);
+  height: auto;
+  filter: drop-shadow(0 22px 36px rgba(0, 0, 0, .22));
+}
+
+.affiliated-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.affiliated-copy > p {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  margin: 0;
+  color: var(--gold-light);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.affiliated-copy > p span { width: .46rem; height: .46rem; background: var(--gold); border-radius: 50%; }
+.affiliated-copy h3 { margin: 1.2rem 0 .9rem; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 1.12; letter-spacing: -.035em; }
+.affiliated-copy small { max-width: 560px; color: #bcc8d8; font-size: .9rem; }
+.affiliated-copy b { display: flex; justify-content: space-between; margin-top: auto; padding-top: 1.2rem; color: var(--gold-light); border-top: 1px solid rgba(255, 255, 255, .2); font-size: .9rem; }
+.affiliated-card:hover .affiliated-copy b span { transform: translate(2px, -2px); }
+.affiliated-copy b span { transition: transform .18s ease; }
 
 .process-section {
   padding-top: 5rem;
@@ -997,7 +1054,7 @@ a:focus-visible {
   .site-nav { gap: 1rem; }
   .intro { grid-template-columns: 1fr; gap: 2.5rem; min-height: auto; padding: 4rem 1.4rem; }
   .section-heading, .participate { grid-template-columns: 1fr; }
-  .research-section, .question-archive, .process-section, .participate { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .research-section, .question-archive, .affiliated-project, .process-section, .participate { padding-left: 1.4rem; padding-right: 1.4rem; }
   .document-page { width: calc(100% - 2.8rem); }
   .process-list { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
   .site-footer { align-items: flex-start; flex-direction: column; padding: 2.2rem 1.4rem; }
@@ -1008,13 +1065,14 @@ a:focus-visible {
   .consent-note { grid-template-columns: 1fr; gap: .35rem; }
   .editor-layout, .contact-layout { grid-template-columns: 1fr; }
   .editor-output { position: static; }
+  .affiliated-card { grid-template-columns: minmax(220px, .65fr) minmax(0, 1.35fr); }
 }
 
 @media (max-width: 620px) {
   .site-header { position: static; }
   .brand-logo { width: 44px; height: 44px; }
   .brand-copy strong { font-size: .94rem; }
-  .site-nav a:nth-child(1), .site-nav a:nth-child(3), .site-nav a:nth-child(4) { display: none; }
+  .site-nav a:nth-child(1), .site-nav a:nth-child(2), .site-nav a:nth-child(3), .site-nav a:nth-child(4) { display: none; }
   .intro h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
   .overview { max-width: 360px; }
   .project-grid { grid-template-columns: 1fr; }
@@ -1022,6 +1080,10 @@ a:focus-visible {
   .question-card { min-height: 290px; padding: 1.5rem; }
   .question-archive-footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
   .project-card { min-height: 410px; padding: 1.5rem; }
+  .affiliated-card { grid-template-columns: 1fr; }
+  .affiliated-logo { padding: 2rem; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+  .affiliated-logo img { width: min(68vw, 250px); }
+  .affiliated-copy { min-height: 330px; padding: 2rem 1.5rem; }
   .card-topline { margin-bottom: 1.5rem; }
   .process-list { grid-template-columns: repeat(2, 1fr); }
   .section-heading { margin-bottom: 1.8rem; }
