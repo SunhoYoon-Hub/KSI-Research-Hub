@@ -177,8 +177,7 @@ a:focus-visible {
 .research-section,
 .question-archive,
 .process-section,
-.participate,
-.document-page {
+.participate {
   padding-left: max(2rem, calc((100vw - var(--max-width)) / 2));
   padding-right: max(2rem, calc((100vw - var(--max-width)) / 2));
 }
@@ -421,7 +420,7 @@ a:focus-visible {
   content: "?";
   position: absolute;
   right: 1rem;
-  bottom: -3.6rem;
+  bottom: -1rem;
   color: rgba(11, 22, 40, .035);
   font-family: var(--serif);
   font-size: 13rem;
@@ -573,10 +572,10 @@ a:focus-visible {
 }
 
 .document-page {
+  width: calc(100% - 4rem);
   max-width: 880px;
   margin: 0 auto;
-  padding-top: 5rem;
-  padding-bottom: 6rem;
+  padding: 5rem 0 6rem;
 }
 
 .document-page > p { color: var(--ink-soft); }
@@ -998,7 +997,8 @@ a:focus-visible {
   .site-nav { gap: 1rem; }
   .intro { grid-template-columns: 1fr; gap: 2.5rem; min-height: auto; padding: 4rem 1.4rem; }
   .section-heading, .participate { grid-template-columns: 1fr; }
-  .research-section, .question-archive, .process-section, .participate, .document-page { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .research-section, .question-archive, .process-section, .participate { padding-left: 1.4rem; padding-right: 1.4rem; }
+  .document-page { width: calc(100% - 2.8rem); }
   .process-list { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
   .site-footer { align-items: flex-start; flex-direction: column; padding: 2.2rem 1.4rem; }
   .footer-links { justify-content: flex-start; }
