@@ -32,7 +32,10 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   <div class="filter-bar" role="group" aria-label="연구 목록 필터">
     <button class="filter-button active" type="button" data-project-filter="all">전체</button>
     {% for researcher in site.data.researchers %}
-      <button class="filter-button" type="button" data-project-filter="{{ researcher.id }}">{{ researcher.display_name }}</button>
+      {% assign researcher_projects = site.data.projects | where: "researcher_id", researcher.id %}
+      {% unless researcher_projects == empty %}
+        <button class="filter-button" type="button" data-project-filter="{{ researcher.id }}">{{ researcher.name_ko }}</button>
+      {% endunless %}
     {% endfor %}
     <button class="filter-button" type="button" data-project-filter="drafting">진행 연구</button>
   </div>
@@ -41,14 +44,16 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 
   <div class="project-grid" id="project-grid">
     {% for project in site.data.projects %}
-    <article class="project-card {% if project.stage == 'published' %}published{% else %}ongoing{% endif %}{% if project.featured %} feature-card{% endif %}" data-researcher="{{ project.researcher_id }}" data-stage="{{ project.stage }}">
+    {% assign project_researchers = site.data.researchers | where: "id", project.researcher_id %}
+    {% assign project_researcher = project_researchers | first %}
+    <article class="project-card {% if project.stage == 'published' %}published{% else %}ongoing{% endif %}{% if project.featured %} feature-card{% endif %}" id="{{ project.id }}" data-researcher="{{ project.researcher_id }}" data-stage="{{ project.stage }}">
       <div class="card-topline">
         <span class="status">{{ project.status_label }}</span>
         <span class="field">{{ project.fields | join: " · " }}</span>
       </div>
       <h3>{{ project.title }}</h3>
       <p class="project-subtitle">{{ project.subtitle }}</p>
-      <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project.researcher }}</a>
+      <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project_researcher.name_ko }} · <span lang="en">{{ project_researcher.name_en }}</span></a>
       <ul class="keyword-list" aria-label="핵심어">
         {% for keyword in project.keywords %}
           <li>{{ keyword }}</li>
