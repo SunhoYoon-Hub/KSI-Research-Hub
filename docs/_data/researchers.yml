@@ -1,5 +1,4 @@
 - id: yoon-s
-  name_ko: "윤선호"
   name_en: "Yoon, Sunho"
   display_name: "Yoon, Sunho"
   role_ko: "KSI 운영자 · 연구자"
@@ -18,7 +17,6 @@
     - "Engineering Ethics"
 
 - id: ho-yejin
-  name_ko: "호예진"
   name_en: "Ho, Yejin"
   display_name: "Ho, Yejin"
   role_ko: "KSI 연구자"
