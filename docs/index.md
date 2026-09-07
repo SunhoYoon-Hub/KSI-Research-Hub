@@ -34,7 +34,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
     {% for researcher in site.data.researchers %}
       {% assign researcher_projects = site.data.projects | where: "researcher_id", researcher.id %}
       {% unless researcher_projects == empty %}
-        <button class="filter-button" type="button" data-project-filter="{{ researcher.id }}">{{ researcher.name_ko }}</button>
+        <button class="filter-button" type="button" data-project-filter="{{ researcher.id }}">{{ researcher.display_name }}</button>
       {% endunless %}
     {% endfor %}
     <button class="filter-button" type="button" data-project-filter="drafting">진행 연구</button>
@@ -53,7 +53,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
       </div>
       <h3>{{ project.title }}</h3>
       <p class="project-subtitle">{{ project.subtitle }}</p>
-      <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project_researcher.name_ko }} · <span lang="en">{{ project_researcher.name_en }}</span></a>
+      <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project.researcher }}</a>
       <ul class="keyword-list" aria-label="핵심어">
         {% for keyword in project.keywords %}
           <li>{{ keyword }}</li>
@@ -72,10 +72,43 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   <div class="empty-state" id="empty-state" hidden>조건에 맞는 연구가 없습니다.</div>
 </section>
 
+<section class="question-archive" id="questions" aria-labelledby="questions-title">
+  <header class="section-heading">
+    <div>
+      <p class="section-index">02 / Open Questions</p>
+      <h2 id="questions-title">미해결 질문 보관소</h2>
+    </div>
+    <p>아직 결론이 나지 않았지만, 다음 연구를 시작하게 할 질문을 기록합니다.</p>
+  </header>
+
+  <div class="question-grid">
+    {% for question in site.data.open_questions %}
+    <article class="question-card" id="{{ question.id }}">
+      <div class="question-meta">
+        <span class="question-number">{{ question.code }}</span>
+        <span class="question-state">미해결</span>
+      </div>
+      <h3>{{ question.question }}</h3>
+      <p>{{ question.note }}</p>
+      <ul class="question-keywords" aria-label="관련 주제">
+        {% for keyword in question.keywords %}
+          <li>{{ keyword }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+
+  <footer class="question-archive-footer">
+    <p>질문이 연구로 발전하면 공개 연구 및 DOI 기록과 연결합니다.</p>
+    <a href="{{ '/contact/' | relative_url }}?type=proposal">새 질문 제안하기 <span aria-hidden="true">→</span></a>
+  </footer>
+</section>
+
 <section class="process-section" id="process" aria-labelledby="process-title">
   <header class="section-heading light-heading">
     <div>
-      <p class="section-index">02 / Process</p>
+      <p class="section-index">03 / Process</p>
       <h2 id="process-title">연구가 공개되기까지</h2>
     </div>
     <p>GitHub는 과정을 기록하고, Zenodo는 완성된 버전을 보존합니다.</p>
@@ -91,7 +124,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 
 <section class="participate" id="participate" aria-labelledby="participate-title">
   <div>
-    <p class="section-index">03 / Participate</p>
+    <p class="section-index">04 / Participate</p>
     <h2 id="participate-title">새로운 질문과 검토를 기다립니다.</h2>
     <p class="participate-copy">KSI는 연구 제안과 구성원 참여 신청을 Owner에게 이메일로 받고, 공개 연구의 수록 기준은 Zenodo KSI 커뮤니티 정책에 따라 운영합니다.</p>
   </div>
