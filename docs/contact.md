@@ -2,13 +2,13 @@
 layout: default
 title: 연구 제안 및 참여 신청
 permalink: /contact/
-description: KSI Owner에게 연구 제안 또는 참여 신청 이메일을 작성하는 화면입니다.
+description: KSI Owner에게 연구 제안, 참여 신청 또는 음악 기록 이메일을 작성하는 화면입니다.
 ---
 
 <section class="directory-hero contact-hero">
   <p class="section-index">Contact KSI</p>
   <h1>질문을 연구로<br>이어봅니다.</h1>
-  <p>연구 제안 또는 KSI 참여 신청 내용을 작성하면 KSI Owner에게 보낼 이메일이 준비됩니다.</p>
+  <p>연구 제안, KSI 참여 신청 또는 연구 음악 기록을 작성하면 KSI Owner에게 보낼 이메일이 준비됩니다.</p>
 </section>
 
 <section class="contact-layout">
@@ -18,6 +18,7 @@ description: KSI Owner에게 연구 제안 또는 참여 신청 이메일을 작
       <select id="contact-type" name="type">
         <option value="proposal">연구 제안</option>
         <option value="join">KSI 참여 신청</option>
+        <option value="listening">KSI 음악 기록</option>
       </select>
     </div>
 

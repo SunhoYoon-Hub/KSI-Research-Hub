@@ -366,11 +366,31 @@ a:focus-visible {
 .doi-link,
 .pending-link {
   align-self: flex-start;
-  margin-top: auto;
   padding-bottom: .2rem;
   font-size: .9rem;
   font-weight: 700;
 }
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .8rem 1.25rem;
+  margin-top: auto;
+}
+
+.listening-link {
+  padding-bottom: .2rem;
+  color: #755b20;
+  border-bottom: 1px solid rgba(117, 91, 32, .45);
+  font-size: .9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.listening-link span { display: inline-block; margin-left: .35rem; transition: transform .18s ease; }
+.listening-link:hover span { transform: translateX(3px); }
+.feature-card .listening-link { color: var(--gold-light); border-color: rgba(240, 223, 173, .4); }
 
 .doi-link {
   color: var(--ink);

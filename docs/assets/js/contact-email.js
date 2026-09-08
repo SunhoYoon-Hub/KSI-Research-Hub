@@ -5,7 +5,7 @@
 
   const typeField = form.elements.type;
   const queryType = new URLSearchParams(window.location.search).get('type');
-  if (queryType === 'join' || queryType === 'proposal') typeField.value = queryType;
+  if (queryType === 'join' || queryType === 'proposal' || queryType === 'listening') typeField.value = queryType;
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -17,7 +17,12 @@
     }
 
     const data = new FormData(form);
-    const typeLabel = data.get('type') === 'join' ? 'KSI 참여 신청' : '연구 제안';
+    const typeLabels = {
+      join: 'KSI 참여 신청',
+      proposal: '연구 제안',
+      listening: 'KSI 음악 기록'
+    };
+    const typeLabel = typeLabels[data.get('type')] || typeLabels.proposal;
     const subject = `[KSI ${typeLabel}] ${data.get('topic')}`;
     const body = [
       `문의 유형: ${typeLabel}`,
