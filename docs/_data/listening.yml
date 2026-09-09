@@ -71,8 +71,16 @@
   subtitle: "GLP-1의 생리적 기능과 약리학적 비만 치료 전략"
   researcher: "Ho, Yejin"
   research_url: "https://doi.org/10.5281/zenodo.22538005"
-  stage: "음악 기록 준비 중"
+  stage: "음악 1곡 공개"
   record_order: 4
   publication_date: "2026-09-06"
   publication_label: "2026.09.06 공개"
-  albums: []
+  albums:
+    - title: "ヤンキーボーイ・ヤンキーガール"
+      artist: "トーマ feat. GUMI"
+      credits: "보컬 GUMI · 작사·작곡 トーマ"
+      year: "2013"
+      format: "Track"
+      initial: true
+      cover_url: "https://static.vocadb.net/img/Album/mainOrig/2094.jpg?v=16"
+      spotify_url: "https://open.spotify.com/intl-ja/track/0QIcoR80WGYB733sKVIp6R"

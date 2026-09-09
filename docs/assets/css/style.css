@@ -302,7 +302,6 @@ a:focus-visible {
 
 .project-card h3 {
   max-width: 29rem;
-  min-height: 2.5em;
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(1.5rem, 2.5vw, 2.15rem);
@@ -311,10 +310,16 @@ a:focus-visible {
   letter-spacing: -.025em;
 }
 
+.project-title-group {
+  display: grid;
+  align-content: start;
+  gap: .42rem;
+  min-height: 7.4rem;
+}
+
 .project-subtitle {
   max-width: 34rem;
-  min-height: 3em;
-  margin: .55rem 0 0;
+  margin: 0;
   color: var(--muted);
   font-family: var(--serif);
   font-size: 1rem;
@@ -1206,7 +1211,7 @@ a:focus-visible {
   .question-card { min-height: 290px; padding: 1.5rem; }
   .question-archive-footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
   .project-card { min-height: 410px; padding: 1.5rem; }
-  .project-card h3, .project-subtitle, .project-description { min-height: 0; }
+  .project-title-group, .project-card h3, .project-subtitle, .project-description { min-height: 0; }
   .release-main { grid-template-columns: 1fr; gap: .75rem; padding: 1.4rem 0; }
   .release-doi { grid-column: auto; }
   .release-plan { margin-left: 0; }

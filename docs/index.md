@@ -51,8 +51,10 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
         <span class="status">{{ project.status_label }}</span>
         <span class="field">{{ project.fields | join: " · " }}</span>
       </div>
-      <h3>{{ project.title }}</h3>
-      <p class="project-subtitle">{{ project.subtitle }}</p>
+      <div class="project-title-group">
+        <h3>{{ project.title }}</h3>
+        <p class="project-subtitle">{{ project.subtitle }}</p>
+      </div>
       <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project.researcher }}</a>
       <ul class="keyword-list" aria-label="핵심어">
         {% for keyword in project.keywords %}

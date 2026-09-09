@@ -118,32 +118,24 @@
 .record-summary-meta span + span::before { content: "·"; margin-right: 1rem; color: var(--gold); }
 
 .record-summary-covers {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(var(--summary-columns, 3), clamp(68px, 6.5vw, 88px));
   align-items: center;
   justify-content: center;
+  gap: .55rem;
   min-width: 0;
-  padding-left: 2.6rem;
   transition: opacity .25s ease, transform .25s ease;
 }
 
 .record-summary-covers img {
   display: block;
-  width: clamp(68px, 7.5vw, 96px);
+  width: 100%;
   aspect-ratio: 1;
-  margin-left: -2.55rem;
   object-fit: cover;
   border: 1px solid rgba(240, 223, 173, .34);
-  border-radius: 2px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, .42);
-  transform: rotate(-5deg);
+  border-radius: 0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .32);
 }
-
-.record-summary-covers img:nth-child(even) { transform: translateY(8px) rotate(4deg); }
-.record-summary-covers img:first-child { z-index: 5; transform: scale(1.12); }
-.record-summary-covers img:nth-child(2) { z-index: 4; }
-.record-summary-covers img:nth-child(3) { z-index: 3; }
-.record-summary-covers img:nth-child(4) { z-index: 2; }
-.record-summary-covers img:nth-child(5) { z-index: 1; }
 
 .record-summary-empty {
   display: grid;
@@ -280,12 +272,20 @@
 }
 
 .carousel-control:hover { color: var(--night); background: var(--gold-light); }
+.carousel-control:disabled,
+.single-album .carousel-control:hover {
+  color: #7c8999;
+  background: rgba(5, 13, 24, .55);
+  border-color: rgba(240, 223, 173, .2);
+  cursor: not-allowed;
+  opacity: .42;
+}
 .carousel-previous { justify-self: start; }
 .carousel-next { justify-self: end; }
 
 .album-navigation {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--album-count, 1), minmax(0, 1fr));
   border-top: 1px solid rgba(255, 255, 255, .16);
   border-left: 1px solid rgba(255, 255, 255, .12);
 }
@@ -324,6 +324,7 @@
 .album-counter { margin: 0 0 .7rem; color: var(--gold-light); font-family: var(--serif); font-size: .8rem; letter-spacing: .08em; }
 .album-information h3 { max-width: 720px; margin: 0; font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3.4rem); font-weight: 500; line-height: 1.12; letter-spacing: -.035em; }
 .album-artist { margin: .75rem 0 0; color: #dbe3ed; font-size: 1rem; font-weight: 700; }
+.album-credits { margin: .45rem 0 0; color: #aeb8c7; font-size: .82rem; }
 .album-meta { margin: .2rem 0 0; color: #8290a3; font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
 .album-note { align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; }
 .album-note [data-album-note-copy] { margin-bottom: 1.3rem; padding-left: 1.1rem; border-left: 2px solid var(--gold); }
@@ -378,9 +379,7 @@
   .archive-sort { width: 100%; }
   .archive-sort button { flex: 1 1 auto; }
   .record-summary { grid-template-columns: 1fr; gap: 1.5rem; min-height: 0; padding: 1.8rem 0; }
-  .record-summary-covers { justify-content: flex-start; padding-left: 1.6rem; }
-  .record-summary-covers img { width: min(18vw, 72px); margin-left: -1.6rem; }
-  .record-summary-covers img:first-child { margin-left: 0; }
+  .record-summary-covers { grid-template-columns: repeat(var(--summary-columns, 3), min(18vw, 72px)); justify-content: flex-start; }
   .record-toggle { grid-column: auto; }
   .record-summary-meta { display: grid; gap: .15rem; }
   .record-summary-meta span + span::before { content: none; }

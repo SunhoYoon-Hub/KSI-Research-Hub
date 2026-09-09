@@ -49,10 +49,10 @@ extra_js: /assets/js/listening-carousel.js
           <span>{{ record.researcher }}</span>
           <span>{{ record.stage }}</span>
           <span>{{ record.publication_label }}</span>
-          <span>{% if album_count == 0 %}기록 준비 중{% else %}앨범 {{ album_count }}개{% endif %}</span>
+          <span>{% if album_count == 0 %}기록 준비 중{% else %}음악 {{ album_count }}개{% endif %}</span>
         </span>
       </span>
-      <span class="record-summary-covers" aria-hidden="true">
+      <span class="record-summary-covers" aria-hidden="true" style="--summary-columns: {% if album_count == 0 %}1{% elsif album_count > 3 %}3{% else %}{{ album_count }}{% endif %};">
         {% if album_count == 0 %}
           <span class="record-summary-empty"><b>Reserved</b><small>Listening space</small></span>
         {% else %}
@@ -90,12 +90,12 @@ extra_js: /assets/js/listening-carousel.js
       </footer>
       {% else %}
       {% assign initial_album = record.albums | first %}
-      <div class="carousel-stage">
-        <button class="carousel-control carousel-previous" type="button" data-carousel-previous aria-label="이전 앨범">
+      <div class="carousel-stage{% if album_count == 1 %} single-album{% endif %}">
+        <button class="carousel-control carousel-previous" type="button" data-carousel-previous aria-label="이전 음악"{% if album_count == 1 %} disabled aria-disabled="true"{% endif %}>
           <span aria-hidden="true">←</span>
         </button>
 
-        <div class="coverflow" tabindex="0" role="group" aria-roledescription="앨범 회전 목록" aria-label="연구 과정에서 들은 앨범">
+        <div class="coverflow" tabindex="0" role="group" aria-roledescription="음악 회전 목록" aria-label="연구 과정에서 들은 음악">
           {% for album in record.albums %}
           <button
             class="album-card{% if album.initial %} is-active{% endif %}"
@@ -104,22 +104,23 @@ extra_js: /assets/js/listening-carousel.js
             data-index="{{ forloop.index0 }}"
             data-title="{{ album.title | escape }}"
             data-artist="{{ album.artist | escape }}"
+            data-credits="{{ album.credits | escape }}"
             data-meta="{{ album.year }} · {{ album.format }}"
             data-note="{{ album.note | escape }}"
             data-url="{{ album.spotify_url }}"
             aria-label="{{ album.artist }}의 {{ album.title }} 선택"
           >
-            <img src="{{ album.cover_url }}" alt="{{ album.title }} 앨범 커버" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+            <img src="{{ album.cover_url }}" alt="{{ album.title }} 표지" loading="lazy" decoding="async" referrerpolicy="no-referrer">
           </button>
           {% endfor %}
         </div>
 
-        <button class="carousel-control carousel-next" type="button" data-carousel-next aria-label="다음 앨범">
+        <button class="carousel-control carousel-next" type="button" data-carousel-next aria-label="다음 음악"{% if album_count == 1 %} disabled aria-disabled="true"{% endif %}>
           <span aria-hidden="true">→</span>
         </button>
       </div>
 
-      <div class="album-navigation" aria-label="앨범 바로 선택">
+      <div class="album-navigation" aria-label="음악 바로 선택" style="--album-count: {{ album_count }};">
         {% for album in record.albums %}
         <button type="button" data-album-jump="{{ forloop.index0 }}"{% if album.initial %} class="is-current" aria-current="true"{% endif %}>
           <span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
@@ -130,10 +131,11 @@ extra_js: /assets/js/listening-carousel.js
 
       <section class="album-information" data-album-information aria-live="polite">
         <div class="album-identity">
-          <p class="album-panel-label">Selected Album · 선택한 앨범</p>
+          <p class="album-panel-label">Selected Music · 선택한 음악</p>
           <p class="album-counter"><span data-current-number>01</span> / {{ record.albums | size | prepend: '0' | slice: -2, 2 }}</p>
           <h3 data-current-title>{{ initial_album.title }}</h3>
           <p class="album-artist" data-current-artist>{{ initial_album.artist }}</p>
+          <p class="album-credits" data-current-credits{% unless initial_album.credits %} hidden{% endunless %}>{{ initial_album.credits }}</p>
           <p class="album-meta" data-current-meta>{{ initial_album.year }} · {{ initial_album.format }}</p>
         </div>
         <div class="album-note">
@@ -141,7 +143,7 @@ extra_js: /assets/js/listening-carousel.js
             <p class="album-panel-label">Listening Note · 음악 기록</p>
             <p data-current-note>{{ initial_album.note }}</p>
           </div>
-          <a data-current-link href="{{ initial_album.spotify_url }}" target="_blank" rel="noopener noreferrer">Spotify에서 앨범 보기 <span aria-hidden="true">↗</span></a>
+          <a data-current-link href="{{ initial_album.spotify_url }}" target="_blank" rel="noopener noreferrer">Spotify에서 음악 보기 <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

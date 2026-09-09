@@ -57,12 +57,14 @@
     const currentNumber = information.querySelector('[data-current-number]');
     const currentTitle = information.querySelector('[data-current-title]');
     const currentArtist = information.querySelector('[data-current-artist]');
+    const currentCredits = information.querySelector('[data-current-credits]');
     const currentMeta = information.querySelector('[data-current-meta]');
     const currentNote = information.querySelector('[data-current-note]');
     const noteContainer = information.querySelector('[data-album-note-copy]');
     const currentLink = information.querySelector('[data-current-link]');
     let activeIndex = Math.max(0, cards.findIndex((card) => card.classList.contains('is-active')));
     let pointerStart = null;
+    const isSingle = cards.length === 1;
 
     const relativePosition = (index) => {
       let position = index - activeIndex;
@@ -93,6 +95,10 @@
       currentNumber.textContent = String(activeIndex + 1).padStart(2, '0');
       currentTitle.textContent = active.dataset.title;
       currentArtist.textContent = active.dataset.artist;
+      if (currentCredits) {
+        currentCredits.textContent = active.dataset.credits;
+        currentCredits.hidden = !active.dataset.credits;
+      }
       currentMeta.textContent = active.dataset.meta;
       currentNote.textContent = active.dataset.note;
       noteContainer.hidden = !active.dataset.note;
@@ -100,6 +106,7 @@
     };
 
     const select = (index) => {
+      if (isSingle) return;
       activeIndex = (index + cards.length) % cards.length;
       update();
     };
@@ -110,6 +117,7 @@
     jumpButtons.forEach((button, index) => button.addEventListener('click', () => select(index)));
 
     coverflow.addEventListener('keydown', (event) => {
+      if (isSingle) return;
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
         select(activeIndex - 1);
@@ -129,6 +137,7 @@
     });
 
     coverflow.addEventListener('pointerdown', (event) => {
+      if (isSingle) return;
       pointerStart = event.clientX;
     });
 
