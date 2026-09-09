@@ -60,29 +60,6 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
         {% endfor %}
       </ul>
       <p class="project-description">{{ project.description }}</p>
-      {% if project.revision %}
-      <details class="revision-note">
-        <summary>
-          <span>개정 기록</span>
-          <strong>{{ project.revision.current }} → {{ project.revision.next }}</strong>
-        </summary>
-        <div class="revision-note-body">
-          <p>다음 버전에서 검토할 항목</p>
-          <ul>
-            {% for change in project.revision.changes limit:3 %}
-              <li>{{ change }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </details>
-      {% else %}
-      <div class="revision-note revision-note-static" aria-label="연구 기록 상태">
-        <div class="revision-note-heading">
-          <span>{% if project.stage == 'published' %}공개 기록{% else %}진행 기록{% endif %}</span>
-          <strong>{% if project.stage == 'published' %}{{ project.status_label }}{% else %}첫 공개 준비{% endif %}</strong>
-        </div>
-      </div>
-      {% endif %}
       <div class="card-actions">
         {% if project.listening_record %}
           <a class="listening-link" href="{{ '/listening/' | relative_url }}#{{ project.id }}">연구 음악 기록 <span aria-hidden="true">→</span></a>
@@ -100,10 +77,53 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   <div class="empty-state" id="empty-state" hidden>조건에 맞는 연구가 없습니다.</div>
 </section>
 
+{% assign release_projects = published_projects | sort: "publication_date" %}
+<section class="release-log" id="release-log" aria-labelledby="release-log-title">
+  <header class="section-heading light-heading">
+    <div>
+      <p class="section-index">02 / Publication Record</p>
+      <h2 id="release-log-title">버전·공개 기록</h2>
+    </div>
+    <p>Zenodo에 공개된 실제 날짜를 기준으로 각 연구의 공개본과 다음 개정 계획을 기록합니다.</p>
+  </header>
+
+  <div class="release-list">
+    {% for project in release_projects %}
+    <article class="release-entry">
+      <div class="release-main">
+        <time datetime="{{ project.publication_date }}">{{ project.publication_label }}</time>
+        <div class="release-copy">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.researcher }}</p>
+        </div>
+        <div class="release-version">
+          <span>Released</span>
+          <strong>{{ project.release_version }}</strong>
+          <small>{% if project.revision %}{{ project.revision.next }}{% else %}최초 공개본{% endif %}</small>
+        </div>
+        <a class="release-doi" href="{{ project.zenodo_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
+      </div>
+      {% if project.revision %}
+      <details class="release-plan">
+        <summary><span>{{ project.revision.next }} 개정 계획</span><b>펼치기</b></summary>
+        <div>
+          <ul>
+            {% for change in project.revision.changes limit:3 %}
+              <li>{{ change }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="question-archive" id="questions" aria-labelledby="questions-title">
   <header class="section-heading">
     <div>
-      <p class="section-index">02 / Open Questions</p>
+      <p class="section-index">03 / Open Questions</p>
       <h2 id="questions-title">미해결 질문 보관소</h2>
     </div>
     <p>아직 결론이 나지 않았지만, 다음 연구를 시작하게 할 질문을 기록합니다.</p>
@@ -136,7 +156,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 <section class="affiliated-project" id="affiliated" aria-labelledby="affiliated-title">
   <header class="section-heading">
     <div>
-      <p class="section-index">03 / Affiliated Project</p>
+      <p class="section-index">04 / Affiliated Project</p>
       <h2 id="affiliated-title">연계 프로젝트</h2>
     </div>
     <p>KSI의 연구 기록 방식을 공유하면서 각 공동체의 정체성과 운영 범위는 독립적으로 유지합니다.</p>
@@ -157,7 +177,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 <section class="process-section" id="process" aria-labelledby="process-title">
   <header class="section-heading light-heading">
     <div>
-      <p class="section-index">04 / Process</p>
+      <p class="section-index">05 / Process</p>
       <h2 id="process-title">연구가 공개되기까지</h2>
     </div>
     <p>GitHub는 과정을 기록하고, Zenodo는 완성된 버전을 보존합니다.</p>
@@ -173,7 +193,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 
 <section class="participate" id="participate" aria-labelledby="participate-title">
   <div>
-    <p class="section-index">05 / Participate</p>
+    <p class="section-index">06 / Participate</p>
     <h2 id="participate-title">새로운 질문과 검토를 기다립니다.</h2>
     <p class="participate-copy">KSI는 연구 제안과 구성원 참여 신청을 Owner에게 이메일로 받고, 공개 연구의 수록 기준은 Zenodo KSI 커뮤니티 정책에 따라 운영합니다.</p>
   </div>

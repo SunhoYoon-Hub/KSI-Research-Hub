@@ -15,6 +15,9 @@
   status_label: "v1.0 공개 · v2.0 준비"
   description: "시·공간의 실재성과 상대성 이론을 과학과 철학의 관점에서 탐구합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.22270214"
+  publication_date: "2026-09-03"
+  publication_label: "2026.09.03"
+  release_version: "v1.0"
   listening_record: reserved
   revision:
     current: "v1.0 공개"
@@ -42,6 +45,9 @@
   status_label: "v1.0 공개 · v2.0 준비"
   description: "현대 교육 시스템의 무한 경쟁과 성적 서열화를 니체의 철학을 통해 고찰합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.21222993"
+  publication_date: "2026-07-06"
+  publication_label: "2026.07.06"
+  release_version: "v1.0"
   listening_record: available
   revision:
     current: "v1.0 공개"
@@ -69,6 +75,9 @@
   status_label: "v1.0 공개 · v2.0 준비"
   description: "롤스와 니체의 관점으로 한국 중등교육의 평등과 자기초극 사이의 모순을 분석합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.22306643"
+  publication_date: "2026-09-04"
+  publication_label: "2026.09.04"
+  release_version: "v1.0"
   listening_record: reserved
   revision:
     current: "v1.0 공개"
@@ -95,6 +104,9 @@
   status_label: "v1.0 공개"
   description: "GLP-1의 생리학적 기능과 수용체 작용제를 중심으로 비만 치료 전략의 발전을 탐구합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.22538005"
+  publication_date: "2026-09-06"
+  publication_label: "2026.09.06"
+  release_version: "v1.0"
   listening_record: reserved
   featured: false
 

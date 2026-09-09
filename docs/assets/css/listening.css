@@ -186,13 +186,18 @@
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 2rem;
-  padding: 1.2rem 0;
+  padding: 1.25rem 1.5rem;
+  color: var(--night);
+  background: var(--gold-light);
+  border-bottom: 1px solid rgba(5, 13, 24, .2);
 }
 
-.record-context p { margin: 0; color: #9fabbc; font-size: .83rem; }
-.record-context p strong { color: #dbe3ed; font-weight: 700; }
+.record-context-copy { display: grid; gap: .2rem; }
+.record-context-label { margin: 0; color: #755b20; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.record-context-copy strong { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; line-height: 1.35; }
+.record-context-copy small { color: #5d513b; font-size: .74rem; }
 .record-context-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .7rem 1.2rem; }
-.record-context-links a { color: var(--gold-light); font-size: .78rem; font-weight: 800; text-decoration: none; }
+.record-context-links a { color: var(--night); border-bottom: 1px solid rgba(8, 21, 38, .36); font-size: .78rem; font-weight: 800; text-decoration: none; }
 .record-context-links a:hover { text-decoration: underline; }
 
 .listening-empty {
@@ -309,16 +314,21 @@
   grid-template-columns: minmax(0, 1fr) minmax(300px, .75fr);
   gap: 3rem;
   min-height: 245px;
-  padding: 2.4rem 0 2.7rem;
-  border-bottom: 1px solid rgba(255, 255, 255, .16);
+  margin-top: 1.5rem;
+  padding: 2.4rem;
+  background: #0d1b2d;
+  border: 1px solid rgba(240, 223, 173, .24);
 }
 
-.album-counter { margin: 0 0 .7rem; color: var(--gold); font-family: var(--serif); font-size: .8rem; letter-spacing: .08em; }
+.album-panel-label { margin: 0 0 1.2rem; color: var(--gold); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.album-counter { margin: 0 0 .7rem; color: var(--gold-light); font-family: var(--serif); font-size: .8rem; letter-spacing: .08em; }
 .album-information h3 { max-width: 720px; margin: 0; font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3.4rem); font-weight: 500; line-height: 1.12; letter-spacing: -.035em; }
 .album-artist { margin: .75rem 0 0; color: #dbe3ed; font-size: 1rem; font-weight: 700; }
 .album-meta { margin: .2rem 0 0; color: #8290a3; font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; }
-.album-note { align-self: end; }
-.album-note p { margin: 0 0 1.3rem; color: #aeb8c7; font-size: .9rem; }
+.album-note { align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; }
+.album-note [data-album-note-copy] { margin-bottom: 1.3rem; padding-left: 1.1rem; border-left: 2px solid var(--gold); }
+.album-note [data-album-note-copy] .album-panel-label { margin-bottom: .65rem; }
+.album-note [data-album-note-copy] p:last-child { margin: 0; color: #aeb8c7; font-size: .9rem; }
 .album-note a { display: flex; justify-content: space-between; padding: .95rem 0; color: var(--gold-light); border-top: 1px solid rgba(240, 223, 173, .36); border-bottom: 1px solid rgba(240, 223, 173, .36); font-size: .86rem; font-weight: 800; text-decoration: none; }
 .album-note a span { transition: transform .18s ease; }
 .album-note a:hover span { transform: translate(2px, -2px); }
@@ -333,6 +343,7 @@
 
 .record-footer p { margin: 0; color: #7e8b9c; font-size: .76rem; }
 .record-footer a { flex: 0 0 auto; color: #dbe3ed; font-size: .8rem; font-weight: 800; text-decoration: none; }
+.record-footer-compact { justify-content: flex-end; }
 
 .listening-participate {
   display: grid;
@@ -383,7 +394,7 @@
   .carousel-control { width: 40px; height: 40px; }
   .album-navigation button { min-height: 54px; padding: .65rem .35rem; text-align: center; }
   .album-navigation small { display: none; }
-  .album-information { min-height: 300px; padding: 2rem 0 2.3rem; }
+  .album-information { min-height: 0; padding: 1.5rem 1.2rem; }
   .listening-empty { min-height: 260px; padding: 3rem 1.2rem; }
   .record-footer { align-items: flex-start; flex-direction: column; gap: .75rem; }
 }

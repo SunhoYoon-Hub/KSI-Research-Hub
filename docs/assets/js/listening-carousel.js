@@ -59,6 +59,7 @@
     const currentArtist = information.querySelector('[data-current-artist]');
     const currentMeta = information.querySelector('[data-current-meta]');
     const currentNote = information.querySelector('[data-current-note]');
+    const noteContainer = information.querySelector('[data-album-note-copy]');
     const currentLink = information.querySelector('[data-current-link]');
     let activeIndex = Math.max(0, cards.findIndex((card) => card.classList.contains('is-active')));
     let pointerStart = null;
@@ -94,6 +95,7 @@
       currentArtist.textContent = active.dataset.artist;
       currentMeta.textContent = active.dataset.meta;
       currentNote.textContent = active.dataset.note;
+      noteContainer.hidden = !active.dataset.note;
       currentLink.href = active.dataset.url;
     };
 

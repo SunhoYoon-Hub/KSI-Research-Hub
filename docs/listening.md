@@ -66,7 +66,11 @@ extra_js: /assets/js/listening-carousel.js
 
     <div class="record-body">
       <div class="record-context">
-        <p>이 음악 기록은 <strong>{{ record.title }}</strong>의 구상·집필 과정에 연결되어 있습니다.</p>
+        <div class="record-context-copy">
+          <p class="record-context-label">Connected Research · 연결 연구</p>
+          <strong>{{ record.title }}</strong>
+          <small>{{ record.researcher }} · {{ record.publication_label }}</small>
+        </div>
         <div class="record-context-links">
           <a href="{{ '/' | relative_url }}#{{ record.id }}">KSI 연구 카드 보기 <span aria-hidden="true">→</span></a>
           <a href="{{ record.research_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
@@ -125,20 +129,23 @@ extra_js: /assets/js/listening-carousel.js
       </div>
 
       <section class="album-information" data-album-information aria-live="polite">
-        <div>
+        <div class="album-identity">
+          <p class="album-panel-label">Selected Album · 선택한 앨범</p>
           <p class="album-counter"><span data-current-number>01</span> / {{ record.albums | size | prepend: '0' | slice: -2, 2 }}</p>
           <h3 data-current-title>{{ initial_album.title }}</h3>
           <p class="album-artist" data-current-artist>{{ initial_album.artist }}</p>
           <p class="album-meta" data-current-meta>{{ initial_album.year }} · {{ initial_album.format }}</p>
         </div>
         <div class="album-note">
-          <p data-current-note>{{ initial_album.note }}</p>
+          <div data-album-note-copy{% unless initial_album.note %} hidden{% endunless %}>
+            <p class="album-panel-label">Listening Note · 음악 기록</p>
+            <p data-current-note>{{ initial_album.note }}</p>
+          </div>
           <a data-current-link href="{{ initial_album.spotify_url }}" target="_blank" rel="noopener noreferrer">Spotify에서 앨범 보기 <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
-      <footer class="record-footer">
-        <p>첫 화면의 앨범은 기록의 시작점을 나타내며, 앨범 사이의 순위나 연구 기여도 차이를 뜻하지 않습니다.</p>
+      <footer class="record-footer record-footer-compact">
         <a href="#{{ record.id }}" data-record-close>음악 기록 접기 <span aria-hidden="true">↑</span></a>
       </footer>
       {% endif %}
