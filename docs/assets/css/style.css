@@ -302,6 +302,7 @@ a:focus-visible {
 
 .project-card h3 {
   max-width: 29rem;
+  min-height: 2.5em;
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(1.5rem, 2.5vw, 2.15rem);
@@ -312,6 +313,7 @@ a:focus-visible {
 
 .project-subtitle {
   max-width: 34rem;
+  min-height: 3em;
   margin: .55rem 0 0;
   color: var(--muted);
   font-family: var(--serif);
@@ -351,6 +353,7 @@ a:focus-visible {
 
 .project-description {
   max-width: 36rem;
+  min-height: 3.3em;
   margin: 1.1rem 0 1.4rem;
   color: var(--ink-soft);
 }
@@ -369,7 +372,8 @@ a:focus-visible {
   border-bottom: 1px solid rgba(57, 94, 137, .25);
 }
 
-.revision-note summary {
+.revision-note summary,
+.revision-note-heading {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
@@ -381,8 +385,10 @@ a:focus-visible {
 
 .revision-note summary::-webkit-details-marker { display: none; }
 .revision-note summary::marker { content: ""; }
-.revision-note summary span { color: var(--blue); font-size: .74rem; font-weight: 800; letter-spacing: .06em; }
-.revision-note summary strong { color: var(--ink-soft); font-size: .75rem; font-weight: 700; text-align: right; }
+.revision-note summary span,
+.revision-note-heading span { color: var(--blue); font-size: .74rem; font-weight: 800; letter-spacing: .06em; }
+.revision-note summary strong,
+.revision-note-heading strong { color: var(--ink-soft); font-size: .75rem; font-weight: 700; text-align: right; }
 .revision-note summary::after { content: "+"; display: none; }
 .revision-note[open] summary strong { color: var(--blue); }
 
@@ -392,8 +398,10 @@ a:focus-visible {
 
 .feature-card .revision-note { border-color: rgba(240, 223, 173, .25); }
 .feature-card .revision-note summary span,
+.feature-card .revision-note-heading span,
 .feature-card .revision-note[open] summary strong { color: var(--gold-light); }
 .feature-card .revision-note summary strong,
+.feature-card .revision-note-heading strong,
 .feature-card .revision-note-body ul { color: #d6dee8; }
 .feature-card .revision-note-body p { color: #9fabbc; }
 
@@ -1154,6 +1162,7 @@ a:focus-visible {
   .question-card { min-height: 290px; padding: 1.5rem; }
   .question-archive-footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
   .project-card { min-height: 410px; padding: 1.5rem; }
+  .project-card h3, .project-subtitle, .project-description { min-height: 0; }
   .affiliated-card { grid-template-columns: 1fr; }
   .affiliated-logo { padding: 2rem; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .14); }
   .affiliated-logo img { width: min(68vw, 250px); }
