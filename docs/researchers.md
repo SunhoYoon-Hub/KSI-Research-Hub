@@ -35,7 +35,9 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
             <div class="researcher-fields">{{ researcher.fields | join: " · " }}</div>
             <div class="researcher-fields-en" lang="en">{{ researcher.fields_en | join: " · " }}</div>
           </div>
-          <span class="project-count">{{ researcher_projects | size }}개 연구</span>
+          <span class="project-count">
+            {% if researcher_projects == empty %}연구 준비 중{% else %}{{ researcher_projects | size }}개 연구{% endif %}
+          </span>
         </header>
 
         {% if researcher.id == "yoon-s" %}
@@ -77,6 +79,12 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
           <span>연구 기록</span>
           <span lang="en">Research Record</span>
         </div>
+        {% if researcher_projects == empty %}
+        <div class="researcher-empty-record">
+          <strong lang="en">Research in Preparation</strong>
+          <p>첫 공개 연구를 준비하고 있습니다.</p>
+        </div>
+        {% else %}
         <ol class="researcher-projects">
           {% for project in researcher_projects %}
           <li>
@@ -85,14 +93,20 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
               <strong>{{ project.title }}</strong>
               <small>{{ project.subtitle }}</small>
             </div>
-            {% if project.zenodo_url %}
-              <a href="{{ project.zenodo_url }}" aria-label="{{ project.title }} Zenodo 공개본">DOI ↗</a>
-            {% else %}
-              <a class="project-pending" href="{{ '/' | relative_url }}#{{ project.id }}">진행 중 →</a>
-            {% endif %}
+            <div class="researcher-project-actions">
+              {% if project.listening_record %}
+                <a class="project-listening" href="{{ '/listening/' | relative_url }}#{{ project.id }}" aria-label="{{ project.title }} 음악 기록">음악 기록 →</a>
+              {% endif %}
+              {% if project.zenodo_url %}
+                <a href="{{ project.zenodo_url }}" aria-label="{{ project.title }} Zenodo 공개본">DOI ↗</a>
+              {% else %}
+                <a class="project-pending" href="{{ '/' | relative_url }}#{{ project.id }}">진행 중 →</a>
+              {% endif %}
+            </div>
           </li>
           {% endfor %}
         </ol>
+        {% endif %}
       </article>
     {% endfor %}
   </div>

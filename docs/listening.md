@@ -21,76 +21,92 @@ extra_js: /assets/js/listening-carousel.js
 <section class="listening-archive" aria-label="KSI 연구 음악 기록">
   {% for record in site.data.listening %}
   {% assign initial_album = record.albums | first %}
-  <article class="listening-record" id="{{ record.id }}" data-listening-carousel>
-    <header class="record-heading">
-      <div>
-        <p class="record-code">{{ record.code }}</p>
-        <h2>{{ record.title }}</h2>
-        <p class="record-subtitle">{{ record.subtitle }}</p>
-      </div>
-      <dl class="record-meta">
-        <div><dt>연구자</dt><dd>{{ record.researcher }}</dd></div>
-        <div><dt>기록 구간</dt><dd>{{ record.stage }}</dd></div>
-        <div><dt>앨범</dt><dd>{{ record.albums | size }} records</dd></div>
-      </dl>
-    </header>
-
-    <div class="carousel-stage">
-      <button class="carousel-control carousel-previous" type="button" data-carousel-previous aria-label="이전 앨범">
-        <span aria-hidden="true">←</span>
-      </button>
-
-      <div class="coverflow" tabindex="0" role="group" aria-roledescription="앨범 회전 목록" aria-label="연구 과정에서 들은 앨범">
+  <details class="listening-record" id="{{ record.id }}" data-listening-record data-listening-carousel>
+    <summary class="record-summary">
+      <span class="record-summary-copy">
+        <span class="record-code">{{ record.code }}</span>
+        <span class="record-title" role="heading" aria-level="2">{{ record.title }}</span>
+        <span class="record-subtitle">{{ record.subtitle }}</span>
+        <span class="record-summary-meta">
+          <span>{{ record.researcher }}</span>
+          <span>{{ record.stage }}</span>
+          <span>{{ record.albums | size }} albums</span>
+        </span>
+      </span>
+      <span class="record-summary-covers" aria-hidden="true">
         {% for album in record.albums %}
-        <button
-          class="album-card{% if album.initial %} is-active{% endif %}"
-          type="button"
-          data-album-card
-          data-index="{{ forloop.index0 }}"
-          data-title="{{ album.title | escape }}"
-          data-artist="{{ album.artist | escape }}"
-          data-meta="{{ album.year }} · {{ album.format }}"
-          data-note="{{ album.note | escape }}"
-          data-url="{{ album.spotify_url }}"
-          aria-label="{{ album.artist }}의 {{ album.title }} 선택"
-        >
-          <img src="{{ album.cover_url }}" alt="{{ album.title }} 앨범 커버" loading="eager" decoding="async" referrerpolicy="no-referrer">
+          <img src="{{ album.cover_url }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+        {% endfor %}
+      </span>
+      <span class="record-toggle" aria-hidden="true"></span>
+    </summary>
+
+    <div class="record-body">
+      <div class="record-context">
+        <p>이 음악 기록은 <strong>{{ record.title }}</strong>의 구상·집필 과정에 연결되어 있습니다.</p>
+        <div class="record-context-links">
+          <a href="{{ '/' | relative_url }}#{{ record.id }}">KSI 연구 카드 보기 <span aria-hidden="true">→</span></a>
+          <a href="{{ record.research_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="carousel-stage">
+        <button class="carousel-control carousel-previous" type="button" data-carousel-previous aria-label="이전 앨범">
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <div class="coverflow" tabindex="0" role="group" aria-roledescription="앨범 회전 목록" aria-label="연구 과정에서 들은 앨범">
+          {% for album in record.albums %}
+          <button
+            class="album-card{% if album.initial %} is-active{% endif %}"
+            type="button"
+            data-album-card
+            data-index="{{ forloop.index0 }}"
+            data-title="{{ album.title | escape }}"
+            data-artist="{{ album.artist | escape }}"
+            data-meta="{{ album.year }} · {{ album.format }}"
+            data-note="{{ album.note | escape }}"
+            data-url="{{ album.spotify_url }}"
+            aria-label="{{ album.artist }}의 {{ album.title }} 선택"
+          >
+            <img src="{{ album.cover_url }}" alt="{{ album.title }} 앨범 커버" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          </button>
+          {% endfor %}
+        </div>
+
+        <button class="carousel-control carousel-next" type="button" data-carousel-next aria-label="다음 앨범">
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <div class="album-navigation" aria-label="앨범 바로 선택">
+        {% for album in record.albums %}
+        <button type="button" data-album-jump="{{ forloop.index0 }}"{% if album.initial %} class="is-current" aria-current="true"{% endif %}>
+          <span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <small>{{ album.artist }}</small>
         </button>
         {% endfor %}
       </div>
 
-      <button class="carousel-control carousel-next" type="button" data-carousel-next aria-label="다음 앨범">
-        <span aria-hidden="true">→</span>
-      </button>
+      <section class="album-information" data-album-information aria-live="polite">
+        <div>
+          <p class="album-counter"><span data-current-number>01</span> / {{ record.albums | size | prepend: '0' | slice: -2, 2 }}</p>
+          <h3 data-current-title>{{ initial_album.title }}</h3>
+          <p class="album-artist" data-current-artist>{{ initial_album.artist }}</p>
+          <p class="album-meta" data-current-meta>{{ initial_album.year }} · {{ initial_album.format }}</p>
+        </div>
+        <div class="album-note">
+          <p data-current-note>{{ initial_album.note }}</p>
+          <a data-current-link href="{{ initial_album.spotify_url }}" target="_blank" rel="noopener noreferrer">Spotify에서 앨범 보기 <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <footer class="record-footer">
+        <p>첫 화면의 앨범은 기록의 시작점을 나타내며, 앨범 사이의 순위나 연구 기여도 차이를 뜻하지 않습니다.</p>
+        <a href="#{{ record.id }}" data-record-close>음악 기록 접기 <span aria-hidden="true">↑</span></a>
+      </footer>
     </div>
-
-    <div class="album-navigation" aria-label="앨범 바로 선택">
-      {% for album in record.albums %}
-      <button type="button" data-album-jump="{{ forloop.index0 }}"{% if album.initial %} class="is-current" aria-current="true"{% endif %}>
-        <span>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-        <small>{{ album.artist }}</small>
-      </button>
-      {% endfor %}
-    </div>
-
-    <section class="album-information" data-album-information aria-live="polite">
-      <div>
-        <p class="album-counter"><span data-current-number>01</span> / {{ record.albums | size | prepend: '0' | slice: -2, 2 }}</p>
-        <h3 data-current-title>{{ initial_album.title }}</h3>
-        <p class="album-artist" data-current-artist>{{ initial_album.artist }}</p>
-        <p class="album-meta" data-current-meta>{{ initial_album.year }} · {{ initial_album.format }}</p>
-      </div>
-      <div class="album-note">
-        <p data-current-note>{{ initial_album.note }}</p>
-        <a data-current-link href="{{ initial_album.spotify_url }}" target="_blank" rel="noopener noreferrer">Spotify에서 앨범 보기 <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-
-    <footer class="record-footer">
-      <p>첫 화면의 앨범은 기록의 시작점을 나타내며, 앨범 사이의 순위나 연구 기여도 차이를 뜻하지 않습니다.</p>
-      <a href="{{ record.research_url }}">연구 공개본 보기 <span aria-hidden="true">↗</span></a>
-    </footer>
-  </article>
+  </details>
   {% endfor %}
 </section>
 

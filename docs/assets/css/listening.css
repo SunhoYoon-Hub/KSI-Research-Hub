@@ -52,28 +52,102 @@
   border-bottom: 1px solid rgba(255, 255, 255, .16);
 }
 
-.record-heading {
+.record-summary {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr);
-  gap: 3rem;
-  padding: 2.25rem 0 1.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 390px) 132px;
+  align-items: center;
+  gap: 2.2rem;
+  min-height: 250px;
+  padding: 2.2rem 1.4rem 2.2rem 0;
+  list-style: none;
+  cursor: pointer;
+  transition: background .2s ease;
 }
 
-.record-code { margin: 0 0 .75rem; color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.record-heading h2 { margin: 0; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 500; line-height: 1.14; letter-spacing: -.035em; }
-.record-subtitle { margin: .55rem 0 0; color: #aeb8c7; font-family: var(--serif); font-size: 1rem; }
+.record-summary::-webkit-details-marker { display: none; }
+.record-summary::marker { content: ""; }
+.record-summary:hover { background: rgba(255, 255, 255, .025); }
+.record-summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
 
-.record-meta {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-self: end;
-  margin: 0;
-  border-top: 1px solid rgba(255, 255, 255, .22);
+.record-summary-copy { display: grid; min-width: 0; }
+.record-code { display: block; margin: 0 0 .75rem; color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.record-title { display: block; margin: 0; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 500; line-height: 1.14; letter-spacing: -.035em; }
+.record-subtitle { display: block; margin: .55rem 0 0; color: #aeb8c7; font-family: var(--serif); font-size: 1rem; }
+
+.record-summary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1rem;
+  margin-top: 1.3rem;
+  color: #8391a3;
+  font-size: .73rem;
 }
 
-.record-meta div { padding: 1rem .75rem 0 0; }
-.record-meta dt { color: #8e9bad; font-size: .7rem; }
-.record-meta dd { margin: .18rem 0 0; color: #eef2f7; font-family: var(--serif); font-size: .94rem; line-height: 1.4; }
+.record-summary-meta span + span::before { content: "·"; margin-right: 1rem; color: var(--gold); }
+
+.record-summary-covers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding-left: 2.6rem;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.record-summary-covers img {
+  display: block;
+  width: clamp(68px, 7.5vw, 96px);
+  aspect-ratio: 1;
+  margin-left: -2.55rem;
+  object-fit: cover;
+  border: 1px solid rgba(240, 223, 173, .34);
+  border-radius: 2px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .42);
+  transform: rotate(-5deg);
+}
+
+.record-summary-covers img:nth-child(even) { transform: translateY(8px) rotate(4deg); }
+.record-summary-covers img:first-child { z-index: 5; transform: scale(1.12); }
+.record-summary-covers img:nth-child(2) { z-index: 4; }
+.record-summary-covers img:nth-child(3) { z-index: 3; }
+.record-summary-covers img:nth-child(4) { z-index: 2; }
+.record-summary-covers img:nth-child(5) { z-index: 1; }
+
+.record-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .85rem 0;
+  color: var(--gold-light);
+  border-top: 1px solid rgba(240, 223, 173, .42);
+  border-bottom: 1px solid rgba(240, 223, 173, .42);
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.record-toggle::before { content: "음악 펼치기"; }
+.record-toggle::after { content: "↓"; font-family: var(--serif); font-size: 1rem; }
+.listening-record[open] .record-toggle::before { content: "음악 접기"; }
+.listening-record[open] .record-toggle::after { content: "↑"; }
+.listening-record[open] .record-summary-covers { opacity: .62; transform: scale(.96); }
+
+.record-body { border-top: 1px solid rgba(255, 255, 255, .16); }
+
+.record-context {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.2rem 0;
+}
+
+.record-context p { margin: 0; color: #9fabbc; font-size: .83rem; }
+.record-context p strong { color: #dbe3ed; font-weight: 700; }
+.record-context-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .7rem 1.2rem; }
+.record-context-links a { color: var(--gold-light); font-size: .78rem; font-weight: 800; text-decoration: none; }
+.record-context-links a:hover { text-decoration: underline; }
 
 .carousel-stage {
   display: grid;
@@ -217,18 +291,25 @@
 .listening-participate a:hover { background: var(--night-2); }
 
 @media (max-width: 850px) {
-  .listening-hero, .record-heading, .album-information, .listening-participate { grid-template-columns: 1fr; gap: 1.5rem; }
+  .listening-hero, .album-information, .listening-participate { grid-template-columns: 1fr; gap: 1.5rem; }
   .listening-hero { padding: 4rem 1.4rem 3.5rem; }
   .listening-archive { padding: 4rem 1.4rem 5rem; }
-  .record-meta { align-self: auto; }
+  .record-summary { grid-template-columns: minmax(0, 1fr) minmax(220px, 310px); gap: 1.3rem; padding-right: 0; }
+  .record-toggle { grid-column: 1 / -1; }
+  .record-context { grid-template-columns: 1fr; gap: .8rem; }
+  .record-context-links { justify-content: flex-start; }
   .listening-participate { padding: 4rem 1.4rem; }
 }
 
 @media (max-width: 620px) {
   .listening-hero h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
-  .record-heading { padding-top: 1.8rem; }
-  .record-meta { grid-template-columns: 1fr 1fr; }
-  .record-meta div:last-child { display: none; }
+  .record-summary { grid-template-columns: 1fr; gap: 1.5rem; min-height: 0; padding: 1.8rem 0; }
+  .record-summary-covers { justify-content: flex-start; padding-left: 1.6rem; }
+  .record-summary-covers img { width: min(18vw, 72px); margin-left: -1.6rem; }
+  .record-summary-covers img:first-child { margin-left: 0; }
+  .record-toggle { grid-column: auto; }
+  .record-summary-meta { display: grid; gap: .15rem; }
+  .record-summary-meta span + span::before { content: none; }
   .carousel-stage { grid-template-columns: 44px minmax(0, 1fr) 44px; margin-left: -.6rem; margin-right: -.6rem; }
   .coverflow { height: 360px; }
   .album-card { width: min(62vw, 245px); }

@@ -1,4 +1,13 @@
 (() => {
+  const revealHashRecord = () => {
+    if (!window.location.hash) return;
+    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (target?.matches('details[data-listening-record]')) target.open = true;
+  };
+
+  revealHashRecord();
+  window.addEventListener('hashchange', revealHashRecord);
+
   const carousels = document.querySelectorAll('[data-listening-carousel]');
 
   carousels.forEach((carousel) => {
@@ -8,6 +17,7 @@
     const coverflow = carousel.querySelector('.coverflow');
     const jumpButtons = Array.from(carousel.querySelectorAll('[data-album-jump]'));
     const information = carousel.querySelector('[data-album-information]');
+    const closeButton = carousel.querySelector('[data-record-close]');
     if (!cards.length || !previous || !next || !coverflow || !information) return;
 
     const currentNumber = information.querySelector('[data-current-number]');
@@ -96,6 +106,12 @@
 
     coverflow.addEventListener('pointercancel', () => {
       pointerStart = null;
+    });
+
+    closeButton?.addEventListener('click', (event) => {
+      event.preventDefault();
+      carousel.open = false;
+      carousel.querySelector('summary')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     carousel.classList.add('is-ready');
