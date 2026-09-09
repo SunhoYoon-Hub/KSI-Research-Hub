@@ -52,7 +52,13 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
         <span class="field">{{ project.fields | join: " · " }}</span>
       </div>
       <div class="project-title-group">
-        <h3>{{ project.title }}</h3>
+        <h3 aria-label="{{ project.title }}">
+          {% if project.card_title_lines %}
+            {% for title_line in project.card_title_lines %}<span>{{ title_line }}</span>{% endfor %}
+          {% else %}
+            {{ project.title }}
+          {% endif %}
+        </h3>
         <p class="project-subtitle">{{ project.subtitle }}</p>
       </div>
       <a class="researcher-link" href="{{ '/researchers/' | relative_url }}#{{ project.researcher_id }}">{{ project.researcher }}</a>

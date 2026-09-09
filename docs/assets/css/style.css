@@ -58,8 +58,8 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 78px;
-  padding: .8rem max(2rem, calc((100vw - var(--max-width)) / 2));
+  min-height: 72px;
+  padding: .65rem max(2rem, calc((100vw - var(--max-width)) / 2));
   color: #fff;
   background: rgba(8, 21, 38, .96);
   border-bottom: 1px solid rgba(255, 255, 255, .12);
@@ -77,12 +77,13 @@ a:focus-visible {
 .brand-logo {
   display: block;
   flex: 0 0 auto;
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
   background: #f7efe2;
   border: 1px solid rgba(240, 223, 173, .75);
-  border-radius: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(240, 223, 173, .08);
 }
 
 .brand-copy { display: grid; line-height: 1.25; }
@@ -309,6 +310,8 @@ a:focus-visible {
   line-height: 1.25;
   letter-spacing: -.025em;
 }
+
+.project-card h3 span { display: block; }
 
 .project-title-group {
   display: grid;
@@ -1201,7 +1204,7 @@ a:focus-visible {
 
 @media (max-width: 620px) {
   .site-header { position: static; }
-  .brand-logo { width: 44px; height: 44px; }
+  .brand-logo { width: 42px; height: 42px; }
   .brand-copy strong { font-size: .94rem; }
   .site-nav a:nth-child(1), .site-nav a:nth-child(2), .site-nav a:nth-child(3), .site-nav a:nth-child(4) { display: none; }
   .intro h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
@@ -1212,6 +1215,8 @@ a:focus-visible {
   .question-archive-footer { align-items: flex-start; flex-direction: column; gap: .7rem; }
   .project-card { min-height: 410px; padding: 1.5rem; }
   .project-title-group, .project-card h3, .project-subtitle, .project-description { min-height: 0; }
+  .project-card h3 span { display: inline; }
+  .project-card h3 span + span::before { content: " "; }
   .release-main { grid-template-columns: 1fr; gap: .75rem; padding: 1.4rem 0; }
   .release-doi { grid-column: auto; }
   .release-plan { margin-left: 0; }
