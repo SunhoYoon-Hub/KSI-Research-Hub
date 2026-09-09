@@ -331,8 +331,9 @@
 .album-note [data-album-note-copy] .album-panel-label { margin-bottom: .65rem; }
 .album-note [data-album-note-copy] p:last-child { margin: 0; color: #aeb8c7; font-size: .9rem; }
 .album-note a { display: flex; justify-content: space-between; padding: .95rem 0; color: var(--gold-light); border-top: 1px solid rgba(240, 223, 173, .36); border-bottom: 1px solid rgba(240, 223, 173, .36); font-size: .86rem; font-weight: 800; text-decoration: none; }
-.album-note a span { transition: transform .18s ease; }
-.album-note a:hover span { transform: translate(2px, -2px); }
+.album-link-label { white-space: nowrap; }
+.album-link-arrow { transition: transform .18s ease; }
+.album-note a:hover .album-link-arrow { transform: translate(2px, -2px); }
 
 .record-footer {
   display: flex;

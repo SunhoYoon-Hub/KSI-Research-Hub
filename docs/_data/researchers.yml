@@ -41,8 +41,10 @@
   status_en: "Research in Preparation"
   fields:
     - "공학"
+    - "전기전자"
   fields_en:
     - "Engineering"
+    - "Electrical & Electronic Engineering"
 
 - id: anonymous-medical
   name_ko: "의학·보건 연구자"

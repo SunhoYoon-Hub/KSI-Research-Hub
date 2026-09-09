@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f4f3ed">
+    <meta name="theme-color" content="#f8ecd7">
     <meta name="description" content="{{ page.description | default: site.description }}">
     <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-    <link rel="icon" type="image/png" href="{{ '/assets/images/ksi-logo.png' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/ksi-mark.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.github.build_revision | default: '20260907' }}">
     {% if page.extra_css %}
     <link rel="stylesheet" href="{{ page.extra_css | relative_url }}?v={{ site.github.build_revision | default: '20260908' }}">
@@ -17,7 +17,7 @@
     <header class="site-header">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="KSI Research Hub 홈">
         <span class="brand-logo" aria-hidden="true">
-          <img src="{{ '/assets/images/ksi-logo.png' | relative_url }}" alt="">
+          <img src="{{ '/assets/images/ksi-mark.png' | relative_url }}" alt="">
         </span>
         <span class="brand-copy">
           <strong>KSI Research Hub</strong>

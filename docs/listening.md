@@ -148,7 +148,7 @@ extra_js: /assets/js/listening-carousel.js
             <p class="album-panel-label">Listening Note · 음악 기록</p>
             <p data-current-note>{{ initial_album.note }}</p>
           </div>
-          <a data-current-link href="{{ initial_album_url }}" target="_blank" rel="noopener noreferrer"><span data-current-platform>{{ initial_album_platform }}</span>에서 듣기 <span aria-hidden="true">↗</span></a>
+          <a data-current-link href="{{ initial_album_url }}" target="_blank" rel="noopener noreferrer"><span class="album-link-label"><span data-current-platform>{{ initial_album_platform }}</span>에서 듣기</span><span class="album-link-arrow" aria-hidden="true">↗</span></a>
         </div>
       </section>
 
