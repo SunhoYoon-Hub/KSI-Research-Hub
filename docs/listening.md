@@ -19,9 +19,27 @@ extra_js: /assets/js/listening-carousel.js
 </section>
 
 <section class="listening-archive" aria-label="KSI 연구 음악 기록">
+  <div class="archive-toolbar">
+    <p><strong>{{ site.data.listening | size }}</strong>개의 연구 음악 기록</p>
+    <div class="archive-sort" role="group" aria-label="음악 기록 정렬">
+      <button class="is-active" type="button" data-listening-sort="record" aria-pressed="true">기록순</button>
+      <button type="button" data-listening-sort="published" aria-pressed="false">공개일순</button>
+      <button type="button" data-listening-sort="researcher" aria-pressed="false">연구자별</button>
+    </div>
+  </div>
+
+  <div class="listening-record-list" data-listening-list>
   {% for record in site.data.listening %}
-  {% assign initial_album = record.albums | first %}
-  <details class="listening-record" id="{{ record.id }}" data-listening-record data-listening-carousel>
+  {% assign album_count = record.albums | size %}
+  <details
+    class="listening-record"
+    id="{{ record.id }}"
+    data-listening-record
+    data-listening-carousel
+    data-record-order="{{ record.record_order }}"
+    data-publication-date="{{ record.publication_date }}"
+    data-researcher="{{ record.researcher | escape }}"
+  >
     <summary class="record-summary">
       <span class="record-summary-copy">
         <span class="record-code">{{ record.code }}</span>
@@ -30,13 +48,18 @@ extra_js: /assets/js/listening-carousel.js
         <span class="record-summary-meta">
           <span>{{ record.researcher }}</span>
           <span>{{ record.stage }}</span>
-          <span>{{ record.albums | size }} albums</span>
+          <span>{{ record.publication_label }}</span>
+          <span>{% if album_count == 0 %}기록 준비 중{% else %}앨범 {{ album_count }}개{% endif %}</span>
         </span>
       </span>
       <span class="record-summary-covers" aria-hidden="true">
-        {% for album in record.albums %}
-          <img src="{{ album.cover_url }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
-        {% endfor %}
+        {% if album_count == 0 %}
+          <span class="record-summary-empty"><b>Reserved</b><small>Listening space</small></span>
+        {% else %}
+          {% for album in record.albums %}
+            <img src="{{ album.cover_url }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+          {% endfor %}
+        {% endif %}
       </span>
       <span class="record-toggle" aria-hidden="true"></span>
     </summary>
@@ -50,6 +73,19 @@ extra_js: /assets/js/listening-carousel.js
         </div>
       </div>
 
+      {% if album_count == 0 %}
+      <section class="listening-empty" aria-label="음악 기록 준비 중">
+        <p class="section-index">Reserved Record</p>
+        <h3>음악 기록을 위한 공간입니다.</h3>
+        <p>연구자가 공개 범위를 확인한 뒤, 실제로 들은 앨범만 이곳에 추가합니다.</p>
+      </section>
+
+      <footer class="record-footer">
+        <p>빈 공간은 향후 기록 위치만 표시하며, 아직 음악 정보가 공개된 것은 아닙니다.</p>
+        <a href="#{{ record.id }}" data-record-close>음악 기록 접기 <span aria-hidden="true">↑</span></a>
+      </footer>
+      {% else %}
+      {% assign initial_album = record.albums | first %}
       <div class="carousel-stage">
         <button class="carousel-control carousel-previous" type="button" data-carousel-previous aria-label="이전 앨범">
           <span aria-hidden="true">←</span>
@@ -105,9 +141,11 @@ extra_js: /assets/js/listening-carousel.js
         <p>첫 화면의 앨범은 기록의 시작점을 나타내며, 앨범 사이의 순위나 연구 기여도 차이를 뜻하지 않습니다.</p>
         <a href="#{{ record.id }}" data-record-close>음악 기록 접기 <span aria-hidden="true">↑</span></a>
       </footer>
+      {% endif %}
     </div>
   </details>
   {% endfor %}
+  </div>
 </section>
 
 <section class="listening-participate" aria-labelledby="listening-participate-title">

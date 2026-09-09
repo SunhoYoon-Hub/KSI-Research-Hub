@@ -15,6 +15,14 @@
   status_label: "v1.0 공개 · v2.0 준비"
   description: "시·공간의 실재성과 상대성 이론을 과학과 철학의 관점에서 탐구합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.22270214"
+  listening_record: reserved
+  revision:
+    current: "v1.0 공개"
+    next: "v2.0 준비"
+    changes:
+      - "영문 제목·초록·키워드 정비"
+      - "칸트 논의와 선험적 관점 보완"
+      - "표지·판본 안내 형식 통일"
   featured: false
 
 - id: camel-hierarchy-ressentiment
@@ -34,7 +42,14 @@
   status_label: "v1.0 공개 · v2.0 준비"
   description: "현대 교육 시스템의 무한 경쟁과 성적 서열화를 니체의 철학을 통해 고찰합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.21222993"
-  listening_record: true
+  listening_record: available
+  revision:
+    current: "v1.0 공개"
+    next: "v2.0 준비"
+    changes:
+      - "연구논문형 구성과 문체 정비"
+      - "사자·아이와 자기초극 논의 확장"
+      - "집필 음악 기록 연계"
   featured: false
 
 - id: foundation-of-equality-education-of-greatness
@@ -54,6 +69,14 @@
   status_label: "v1.0 공개 · v2.0 준비"
   description: "롤스와 니체의 관점으로 한국 중등교육의 평등과 자기초극 사이의 모순을 분석합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.22306643"
+  listening_record: reserved
+  revision:
+    current: "v1.0 공개"
+    next: "v2.0 준비"
+    changes:
+      - "컨설팅 및 동료평가 반영"
+      - "선행연구와 타 교육철학 검토 보강"
+      - "공교육 적용과 제도 제안 정교화"
   featured: true
 
 - id: glp1-obesity-treatment
@@ -72,6 +95,7 @@
   status_label: "v1.0 공개"
   description: "GLP-1의 생리학적 기능과 수용체 작용제를 중심으로 비만 치료 전략의 발전을 탐구합니다."
   zenodo_url: "https://doi.org/10.5281/zenodo.22538005"
+  listening_record: reserved
   featured: false
 
 - id: rawls-theory-of-justice-reading

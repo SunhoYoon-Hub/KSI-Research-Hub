@@ -5,6 +5,9 @@
   researcher: "Yoon, Sunho"
   research_url: "https://doi.org/10.5281/zenodo.21222993"
   stage: "구상 · 집필 · 개정 준비"
+  record_order: 1
+  publication_date: "2026-07-06"
+  publication_label: "2026.07.06 공개"
   albums:
     - title: "One Assassination Under God – Chapter 1"
       artist: "Marilyn Manson"
@@ -42,3 +45,39 @@
       cover_url: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02ea76f03ff30a6cb758809982"
       spotify_url: "https://open.spotify.com/album/1hmW4opQGq4hIYTbEWsyqW"
       note: "연구의 구상과 집필 과정에서 함께 들은 앨범으로 기록합니다."
+
+- id: spacetime-study
+  code: "Listening Record 02"
+  title: "시·공간은 실재하는가"
+  subtitle: "과학과 철학, 두 시선에서 본 그 본질"
+  researcher: "Yoon, Sunho"
+  research_url: "https://doi.org/10.5281/zenodo.22270214"
+  stage: "음악 기록 준비 중"
+  record_order: 2
+  publication_date: "2026-09-03"
+  publication_label: "2026.09.03 공개"
+  albums: []
+
+- id: foundation-of-equality-education-of-greatness
+  code: "Listening Record 03"
+  title: "평등의 토대, 위대함의 교육"
+  subtitle: "롤스와 니체의 관점에서 본 한국 중등교육의 모순"
+  researcher: "Yoon, Sunho"
+  research_url: "https://doi.org/10.5281/zenodo.22306643"
+  stage: "음악 기록 준비 중"
+  record_order: 3
+  publication_date: "2026-09-04"
+  publication_label: "2026.09.04 공개"
+  albums: []
+
+- id: glp1-obesity-treatment
+  code: "Listening Record 04"
+  title: "GLP-1 수용체 작용체가 불러온 비만 치료의 변화 ver.1"
+  subtitle: "GLP-1의 생리적 기능과 약리학적 비만 치료 전략"
+  researcher: "Ho, Yejin"
+  research_url: "https://doi.org/10.5281/zenodo.22538005"
+  stage: "음악 기록 준비 중"
+  record_order: 4
+  publication_date: "2026-09-06"
+  publication_label: "2026.09.06 공개"
+  albums: []

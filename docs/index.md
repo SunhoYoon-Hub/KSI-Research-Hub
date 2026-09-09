@@ -60,9 +60,25 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
         {% endfor %}
       </ul>
       <p class="project-description">{{ project.description }}</p>
+      {% if project.revision %}
+      <details class="revision-note">
+        <summary>
+          <span>개정 기록</span>
+          <strong>{{ project.revision.current }} → {{ project.revision.next }}</strong>
+        </summary>
+        <div class="revision-note-body">
+          <p>다음 버전에서 검토할 항목</p>
+          <ul>
+            {% for change in project.revision.changes limit:3 %}
+              <li>{{ change }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+      {% endif %}
       <div class="card-actions">
         {% if project.listening_record %}
-          <a class="listening-link" href="{{ '/listening/' | relative_url }}#{{ project.id }}">이 연구의 음악 <span aria-hidden="true">→</span></a>
+          <a class="listening-link" href="{{ '/listening/' | relative_url }}#{{ project.id }}">{% if project.listening_record == 'reserved' %}음악 기록 공간{% else %}이 연구의 음악{% endif %} <span aria-hidden="true">→</span></a>
         {% endif %}
         {% if project.zenodo_url %}
           <a class="doi-link" href="{{ project.zenodo_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>

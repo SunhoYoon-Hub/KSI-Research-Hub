@@ -8,6 +8,33 @@
   revealHashRecord();
   window.addEventListener('hashchange', revealHashRecord);
 
+  const recordList = document.querySelector('[data-listening-list]');
+  const sortButtons = Array.from(document.querySelectorAll('[data-listening-sort]'));
+
+  if (recordList && sortButtons.length) {
+    const records = Array.from(recordList.querySelectorAll('[data-listening-record]'));
+    const byRecordOrder = (a, b) => Number(a.dataset.recordOrder) - Number(b.dataset.recordOrder);
+    const comparators = {
+      record: byRecordOrder,
+      published: (a, b) => b.dataset.publicationDate.localeCompare(a.dataset.publicationDate) || byRecordOrder(a, b),
+      researcher: (a, b) => a.dataset.researcher.localeCompare(b.dataset.researcher, 'en') || byRecordOrder(a, b)
+    };
+
+    sortButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const comparator = comparators[button.dataset.listeningSort];
+        if (!comparator) return;
+
+        [...records].sort(comparator).forEach((record) => recordList.append(record));
+        sortButtons.forEach((candidate) => {
+          const isActive = candidate === button;
+          candidate.classList.toggle('is-active', isActive);
+          candidate.setAttribute('aria-pressed', String(isActive));
+        });
+      });
+    });
+  }
+
   const carousels = document.querySelectorAll('[data-listening-carousel]');
 
   carousels.forEach((carousel) => {
@@ -18,6 +45,13 @@
     const jumpButtons = Array.from(carousel.querySelectorAll('[data-album-jump]'));
     const information = carousel.querySelector('[data-album-information]');
     const closeButton = carousel.querySelector('[data-record-close]');
+
+    closeButton?.addEventListener('click', (event) => {
+      event.preventDefault();
+      carousel.open = false;
+      carousel.querySelector('summary')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
     if (!cards.length || !previous || !next || !coverflow || !information) return;
 
     const currentNumber = information.querySelector('[data-current-number]');
@@ -106,12 +140,6 @@
 
     coverflow.addEventListener('pointercancel', () => {
       pointerStart = null;
-    });
-
-    closeButton?.addEventListener('click', (event) => {
-      event.preventDefault();
-      carousel.open = false;
-      carousel.querySelector('summary')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
     carousel.classList.add('is-ready');
