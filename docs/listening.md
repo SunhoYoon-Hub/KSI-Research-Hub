@@ -97,6 +97,8 @@ extra_js: /assets/js/listening-carousel.js
 
         <div class="coverflow" tabindex="0" role="group" aria-roledescription="음악 회전 목록" aria-label="연구 과정에서 들은 음악">
           {% for album in record.albums %}
+          {% assign album_url = album.music_url | default: album.spotify_url %}
+          {% assign album_platform = album.platform | default: "Spotify" %}
           <button
             class="album-card{% if album.initial %} is-active{% endif %}"
             type="button"
@@ -107,7 +109,8 @@ extra_js: /assets/js/listening-carousel.js
             data-credits="{{ album.credits | escape }}"
             data-meta="{{ album.year }} · {{ album.format }}"
             data-note="{{ album.note | escape }}"
-            data-url="{{ album.spotify_url }}"
+            data-url="{{ album_url }}"
+            data-platform="{{ album_platform }}"
             aria-label="{{ album.artist }}의 {{ album.title }} 선택"
           >
             <img src="{{ album.cover_url }}" alt="{{ album.title }} 표지" loading="lazy" decoding="async" referrerpolicy="no-referrer">
@@ -130,6 +133,8 @@ extra_js: /assets/js/listening-carousel.js
       </div>
 
       <section class="album-information" data-album-information aria-live="polite">
+        {% assign initial_album_url = initial_album.music_url | default: initial_album.spotify_url %}
+        {% assign initial_album_platform = initial_album.platform | default: "Spotify" %}
         <div class="album-identity">
           <p class="album-panel-label">Selected Music · 선택한 음악</p>
           <p class="album-counter"><span data-current-number>01</span> / {{ record.albums | size | prepend: '0' | slice: -2, 2 }}</p>
@@ -143,7 +148,7 @@ extra_js: /assets/js/listening-carousel.js
             <p class="album-panel-label">Listening Note · 음악 기록</p>
             <p data-current-note>{{ initial_album.note }}</p>
           </div>
-          <a data-current-link href="{{ initial_album.spotify_url }}" target="_blank" rel="noopener noreferrer">Spotify에서 음악 보기 <span aria-hidden="true">↗</span></a>
+          <a data-current-link href="{{ initial_album_url }}" target="_blank" rel="noopener noreferrer"><span data-current-platform>{{ initial_album_platform }}</span>에서 음악 보기 <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

@@ -62,6 +62,7 @@
     const currentNote = information.querySelector('[data-current-note]');
     const noteContainer = information.querySelector('[data-album-note-copy]');
     const currentLink = information.querySelector('[data-current-link]');
+    const currentPlatform = information.querySelector('[data-current-platform]');
     let activeIndex = Math.max(0, cards.findIndex((card) => card.classList.contains('is-active')));
     let pointerStart = null;
     const isSingle = cards.length === 1;
@@ -103,6 +104,7 @@
       currentNote.textContent = active.dataset.note;
       noteContainer.hidden = !active.dataset.note;
       currentLink.href = active.dataset.url;
+      if (currentPlatform) currentPlatform.textContent = active.dataset.platform;
     };
 
     const select = (index) => {

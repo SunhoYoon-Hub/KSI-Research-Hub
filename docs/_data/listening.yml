@@ -83,4 +83,5 @@
       format: "Track"
       initial: true
       cover_url: "https://static.vocadb.net/img/Album/mainOrig/2094.jpg?v=16"
-      spotify_url: "https://open.spotify.com/intl-ja/track/0QIcoR80WGYB733sKVIp6R"
+      platform: "Apple Music"
+      music_url: "https://music.apple.com/jp/song/%E3%83%A4%E3%83%B3%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%82%A4-%E3%83%A4%E3%83%B3%E3%82%AD%E3%83%BC%E3%82%AC%E3%83%BC%E3%83%AB/656611365"
