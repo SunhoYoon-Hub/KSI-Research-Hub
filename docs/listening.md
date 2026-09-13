@@ -73,7 +73,11 @@ extra_js: /assets/js/listening-carousel.js
         </div>
         <div class="record-context-links">
           <a href="{{ '/' | relative_url }}#{{ record.id }}">KSI 연구 카드 보기 <span aria-hidden="true">→</span></a>
+          {% if record.research_url %}
           <a href="{{ record.research_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
+          {% else %}
+          <span class="pending-link">Zenodo 공개 준비 중</span>
+          {% endif %}
         </div>
       </div>
 

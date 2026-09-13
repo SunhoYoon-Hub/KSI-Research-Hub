@@ -122,6 +122,30 @@
   listening_record: reserved
   featured: false
 
+- id: pandemic-social-problems
+  title: "철학·교육학적 관점에서 본 팬데믹의 사회적 문제"
+  card_title_lines:
+    - "철학·교육학적 관점에서 본"
+    - "팬데믹의 사회적 문제"
+  subtitle: "혐오·낙인과 교육 격차를 중심으로"
+  researcher_id: yoon-s
+  researcher: "Yoon, Sunho"
+  fields:
+    - "사회철학"
+    - "교육학"
+  keywords:
+    - "팬데믹"
+    - "혐오표현"
+    - "사회적 낙인"
+    - "교육 격차"
+    - "실질적 평등"
+  stage: drafting
+  status_label: "v1.0 공개 준비"
+  description: "팬데믹 과정의 혐오·낙인과 원격수업의 교육 격차를 철학·교육학적으로 분석합니다."
+  zenodo_url:
+  listening_record: available
+  featured: false
+
 - id: rawls-theory-of-justice-reading
   title: "롤스 『정의론』 독서 탐구"
   card_title_lines:
