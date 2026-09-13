@@ -90,3 +90,37 @@
       cover_url: "https://static.vocadb.net/img/Album/mainOrig/2094.jpg?v=16"
       platform: "Apple Music"
       music_url: "https://music.apple.com/jp/song/%E3%83%A4%E3%83%B3%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%82%A4-%E3%83%A4%E3%83%B3%E3%82%AD%E3%83%BC%E3%82%AC%E3%83%BC%E3%83%AB/656611365"
+
+- id: pandemic-social-problems
+  code: "Listening Record 05"
+  title: "철학·교육학적 관점에서 본 팬데믹의 사회적 문제"
+  subtitle: "혐오·낙인과 교육 격차를 중심으로"
+  researcher: "Yoon, Sunho"
+  research_url:
+  stage: "집필 · 개정 완료"
+  record_order: 5
+  publication_date:
+  publication_label: "Zenodo 공개 준비 중"
+  albums:
+    - title: "May It Never Falter"
+      artist: "glaive"
+      year: "2024"
+      format: "Album"
+      initial: true
+      cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a0/f0/b2/a0f0b2a0-672e-07ae-f3ad-4655b84f5fcc/5034644139319.jpg/1200x1200bf-60.jpg"
+      platform: "Apple Music"
+      music_url: "https://music.apple.com/kr/album/may-it-never-falter/1771890672"
+    - title: "star"
+      artist: "2hollis"
+      year: "2025"
+      format: "Album"
+      cover_url: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3a/da/c0/3adac065-136d-d93c-edc8-fdfa4a744b7f/25UMGIM44740.rgb.jpg/1200x1200bf-60.jpg"
+      platform: "Apple Music"
+      music_url: "https://music.apple.com/kr/album/star/1803726233"
+    - title: "Trees (feat. zootzie & Chanel Rose)"
+      artist: "kurtains"
+      year: "2020"
+      format: "Single"
+      cover_url: "https://geo-media.beatsource.com/image_size/1400x1400/6/1/8/618b45de-875b-445e-979e-b30a8741e724.jpg"
+      platform: "Apple Music"
+      music_url: "https://music.apple.com/kr/album/trees-feat-zootzie-chanel-rose-single/1548508432"
