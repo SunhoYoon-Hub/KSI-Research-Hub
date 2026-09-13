@@ -65,7 +65,7 @@ permalink: /class-2-2/
   </header>
   <a class="ksi-card" href="{{ '/' | relative_url }}">
     <div class="ksi-card-logo">
-      <img src="{{ '/assets/images/ksi-logo.png' | relative_url }}" alt="KSI 로고">
+      <img src="{{ '/assets/images/ksi-mark.png' | relative_url }}" alt="KSI 로고">
     </div>
     <div class="ksi-card-copy">
       <p><span aria-hidden="true"></span>Connected with 2026 Class 2-2</p>

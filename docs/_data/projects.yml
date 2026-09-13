@@ -168,24 +168,3 @@
   zenodo_url:
   featured: false
 
-- id: naca2412-uam-ethics
-  title: "NACA 2412 익형과 UAM 쿼드콥터"
-  card_title_lines:
-    - "NACA 2412 익형과"
-    - "UAM 쿼드콥터"
-  subtitle: "공력 특성과 소재별 질량 변화가 비행 성능에 미치는 영향"
-  researcher_id: yoon-s
-  researcher: "Yoon, Sunho 외 1명"
-  fields:
-    - "공학"
-    - "윤리"
-  keywords:
-    - "NACA 2412"
-    - "UAM"
-    - "쿼드콥터"
-    - "공학윤리"
-  stage: drafting
-  status_label: "집필 중 · 가제"
-  description: "익형과 소재가 비행 성능에 미치는 영향 및 효율·안전·환경의 설계 기준을 함께 분석합니다."
-  zenodo_url:
-  featured: false
