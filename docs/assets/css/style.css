@@ -90,11 +90,12 @@ a:focus-visible {
 
 .brand-logo img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   margin: 0;
   object-fit: contain;
-  object-position: 50% 50%;
+  object-position: center;
+  transform: translateY(-2px);
   border-radius: 7px;
 }
 
@@ -889,7 +890,7 @@ a:focus-visible {
 .project-count { color: var(--muted); font-size: .82rem; }
 
 .research-trajectory {
-  padding: 2rem;
+  padding: 0;
   color: #fff;
   background:
     radial-gradient(circle at 95% 5%, rgba(200, 167, 91, .18), transparent 30%),
@@ -897,17 +898,37 @@ a:focus-visible {
   border-bottom: 1px solid rgba(255, 255, 255, .12);
 }
 
-.research-trajectory > header {
+.research-trajectory-summary {
   display: grid;
-  grid-template-columns: 1fr minmax(260px, 400px);
-  align-items: end;
+  grid-template-columns: minmax(230px, 1fr) minmax(260px, 400px) auto;
+  align-items: center;
   gap: 2rem;
-  margin-bottom: 1.5rem;
+  padding: 1.25rem 2rem;
+  list-style: none;
+  cursor: pointer;
 }
 
-.research-trajectory .section-index { margin-bottom: .4rem; }
-.research-trajectory h3 { margin: 0; font-family: var(--serif); font-size: 1.65rem; font-weight: 500; }
-.research-trajectory > header > p { margin: 0; color: #b9c3d0; font-size: .85rem; }
+.research-trajectory-summary::-webkit-details-marker { display: none; }
+.research-trajectory-summary::marker { content: ""; }
+.research-trajectory-summary:focus-visible { outline: 2px solid var(--gold-light); outline-offset: -3px; }
+.research-trajectory-heading { display: grid; gap: .25rem; }
+.research-trajectory .section-index { margin: 0; }
+.research-trajectory-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; }
+.research-trajectory-description { color: #b9c3d0; font-size: .85rem; }
+.research-trajectory-toggle { display: flex; align-items: center; gap: .55rem; color: var(--gold-light); font-size: .7rem; }
+.research-trajectory-toggle .toggle-close { display: none; }
+.research-trajectory-toggle i {
+  width: .42rem;
+  height: .42rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-.12rem);
+  transition: transform .18s ease;
+}
+.research-trajectory[open] .research-trajectory-toggle .toggle-open { display: none; }
+.research-trajectory[open] .research-trajectory-toggle .toggle-close { display: inline; }
+.research-trajectory[open] .research-trajectory-toggle i { transform: rotate(225deg) translate(-.05rem, -.05rem); }
+.research-trajectory-body { padding: 0 2rem 2rem; }
 
 .trajectory-list {
   display: grid;
@@ -1283,7 +1304,8 @@ a:focus-visible {
   .site-footer { align-items: flex-start; flex-direction: column; padding: 2.2rem 1.4rem; }
   .footer-links { justify-content: flex-start; }
   .directory-hero, .researcher-directory, .editor-layout, .contact-layout { padding-left: 1.4rem; padding-right: 1.4rem; }
-  .directory-section-heading, .research-trajectory > header { grid-template-columns: 1fr; gap: .8rem; }
+  .directory-section-heading { grid-template-columns: 1fr; gap: .8rem; }
+  .research-trajectory-summary { grid-template-columns: minmax(220px, 1fr) minmax(220px, 360px) auto; gap: 1.2rem; }
   .anonymous-researcher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .consent-note { grid-template-columns: 1fr; gap: .35rem; }
   .editor-layout, .contact-layout { grid-template-columns: 1fr; }
@@ -1296,7 +1318,8 @@ a:focus-visible {
 
 @media (max-width: 620px) {
   .site-header { position: static; }
-  .brand-logo { width: 44px; height: 44px; }
+  .brand-logo { width: 44px; height: 44px; flex-basis: 44px; padding: 3px; }
+  .brand-logo img { width: 36px; height: 36px; transform: translateY(-1px); }
   .brand-copy strong { font-size: .94rem; }
   .site-nav > a { display: none; }
   .intro h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
@@ -1324,7 +1347,9 @@ a:focus-visible {
   .researcher-projects li { align-items: flex-start; flex-direction: column; gap: .9rem; padding: 1.2rem 1.4rem; }
   .researcher-projects li > .researcher-project-actions { flex-wrap: wrap; }
   .researcher-empty-record { padding: 1.4rem; }
-  .research-trajectory { padding: 1.5rem 1.4rem; }
+  .research-trajectory-summary { grid-template-columns: 1fr auto; gap: .65rem 1rem; padding: 1.15rem 1.4rem; }
+  .research-trajectory-description { grid-column: 1 / -1; }
+  .research-trajectory-body { padding: 0 1.4rem 1.5rem; }
   .trajectory-list { grid-template-columns: 1fr; }
   .trajectory-list li { padding: 1.2rem 0 2.1rem; }
   .trajectory-list li:not(:last-child)::after { content: "↓"; top: auto; right: auto; bottom: .35rem; left: 0; }

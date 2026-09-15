@@ -41,49 +41,56 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
         </header>
 
         {% if researcher.id == "yoon-s" %}
-        <section class="research-trajectory" aria-labelledby="yoon-trajectory-title">
-          <header>
-            <div>
-              <p class="section-index">Research Trajectory</p>
-              <h3 id="yoon-trajectory-title">연구의 발전 경로</h3>
+        <details class="research-trajectory">
+          <summary class="research-trajectory-summary">
+            <span class="research-trajectory-heading">
+              <span class="section-index">Research Trajectory</span>
+              <strong class="research-trajectory-title" role="heading" aria-level="3">연구의 발전 경로</strong>
+            </span>
+            <span class="research-trajectory-description">경쟁 비판에서 공정성 탐구로, 다시 두 관점의 종합으로 이어집니다.</span>
+            <span class="research-trajectory-toggle" aria-hidden="true">
+              <b class="toggle-open">펼치기</b>
+              <b class="toggle-close">접기</b>
+              <i></i>
+            </span>
+          </summary>
+          <div class="research-trajectory-body">
+            <ol class="trajectory-list">
+              <li>
+                <a href="https://doi.org/10.5281/zenodo.21222993">
+                  <span class="trajectory-step">01 · 니체</span>
+                  <strong>낙타의 서열화와 르상티망</strong>
+                  <small>경쟁·서열화·르상티망 분석</small>
+                </a>
+              </li>
+              <li>
+                <a href="{{ '/' | relative_url }}#rawls-theory-of-justice-reading">
+                  <span class="trajectory-step">02 · 롤스</span>
+                  <strong>롤스 『정의론』 독서 탐구</strong>
+                  <small>공정성과 완전성의 원리 검토</small>
+                </a>
+              </li>
+              <li>
+                <a href="https://doi.org/10.5281/zenodo.22306643">
+                  <span class="trajectory-step">03 · 종합</span>
+                  <strong>평등의 토대, 위대함의 교육</strong>
+                  <small>롤스의 평등과 니체의 자기초극 종합</small>
+                </a>
+              </li>
+            </ol>
+            <div class="trajectory-branch">
+              <div>
+                <span>별도 갈래</span>
+                <small lang="en">Interdisciplinary Session</small>
+              </div>
+              <a href="https://doi.org/10.5281/zenodo.22718001">
+                <span class="trajectory-step">융합세션 · 철학·교육학</span>
+                <strong>철학·교육학적 관점에서 본 팬데믹의 사회적 문제</strong>
+                <small>혐오·낙인과 교육 격차 분석</small>
+              </a>
             </div>
-            <p>경쟁 비판에서 공정성 탐구로, 다시 두 관점의 종합으로 이어집니다.</p>
-          </header>
-          <ol class="trajectory-list">
-            <li>
-              <a href="https://doi.org/10.5281/zenodo.21222993">
-                <span class="trajectory-step">01 · 니체</span>
-                <strong>낙타의 서열화와 르상티망</strong>
-                <small>경쟁·서열화·르상티망 분석</small>
-              </a>
-            </li>
-            <li>
-              <a href="{{ '/' | relative_url }}#rawls-theory-of-justice-reading">
-                <span class="trajectory-step">02 · 롤스</span>
-                <strong>롤스 『정의론』 독서 탐구</strong>
-                <small>공정성과 완전성의 원리 검토</small>
-              </a>
-            </li>
-            <li>
-              <a href="https://doi.org/10.5281/zenodo.22306643">
-                <span class="trajectory-step">03 · 종합</span>
-                <strong>평등의 토대, 위대함의 교육</strong>
-                <small>롤스의 평등과 니체의 자기초극 종합</small>
-              </a>
-            </li>
-          </ol>
-          <div class="trajectory-branch">
-            <div>
-              <span>별도 갈래</span>
-              <small lang="en">Interdisciplinary Session</small>
-            </div>
-            <a href="https://doi.org/10.5281/zenodo.22718001">
-              <span class="trajectory-step">융합세션 · 철학·교육학</span>
-              <strong>철학·교육학적 관점에서 본 팬데믹의 사회적 문제</strong>
-              <small>혐오·낙인과 교육 격차 분석</small>
-            </a>
           </div>
-        </section>
+        </details>
         {% endif %}
 
         <details class="researcher-work-record">

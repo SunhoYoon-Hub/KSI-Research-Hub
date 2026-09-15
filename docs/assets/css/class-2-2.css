@@ -70,14 +70,24 @@ a:focus-visible { outline: 3px solid var(--class-gold); outline-offset: 4px; }
   text-decoration: none;
 }
 
-.class-brand img {
-  display: block;
-  flex: 0 0 auto;
+.class-brand-logo {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex: 0 0 54px;
   width: 54px;
   height: 54px;
-  object-fit: contain;
   border: 1px solid rgba(240, 223, 173, .72);
   border-radius: 50%;
+}
+
+.class-brand-logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(-2px);
 }
 
 .class-brand > span { display: grid; line-height: 1.25; }
@@ -318,7 +328,8 @@ a:focus-visible { outline: 3px solid var(--class-gold); outline-offset: 4px; }
 
 @media (max-width: 620px) {
   .class-header { position: static; }
-  .class-brand img { width: 44px; height: 44px; }
+  .class-brand-logo { width: 44px; height: 44px; flex-basis: 44px; }
+  .class-brand-logo img { width: 36px; height: 36px; transform: translateY(-1px); }
   .class-brand strong { font-size: .94rem; }
   .class-nav .ksi-link { display: none; }
   .class-nav .zenodo-link { padding-left: 0; border-left: 0; }
