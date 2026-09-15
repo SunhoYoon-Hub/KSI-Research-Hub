@@ -75,3 +75,18 @@
     - "컴퓨터공학"
   fields_en:
     - "Computer Engineering"
+
+- id: anonymous-engineering
+  name_ko: "공학 연구자"
+  name_en: "Engineering Researcher"
+  display_name: "공학 연구자"
+  role_ko: "KSI 연구자 · 익명"
+  role_en: "KSI Researcher · Anonymous"
+  anonymous: true
+  monogram: "ENG"
+  status_ko: "연구 준비 중"
+  status_en: "Research in Preparation"
+  fields:
+    - "공학"
+  fields_en:
+    - "Engineering"
