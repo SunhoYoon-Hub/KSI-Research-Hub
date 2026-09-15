@@ -72,41 +72,63 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
               </a>
             </li>
           </ol>
+          <div class="trajectory-branch">
+            <div>
+              <span>별도 갈래</span>
+              <small lang="en">Interdisciplinary Session</small>
+            </div>
+            <a href="https://doi.org/10.5281/zenodo.22718001">
+              <span class="trajectory-step">융합세션 · 철학·교육학</span>
+              <strong>철학·교육학적 관점에서 본 팬데믹의 사회적 문제</strong>
+              <small>혐오·낙인과 교육 격차 분석</small>
+            </a>
+          </div>
         </section>
         {% endif %}
 
-        <div class="researcher-work-heading">
-          <span>연구 기록</span>
-          <span lang="en">Research Record</span>
-        </div>
-        {% if researcher_projects == empty %}
-        <div class="researcher-empty-record">
-          <strong lang="en">Research in Preparation</strong>
-          <p>첫 공개 연구를 준비하고 있습니다.</p>
-        </div>
-        {% else %}
-        <ol class="researcher-projects">
-          {% for project in researcher_projects %}
-          <li>
-            <div>
-              <span>{{ project.status_label }}</span>
-              <strong>{{ project.title }}</strong>
-              <small>{{ project.subtitle }}</small>
+        <details class="researcher-work-record">
+          <summary class="researcher-work-heading">
+            <span class="researcher-work-label">
+              <span>연구 기록</span>
+              <span lang="en">Research Record</span>
+            </span>
+            <span class="researcher-work-toggle" aria-hidden="true">
+              <b class="toggle-open">펼치기</b>
+              <b class="toggle-close">접기</b>
+              <i></i>
+            </span>
+          </summary>
+          <div class="researcher-work-body">
+            {% if researcher_projects == empty %}
+            <div class="researcher-empty-record">
+              <strong lang="en">Research in Preparation</strong>
+              <p>첫 공개 연구를 준비하고 있습니다.</p>
             </div>
-            <div class="researcher-project-actions">
-              {% if project.listening_record %}
-                <a class="project-listening" href="{{ '/listening/' | relative_url }}#{{ project.id }}" aria-label="{{ project.title }} 음악 기록">음악 기록 →</a>
-              {% endif %}
-              {% if project.zenodo_url %}
-                <a href="{{ project.zenodo_url }}" aria-label="{{ project.title }} Zenodo 공개본">DOI ↗</a>
-              {% else %}
-                <a class="project-pending" href="{{ '/' | relative_url }}#{{ project.id }}">진행 중 →</a>
-              {% endif %}
-            </div>
-          </li>
-          {% endfor %}
-        </ol>
-        {% endif %}
+            {% else %}
+            <ol class="researcher-projects">
+              {% for project in researcher_projects %}
+              <li>
+                <div>
+                  <span>{{ project.status_label }}</span>
+                  <strong>{{ project.title }}</strong>
+                  <small>{{ project.subtitle }}</small>
+                </div>
+                <div class="researcher-project-actions">
+                  {% if project.listening_record %}
+                    <a class="project-listening" href="{{ '/listening/' | relative_url }}#{{ project.id }}" aria-label="{{ project.title }} 음악 기록">음악 기록 →</a>
+                  {% endif %}
+                  {% if project.zenodo_url %}
+                    <a href="{{ project.zenodo_url }}" aria-label="{{ project.title }} Zenodo 공개본">DOI ↗</a>
+                  {% else %}
+                    <a class="project-pending" href="{{ '/' | relative_url }}#{{ project.id }}">진행 중 →</a>
+                  {% endif %}
+                </div>
+              </li>
+              {% endfor %}
+            </ol>
+            {% endif %}
+          </div>
+        </details>
       </article>
     {% endfor %}
   </div>
