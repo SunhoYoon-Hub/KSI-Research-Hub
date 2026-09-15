@@ -253,7 +253,22 @@ a:focus-visible { outline: 3px solid var(--class-gold); outline-offset: 4px; }
 }
 
 .ksi-card-logo { display: grid; place-items: center; padding: 2.2rem; background: rgba(1, 12, 25, .28); border-right: 1px solid rgba(255, 255, 255, .14); }
-.ksi-card-logo img { display: block; width: min(100%, 260px); height: auto; object-fit: contain; filter: drop-shadow(0 22px 36px rgba(0, 0, 0, .22)); }
+.ksi-card-mark {
+  display: block;
+  overflow: hidden;
+  width: min(100%, 260px);
+  aspect-ratio: 1;
+  background: #f8ecd7;
+  filter: drop-shadow(0 22px 36px rgba(0, 0, 0, .22));
+}
+.ksi-card-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: translateY(-10%);
+}
 .ksi-card-copy { display: flex; flex-direction: column; justify-content: center; padding: 3rem; }
 .ksi-card-copy > p:first-child { display: flex; align-items: center; gap: .55rem; margin: 0; color: var(--class-gold-light); font-size: .78rem; font-weight: 800; letter-spacing: .06em; }
 .ksi-card-copy > p:first-child span { width: .46rem; height: .46rem; background: var(--class-gold); border-radius: 50%; }
@@ -341,7 +356,7 @@ a:focus-visible { outline: 3px solid var(--class-gold); outline-offset: 4px; }
   .question-placeholder { min-height: 290px; padding: 1.5rem; }
   .ksi-card { grid-template-columns: 1fr; }
   .ksi-card-logo { padding: 2rem; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .14); }
-  .ksi-card-logo img { width: min(60vw, 220px); }
+  .ksi-card-mark { width: min(60vw, 220px); }
   .ksi-card-copy { min-height: 350px; padding: 2rem 1.5rem; }
   .class-process-list { grid-template-columns: repeat(2, 1fr); }
   .class-section-heading { margin-bottom: 1.8rem; }
