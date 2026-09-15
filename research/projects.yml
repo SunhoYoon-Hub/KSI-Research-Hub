@@ -47,9 +47,9 @@ projects:
     field:
       - "사회철학"
       - "교육학"
-    status: drafting
-    version: "v1.0 공개 준비"
-    zenodo_url: null
+    status: published
+    version: "v1.0 공개"
+    zenodo_url: "https://doi.org/10.5281/zenodo.22718001"
 
   - id: rawls-theory-of-justice-reading
     title: "롤스 『정의론』 독서 탐구"
