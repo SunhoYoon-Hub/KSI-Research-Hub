@@ -139,10 +139,13 @@
     - "사회적 낙인"
     - "교육 격차"
     - "실질적 평등"
-  stage: drafting
-  status_label: "v1.0 공개 준비"
+  stage: published
+  status_label: "v1.0 공개"
   description: "팬데믹 과정의 혐오·낙인과 원격수업의 교육 격차를 철학·교육학적으로 분석합니다."
-  zenodo_url:
+  zenodo_url: "https://doi.org/10.5281/zenodo.22718001"
+  publication_date: "2026-09-12"
+  publication_label: "2026.09.12"
+  release_version: "v1.0"
   listening_record: available
   featured: false
 

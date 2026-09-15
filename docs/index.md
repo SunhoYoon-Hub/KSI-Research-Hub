@@ -6,6 +6,8 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
 
 {% assign published_projects = site.data.projects | where: "stage", "published" %}
 {% assign drafting_projects = site.data.projects | where: "stage", "drafting" %}
+{% assign display_published_projects = published_projects | sort: "publication_date" | reverse %}
+{% assign display_projects = display_published_projects | concat: drafting_projects %}
 
 <section class="intro" aria-labelledby="intro-title">
   <div class="intro-copy">
@@ -43,7 +45,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   <p class="filter-result" aria-live="polite"><span id="visible-project-count">{{ site.data.projects | size }}</span>개의 연구</p>
 
   <div class="project-grid" id="project-grid">
-    {% for project in site.data.projects %}
+    {% for project in display_projects %}
     {% assign project_researchers = site.data.researchers | where: "id", project.researcher_id %}
     {% assign project_researcher = project_researchers | first %}
     <article class="project-card {% if project.stage == 'published' %}published{% else %}ongoing{% endif %}{% if project.featured %} feature-card{% endif %}" id="{{ project.id }}" data-researcher="{{ project.researcher_id }}" data-stage="{{ project.stage }}">
