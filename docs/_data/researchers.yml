@@ -61,14 +61,13 @@
   fields_en:
     - "Medicine & Health"
 
-- id: anonymous-computer-engineering
-  name_ko: "컴퓨터공학 연구자"
-  name_en: "Computer Engineering Researcher"
-  display_name: "컴퓨터공학 연구자"
-  role_ko: "KSI 연구자 · 익명"
-  role_en: "KSI Researcher · Anonymous"
-  anonymous: true
-  monogram: "CE"
+- id: park-yihyun
+  name_en: "Park, Yihyun"
+  display_name: "Park, Yihyun"
+  role_ko: "KSI 연구자"
+  role_en: "KSI Researcher"
+  anonymous: false
+  monogram: "PY"
   status_ko: "연구 준비 중"
   status_en: "Research in Preparation"
   fields:
