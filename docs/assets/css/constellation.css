@@ -482,3 +482,18 @@
     min-height: 620px;
   }
 }
+
+
+/* Prevent the two title lines from touching while preserving the observatory scale. */
+.constellation-hero h1 {
+  line-height: .94;
+  letter-spacing: -.055em;
+  word-break: keep-all;
+}
+
+@media (max-width: 760px) {
+  .constellation-hero h1 {
+    line-height: .98;
+    letter-spacing: -.045em;
+  }
+}

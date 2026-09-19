@@ -56,6 +56,7 @@ extra_js: /assets/js/keywords.js
         data-accession="{{ specimen.accession }}"
         data-term="{{ specimen.term | downcase | escape }}"
         data-language="{{ specimen.language }}"
+        data-counterpart="{{ specimen.counterpart | default: '' }}"
         data-template="specimen-{{ forloop.index0 }}"
         aria-controls="keyword-inspector"
       >
@@ -71,6 +72,7 @@ extra_js: /assets/js/keywords.js
 
   {% for specimen in cabinet.specimens %}
   <template id="specimen-{{ forloop.index0 }}">
+    <p class="section-index inspector-section-label">Cross References · 연결 기록</p>
     <p class="inspector-accession">{{ specimen.accession }}</p>
     <h3>{{ specimen.term }}</h3>
     <p class="inspector-authors">{{ specimen.authors | join: ' · ' }}</p>
@@ -88,7 +90,7 @@ extra_js: /assets/js/keywords.js
 
   <section class="keyword-inspector" id="keyword-inspector" aria-live="polite">
     <div class="inspector-placeholder">
-      <p class="section-index">02 / Cross References</p>
+      <p class="section-index inspector-section-label">Cross References · 연결 기록</p>
       <h3>표본 서랍을 선택하세요.</h3>
       <p>선택한 주제어가 사용된 연구 기록을 이곳에서 확인할 수 있습니다.</p>
     </div>
@@ -98,7 +100,7 @@ extra_js: /assets/js/keywords.js
 <section class="source-register" aria-labelledby="source-register-title">
   <header class="keyword-section-heading">
     <div>
-      <p class="section-index">03 / Source Register</p>
+      <p class="section-index">02 / Source Register</p>
       <h2 id="source-register-title">출처 대장</h2>
     </div>
     <p>2026년 9월 19일 기준, 공개 Zenodo 레코드의 주제어 메타데이터입니다.</p>

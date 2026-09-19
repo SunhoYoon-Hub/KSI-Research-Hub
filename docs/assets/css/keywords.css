@@ -462,3 +462,23 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Keep the two-line Korean title optically separated at every viewport size. */
+.keyword-hero h1 {
+  line-height: .94;
+  letter-spacing: -.055em;
+  word-break: keep-all;
+}
+
+.inspector-section-label {
+  margin-bottom: 1.1rem;
+  color: #d3ad52;
+}
+
+@media (max-width: 560px) {
+  .keyword-hero h1 {
+    line-height: .98;
+    letter-spacing: -.045em;
+  }
+}

@@ -11,10 +11,16 @@
   const empty = document.querySelector('[data-keyword-empty]');
   const placeholder = inspector.innerHTML;
   let language = 'ko';
+  let selectedDrawer = null;
 
-  const clearSelection = () => {
-    drawers.forEach((drawer) => drawer.classList.remove('is-selected'));
-    inspector.innerHTML = placeholder;
+  const renderSelection = (drawer, shouldScroll = false) => {
+    const template = document.getElementById(drawer.dataset.template);
+    if (!template) return;
+    drawers.forEach((candidate) => candidate.classList.remove('is-selected'));
+    drawer.classList.add('is-selected');
+    selectedDrawer = drawer;
+    inspector.replaceChildren(template.content.cloneNode(true));
+    if (shouldScroll) inspector.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   };
 
   const applyView = () => {
@@ -33,34 +39,34 @@
     if (visibleCount) visibleCount.textContent = String(shown);
     if (totalCount) totalCount.textContent = String(inLanguage);
     if (empty) empty.hidden = shown !== 0;
-
-    const selected = drawers.find((drawer) => drawer.classList.contains('is-selected'));
-    if (selected?.hidden) clearSelection();
   };
 
   languageButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      language = button.dataset.keywordLanguage;
+      const nextLanguage = button.dataset.keywordLanguage;
+      if (nextLanguage === language) return;
+
+      const counterpart = selectedDrawer?.dataset.counterpart;
+      const pairedDrawer = counterpart
+        ? drawers.find((drawer) => drawer.dataset.accession === counterpart && drawer.dataset.language === nextLanguage)
+        : null;
+
+      language = nextLanguage;
       languageButtons.forEach((candidate) => {
         const active = candidate === button;
         candidate.classList.toggle('is-active', active);
         candidate.setAttribute('aria-pressed', String(active));
       });
+
       if (search) search.value = '';
-      clearSelection();
       applyView();
+
+      if (pairedDrawer) renderSelection(pairedDrawer);
     });
   });
 
   drawers.forEach((drawer) => {
-    drawer.addEventListener('click', () => {
-      const template = document.getElementById(drawer.dataset.template);
-      if (!template) return;
-      drawers.forEach((candidate) => candidate.classList.remove('is-selected'));
-      drawer.classList.add('is-selected');
-      inspector.replaceChildren(template.content.cloneNode(true));
-      inspector.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-    });
+    drawer.addEventListener('click', () => renderSelection(drawer, true));
   });
 
   search?.addEventListener('input', applyView);
