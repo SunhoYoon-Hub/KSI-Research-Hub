@@ -1375,3 +1375,150 @@ a:focus-visible {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+
+/* Researcher profile → Question Constellation */
+.constellation-profile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  background: var(--night-2);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  text-decoration: none;
+}
+.constellation-profile-link > span { display: grid; gap: .15rem; }
+.constellation-profile-link small {
+  color: var(--gold);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.constellation-profile-link strong {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.constellation-profile-link i {
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  font-style: normal;
+  transition: transform .18s ease;
+}
+.constellation-profile-link:hover { background: #17304e; }
+.constellation-profile-link:hover i { transform: translate(2px, -2px); }
+
+.embedded-trajectory {
+  color: #fff;
+  background:
+    radial-gradient(circle at 94% 4%, rgba(200, 167, 91, .16), transparent 27%),
+    var(--night-2);
+  border-top: 1px solid rgba(200, 167, 91, .34);
+}
+.embedded-trajectory > header {
+  display: grid;
+  grid-template-columns: minmax(220px, .75fr) minmax(280px, 1.25fr);
+  align-items: end;
+  gap: 2rem;
+  padding: 1.5rem 2rem 1.2rem;
+}
+.embedded-trajectory .section-index { margin: 0 0 .3rem; }
+.embedded-trajectory h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.embedded-trajectory header p {
+  margin: 0;
+  color: #b9c3d0;
+  font-size: .82rem;
+}
+.embedded-trajectory-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 2rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(240, 223, 173, .32);
+}
+.embedded-trajectory-list li {
+  position: relative;
+  padding: 1.15rem 1.7rem 1.25rem 0;
+}
+.embedded-trajectory-list li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 2.15rem;
+  right: .7rem;
+  color: var(--gold);
+}
+.embedded-trajectory-list a {
+  display: grid;
+  gap: .3rem;
+  color: #fff;
+  text-decoration: none;
+}
+.embedded-trajectory-list span,
+.embedded-trajectory-branch > span {
+  color: var(--gold-light);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.embedded-trajectory-list strong {
+  max-width: 17rem;
+  font-family: var(--serif);
+  font-size: .98rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.embedded-trajectory-list a:hover strong { color: var(--gold-light); }
+.embedded-trajectory-branch {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin: 0 2rem;
+  padding: .95rem 0;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+.embedded-trajectory-branch a {
+  color: #c8d0dc;
+  font-size: .78rem;
+  text-decoration: none;
+}
+.embedded-trajectory-branch a:hover { color: var(--gold-light); }
+.embedded-trajectory-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  color: var(--gold-light);
+  border-top: 1px solid rgba(240, 223, 173, .32);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.embedded-trajectory-link b { transition: transform .18s ease; }
+.embedded-trajectory-link:hover b { transform: translate(2px, -2px); }
+
+@media (max-width: 620px) {
+  .constellation-profile-link { padding: .95rem 1.4rem; }
+  .embedded-trajectory > header { grid-template-columns: 1fr; gap: .55rem; padding: 1.35rem 1.4rem 1rem; }
+  .embedded-trajectory-list { grid-template-columns: 1fr; margin: 0 1.4rem; }
+  .embedded-trajectory-list li { padding: 1rem 0 1.9rem; }
+  .embedded-trajectory-list li:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: auto;
+    bottom: .3rem;
+    left: 0;
+  }
+  .embedded-trajectory-branch { align-items: flex-start; flex-direction: column; gap: .35rem; margin: 0 1.4rem; }
+  .embedded-trajectory-link { padding: 1rem 1.4rem; }
+}

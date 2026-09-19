@@ -1,0 +1,265 @@
+.constellation-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
+  align-items: end;
+  gap: 4rem;
+  min-height: 390px;
+  padding: 5rem max(2rem, calc((100vw - var(--max-width)) / 2));
+  color: #fff;
+  background:
+    radial-gradient(circle at 77% 20%, rgba(200, 167, 91, .18), transparent 24%),
+    linear-gradient(135deg, var(--night), var(--night-2));
+}
+.constellation-hero::after {
+  content: "∑";
+  position: absolute;
+  top: -8rem;
+  right: 2vw;
+  color: rgba(255, 255, 255, .025);
+  font: 32rem/1 var(--serif);
+}
+.constellation-hero > * { position: relative; z-index: 1; }
+.constellation-hero h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 5.6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+.constellation-hero h1 em { color: var(--gold-light); font-style: normal; }
+.constellation-hero > p { margin: 0 0 .4rem; color: #c8d0dc; font-size: 1.02rem; }
+
+.constellation-section {
+  padding: 5rem max(2rem, calc((100vw - var(--max-width)) / 2)) 6rem;
+}
+.constellation-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.constellation-heading h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+.constellation-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: .76rem;
+  list-style: none;
+}
+.constellation-legend li { display: flex; align-items: center; gap: .45rem; }
+.constellation-legend i { display: inline-block; width: .72rem; height: .72rem; border-radius: 50%; }
+.legend-question { background: var(--blue); box-shadow: 0 0 0 3px rgba(57, 94, 137, .15); }
+.legend-drafting { background: transparent; border: 2px solid #e9e3d3; box-shadow: 0 0 0 1px #7d8796; }
+.legend-published { background: var(--gold); box-shadow: 0 0 0 3px rgba(200, 167, 91, .15); }
+
+.constellation-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  min-height: 720px;
+  color: #fff;
+  background: #050f1c;
+  border-top: 3px solid var(--gold);
+}
+.constellation-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 720px;
+  background:
+    radial-gradient(circle at 56% 36%, rgba(57, 94, 137, .18), transparent 28%),
+    radial-gradient(circle at 84% 55%, rgba(200, 167, 91, .08), transparent 24%),
+    linear-gradient(145deg, #071321, #050d18);
+}
+.constellation-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .34;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, .38) 0 1px, transparent 1.3px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(to bottom, #000, transparent 92%);
+}
+.constellation-watermark {
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  color: rgba(240, 223, 173, .035);
+  font: clamp(5rem, 13vw, 10rem)/1 var(--serif);
+  white-space: nowrap;
+}
+.constellation-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.constellation-lines line {
+  stroke: rgba(174, 184, 199, .28);
+  stroke-width: 1.4;
+  stroke-dasharray: 8 8;
+  vector-effect: non-scaling-stroke;
+  animation: trace-line 1.2s ease both;
+  transition: stroke .2s ease, opacity .2s ease;
+}
+.constellation-lines line.is-active { stroke: var(--gold); stroke-width: 2; opacity: 1; }
+.constellation-map.has-selection .constellation-lines line:not(.is-active) { opacity: .28; }
+@keyframes trace-line {
+  from { stroke-dashoffset: 80; opacity: 0; }
+  to { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.constellation-node {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: .55rem;
+  width: 150px;
+  padding: 0;
+  color: #dbe3ed;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.node-core {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: var(--blue);
+  border: 1px solid #8ca5c1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(57, 94, 137, .11);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.node-drafting .node-core {
+  width: 27px;
+  height: 27px;
+  background: #0c1b2e;
+  border: 2px solid #eee8d8;
+  box-shadow: 0 0 0 6px rgba(238, 232, 216, .08);
+}
+.node-published .node-core {
+  width: 35px;
+  height: 35px;
+  background: var(--gold);
+  border: 5px solid #10243d;
+  box-shadow: 0 0 0 2px var(--gold-light), 0 0 0 8px rgba(200, 167, 91, .1);
+}
+.node-label {
+  max-width: 145px;
+  color: #b9c5d3;
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-shadow: 0 2px 8px #02070d;
+}
+.node-question .node-label { color: #9fb6d0; }
+.node-published .node-label { color: var(--gold-light); font-family: var(--serif); font-size: .82rem; font-weight: 500; }
+.constellation-node:hover .node-core,
+.constellation-node:focus-visible .node-core,
+.constellation-node.is-active .node-core {
+  transform: scale(1.18);
+  box-shadow: 0 0 0 5px rgba(240, 223, 173, .16), 0 0 25px rgba(240, 223, 173, .52);
+}
+.constellation-node:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 6px; }
+.constellation-map.has-selection .constellation-node:not(.is-active):not(.is-connected) { opacity: .46; }
+.constellation-node.is-connected .node-label { color: #fff; }
+
+.constellation-inspector {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: var(--night-2);
+  border-left: 1px solid rgba(255, 255, 255, .12);
+}
+.inspector-kind {
+  margin: 0;
+  color: var(--gold);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.constellation-inspector h3 {
+  margin: 1rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.inspector-description { margin: 1.2rem 0 0; color: #c8d0dc; font-size: .88rem; }
+.inspector-meta {
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+  color: #91a0b3;
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: .73rem;
+}
+.inspector-link {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 1rem 0;
+  color: var(--gold-light);
+  border-top: 1px solid rgba(240, 223, 173, .35);
+  border-bottom: 1px solid rgba(240, 223, 173, .35);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.inspector-link[hidden] { display: none; }
+.constellation-note { margin: 1rem 0 0; color: var(--muted); font-size: .78rem; }
+
+@media (max-width: 900px) {
+  .constellation-hero { grid-template-columns: 1fr; gap: 2rem; min-height: auto; padding: 4rem 1.4rem; }
+  .constellation-section { padding: 4rem 1.4rem 5rem; }
+  .constellation-shell { grid-template-columns: 1fr; }
+  .constellation-inspector { min-height: 290px; border-top: 1px solid rgba(255, 255, 255, .12); border-left: 0; }
+  .inspector-link { margin-top: 2rem; }
+}
+@media (max-width: 680px) {
+  .constellation-heading { align-items: flex-start; flex-direction: column; }
+  .constellation-shell { min-height: 0; }
+  .constellation-map {
+    display: grid;
+    gap: .65rem;
+    min-height: 0;
+    padding: 1.2rem;
+  }
+  .constellation-map::before, .constellation-watermark, .constellation-lines { display: none; }
+  .constellation-node {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: .85rem;
+    width: 100%;
+    min-height: 62px;
+    padding: .75rem .9rem;
+    background: rgba(255, 255, 255, .035);
+    border: 1px solid rgba(255, 255, 255, .08);
+    text-align: left;
+    transform: none;
+  }
+  .constellation-node.is-active { border-color: var(--gold); background: rgba(200, 167, 91, .09); }
+  .node-label, .node-published .node-label { max-width: none; font-family: var(--sans); font-size: .76rem; font-weight: 700; }
+  .constellation-map.has-selection .constellation-node:not(.is-active):not(.is-connected) { opacity: .7; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .constellation-lines line { animation: none; }
+}
