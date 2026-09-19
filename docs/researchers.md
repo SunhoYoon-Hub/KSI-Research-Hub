@@ -40,8 +40,8 @@ description: KSI Research Hub의 공개 연구자와 익명 연구자, 연구별
           </span>
         </header>
 
-        {% if researcher.id == "yoon-s" %}
-        <a class="constellation-profile-link" href="{{ '/constellation/' | relative_url }}">
+        {% if researcher.id == "yoon-s" or researcher.id == "ho-yejin" %}
+        <a class="constellation-profile-link" href="{{ '/constellation/' | relative_url }}?researcher={{ researcher.id }}">
           <span>
             <small lang="en">Question Constellation</small>
             <strong>질문의 별자리에서 연구 관계 보기</strong>

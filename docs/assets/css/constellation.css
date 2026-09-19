@@ -263,3 +263,48 @@
 @media (prefers-reduced-motion: reduce) {
   .constellation-lines line { animation: none; }
 }
+
+
+/* Researcher observation modes */
+.constellation-focus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem;
+  margin: -1rem 0 1.25rem;
+}
+.constellation-focus > span {
+  margin-right: .35rem;
+  color: var(--muted);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.constellation-focus button {
+  min-height: 36px;
+  padding: .5rem .8rem;
+  color: var(--ink-soft);
+  background: rgba(255, 255, 255, .42);
+  border: 1px solid #b8bdc4;
+  border-radius: 999px;
+  font: 700 .76rem/1 var(--sans);
+  cursor: pointer;
+}
+.constellation-focus button:hover {
+  color: var(--night);
+  background: #fff;
+  border-color: var(--gold);
+}
+.constellation-focus button.is-active {
+  color: var(--gold-light);
+  background: var(--night-2);
+  border-color: var(--night-2);
+}
+.constellation-node.is-focus-muted {
+  opacity: .13 !important;
+  filter: saturate(.35);
+}
+.constellation-lines line.is-focus-muted {
+  opacity: .06 !important;
+}
