@@ -338,3 +338,147 @@
 @media (prefers-reduced-motion: reduce) {
   .constellation-lines line { animation: none; }
 }
+
+/* Unified dark observatory — continuous with the listening archive. */
+.constellation-hero {
+  min-height: 420px;
+  padding: clamp(4rem, 8vw, 7rem) max(5vw, calc((100vw - 1160px) / 2));
+  background:
+    radial-gradient(circle at 72% 28%, rgba(43, 66, 96, .38), transparent 30rem),
+    linear-gradient(135deg, #050d18 0%, #12243f 100%);
+  border-bottom: 1px solid rgba(240, 223, 173, .34);
+}
+
+.constellation-hero h1 {
+  max-width: 8ch;
+  font-size: clamp(3.7rem, 7.2vw, 7rem);
+}
+
+.constellation-hero > p {
+  max-width: 34rem;
+  align-self: end;
+  color: #b7c0ce;
+}
+
+.constellation-section {
+  padding: clamp(3.5rem, 7vw, 6.5rem) max(3vw, calc((100vw - 1400px) / 2));
+  color: #fff;
+  background: #050d18;
+}
+
+.constellation-heading {
+  border-bottom-color: rgba(240, 223, 173, .48);
+}
+
+.constellation-heading h2 {
+  color: #fff;
+}
+
+.constellation-heading > div > p,
+.constellation-note {
+  color: #9ca8b8;
+}
+
+.constellation-legend {
+  color: #b7c0ce;
+}
+
+.constellation-focus {
+  border-bottom-color: rgba(240, 223, 173, .22);
+}
+
+.constellation-focus > span {
+  color: #9ca8b8;
+}
+
+.constellation-focus button {
+  color: #d8deea;
+  background: #071323;
+  border-color: rgba(240, 223, 173, .35);
+}
+
+.constellation-focus button:hover,
+.constellation-focus button.is-active {
+  color: #071323;
+  background: #f0dfad;
+  border-color: #f0dfad;
+}
+
+.constellation-shell {
+  min-height: clamp(570px, 68vh, 760px);
+  background: #07111e;
+  border-top: 2px solid #f0dfad;
+  border-bottom: 1px solid rgba(240, 223, 173, .48);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .34);
+}
+
+.constellation-map {
+  min-height: clamp(570px, 68vh, 760px);
+  background:
+    radial-gradient(circle at 48% 46%, rgba(30, 53, 84, .42), transparent 38rem),
+    #07111e;
+}
+
+.constellation-map::before {
+  opacity: .42;
+}
+
+.constellation-lines line {
+  stroke: rgba(240, 223, 173, .42);
+  stroke-width: 1.4;
+}
+
+.constellation-lines line.is-active {
+  stroke: #f0dfad;
+  stroke-width: 2.1;
+}
+
+.node-core {
+  border-color: rgba(240, 223, 173, .58);
+}
+
+.node-label,
+.node-published .node-label {
+  color: #dbe1eb;
+}
+
+.constellation-inspector {
+  color: #fff;
+  background: #10223b;
+  border: 1px solid rgba(240, 223, 173, .52);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, .34);
+}
+
+.constellation-inspector h3 {
+  color: #fff;
+}
+
+.inspector-description,
+.inspector-meta {
+  color: #b7c0ce;
+}
+
+.inspector-link {
+  color: #f0dfad;
+  border-top-color: rgba(240, 223, 173, .34);
+}
+
+@media (max-width: 760px) {
+  .constellation-hero {
+    min-height: 360px;
+    padding: 4rem 1.35rem;
+  }
+
+  .constellation-hero h1 {
+    font-size: clamp(3.3rem, 17vw, 5rem);
+  }
+
+  .constellation-section {
+    padding: 3rem 1rem;
+  }
+
+  .constellation-shell,
+  .constellation-map {
+    min-height: 620px;
+  }
+}

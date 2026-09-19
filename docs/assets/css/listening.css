@@ -402,3 +402,62 @@
 @media (prefers-reduced-motion: reduce) {
   .album-card { transition: none; }
 }
+
+
+/* Connected research belongs after the listening record, as a quiet archival cross-reference. */
+.record-summary-meta {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: .35rem;
+}
+
+.record-summary-meta span + span::before {
+  content: "·";
+  margin-right: 1rem;
+  color: var(--gold);
+}
+
+.record-context {
+  margin-top: 1.6rem;
+  padding: 1.35rem 0;
+  color: #fff;
+  background: transparent;
+  border-top: 1px solid rgba(240, 223, 173, .58);
+  border-bottom: 1px solid rgba(240, 223, 173, .24);
+}
+
+.record-context-label,
+.record-context-copy small {
+  color: #b7c0ce;
+}
+
+.record-context-copy strong {
+  color: #fff;
+}
+
+.record-context-links a {
+  color: #f0dfad;
+  border-bottom-color: rgba(240, 223, 173, .54);
+}
+
+.record-context-links a:hover {
+  border-bottom-color: #f0dfad;
+}
+
+@media (max-width: 760px) {
+  .record-summary-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: .35rem .8rem;
+  }
+
+  .record-summary-meta span + span::before {
+    display: none;
+  }
+
+  .record-context {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

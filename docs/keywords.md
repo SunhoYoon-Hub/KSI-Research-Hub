@@ -2,23 +2,25 @@
 layout: default
 title: 주제어 표본실
 permalink: /keywords/
-description: KSI의 공개 연구에 등록된 Zenodo 주제어를 원문 그대로 수집하고 연구 간 연결을 살펴봅니다.
+description: KSI의 공개 연구에 등록된 Zenodo 주제어를 한국어와 영어 표본으로 나누어 보관합니다.
 extra_css: /assets/css/keywords.css
 extra_js: /assets/js/keywords.js
 ---
 
 {% assign cabinet = site.data.keywords %}
+{% assign korean_specimens = cabinet.specimens | where: "language", "ko" %}
+{% assign english_specimens = cabinet.specimens | where: "language", "en" %}
 <section class="keyword-hero" aria-labelledby="keyword-title">
   <div>
     <p class="section-index">Keyword Cabinet · Zenodo Metadata Collection</p>
     <h1 id="keyword-title">연구의<br><em>키워드</em></h1>
   </div>
   <div class="keyword-hero-copy">
-    <p>공개 연구에 등록된 주제어를 번역하거나 다듬지 않고, Zenodo에 표시된 형태 그대로 보관합니다.</p>
+    <p>공개 연구에 등록된 주제어를 번역하거나 섞지 않고, Zenodo에 표시된 형태 그대로 한국어와 영어로 나누어 보관합니다.</p>
     <dl>
-      <div><dt>등록 표본</dt><dd>{{ cabinet.specimens | size }}</dd></div>
-      <div><dt>출처 기록</dt><dd>{{ cabinet.records | size }}</dd></div>
-      <div><dt>연구자</dt><dd>2</dd></div>
+      <div><dt>전체 표본</dt><dd>{{ cabinet.specimens | size }}</dd></div>
+      <div><dt>한국어</dt><dd>{{ korean_specimens | size }}</dd></div>
+      <div><dt>English</dt><dd>{{ english_specimens | size }}</dd></div>
     </dl>
   </div>
 </section>
@@ -29,31 +31,22 @@ extra_js: /assets/js/keywords.js
       <p class="section-index">01 / Registered Specimens</p>
       <h2 id="specimen-title">등록 표본</h2>
     </div>
-    <p>서랍을 선택하면 해당 주제어가 연결된 연구와 DOI를 확인할 수 있습니다.</p>
+    <p>언어를 고른 뒤 서랍을 선택하면 주제어가 연결된 연구와 DOI를 확인할 수 있습니다.</p>
   </header>
 
-  <div class="cabinet-toolbar" aria-label="주제어 표본 검색 및 정렬">
-    <label>
-      <span>표본 검색</span>
-      <input type="search" data-keyword-search placeholder="주제어 입력" autocomplete="off">
-    </label>
-    <div class="cabinet-filters" role="group" aria-label="연구자 필터">
-      <button type="button" class="is-active" data-keyword-author="all" aria-pressed="true">전체</button>
-      <button type="button" data-keyword-author="Yoon, Sunho" aria-pressed="false">Yoon, Sunho</button>
-      <button type="button" data-keyword-author="Ho, Yejin" aria-pressed="false">Ho, Yejin</button>
+  <div class="cabinet-toolbar" aria-label="주제어 언어 선택 및 검색">
+    <div class="language-switch" role="group" aria-label="주제어 언어">
+      <button type="button" class="is-active" data-keyword-language="ko" aria-pressed="true">한국어 표본 <span>{{ korean_specimens | size }}</span></button>
+      <button type="button" data-keyword-language="en" aria-pressed="false">English Specimens <span>{{ english_specimens | size }}</span></button>
     </div>
-    <label>
-      <span>정렬</span>
-      <select data-keyword-sort>
-        <option value="accession">등록순</option>
-        <option value="alpha">가나다·ABC순</option>
-        <option value="connections">연결 많은 순</option>
-      </select>
+    <label class="cabinet-search">
+      <span>표본 검색</span>
+      <input type="search" data-keyword-search placeholder="현재 언어의 주제어 검색" autocomplete="off">
     </label>
   </div>
 
   <div class="cabinet-case">
-    <p class="cabinet-count"><span data-keyword-visible>{{ cabinet.specimens | size }}</span> / {{ cabinet.specimens | size }} specimens</p>
+    <p class="cabinet-count"><span data-keyword-visible>{{ korean_specimens | size }}</span> / <span data-keyword-total>{{ korean_specimens | size }}</span> specimens</p>
     <div class="cabinet-grid" data-keyword-grid>
       {% for specimen in cabinet.specimens %}
       <button
@@ -62,8 +55,7 @@ extra_js: /assets/js/keywords.js
         data-keyword-drawer
         data-accession="{{ specimen.accession }}"
         data-term="{{ specimen.term | downcase | escape }}"
-        data-authors="{{ specimen.authors | join: '|' | escape }}"
-        data-count="{{ specimen.record_ids | size }}"
+        data-language="{{ specimen.language }}"
         data-template="specimen-{{ forloop.index0 }}"
         aria-controls="keyword-inspector"
       >
@@ -74,7 +66,7 @@ extra_js: /assets/js/keywords.js
       </button>
       {% endfor %}
     </div>
-    <p class="cabinet-empty" data-keyword-empty hidden>조건에 맞는 표본이 없습니다.</p>
+    <p class="cabinet-empty" data-keyword-empty hidden>현재 조건에 맞는 표본이 없습니다.</p>
   </div>
 
   {% for specimen in cabinet.specimens %}
@@ -98,7 +90,7 @@ extra_js: /assets/js/keywords.js
     <div class="inspector-placeholder">
       <p class="section-index">02 / Cross References</p>
       <h3>표본 서랍을 선택하세요.</h3>
-      <p>같은 주제어가 여러 연구에 쓰였다면 이곳에서 교차 연결됩니다.</p>
+      <p>선택한 주제어가 사용된 연구 기록을 이곳에서 확인할 수 있습니다.</p>
     </div>
   </section>
 </section>

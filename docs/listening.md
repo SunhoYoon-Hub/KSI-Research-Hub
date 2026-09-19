@@ -46,7 +46,7 @@ extra_js: /assets/js/listening-carousel.js
           <span>{{ record.researcher }}</span>
           <span>{{ record.stage }}</span>
           <span>{{ record.publication_label }}</span>
-          <span>{% if album_count == 0 %}기록 준비 중{% else %}음악 {{ album_count }}개{% endif %}</span>
+          <span>{% if album_count == 0 %}음악 준비 중{% else %}음악 {{ album_count }}개{% endif %}</span>
         </span>
       </span>
       <span class="record-summary-covers" aria-hidden="true" style="--summary-columns: {% if album_count == 0 %}1{% elsif album_count > 3 %}3{% else %}{{ album_count }}{% endif %};">
@@ -62,22 +62,6 @@ extra_js: /assets/js/listening-carousel.js
     </summary>
 
     <div class="record-body">
-      <div class="record-context">
-        <div class="record-context-copy">
-          <p class="record-context-label">Connected Research · 연결 연구</p>
-          <strong>{{ record.title }}</strong>
-          <small>{{ record.researcher }} · {{ record.publication_label }}</small>
-        </div>
-        <div class="record-context-links">
-          <a href="{{ '/' | relative_url }}#{{ record.id }}">KSI 연구 카드 보기 <span aria-hidden="true">→</span></a>
-          {% if record.research_url %}
-          <a href="{{ record.research_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
-          {% else %}
-          <span class="pending-link">Zenodo 공개 준비 중</span>
-          {% endif %}
-        </div>
-      </div>
-
       {% if album_count == 0 %}
       <section class="listening-empty" aria-label="음악 기록 준비 중">
         <p class="section-index">Reserved Record</p>
@@ -85,10 +69,6 @@ extra_js: /assets/js/listening-carousel.js
         <p>연구자가 공개 범위를 확인한 뒤, 실제로 들은 앨범만 이곳에 추가합니다.</p>
       </section>
 
-      <footer class="record-footer">
-        <p>빈 공간은 향후 기록 위치만 표시하며, 아직 음악 정보가 공개된 것은 아닙니다.</p>
-        <a href="#{{ record.id }}" data-record-close>음악 기록 접기 <span aria-hidden="true">↑</span></a>
-      </footer>
       {% else %}
       {% assign initial_album = record.albums | first %}
       <div class="carousel-stage{% if album_count == 1 %} single-album{% endif %}">
@@ -153,10 +133,30 @@ extra_js: /assets/js/listening-carousel.js
         </div>
       </section>
 
-      <footer class="record-footer record-footer-compact">
+      {% endif %}
+
+      <div class="record-context">
+        <div class="record-context-copy">
+          <p class="record-context-label">Connected Research · 연결 연구</p>
+          <strong>{{ record.title }}</strong>
+          <small>{{ record.researcher }} · {{ record.publication_label }}</small>
+        </div>
+        <div class="record-context-links">
+          <a href="{{ '/' | relative_url }}#{{ record.id }}">KSI 연구 카드 보기 <span aria-hidden="true">→</span></a>
+          {% if record.research_url %}
+          <a href="{{ record.research_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
+          {% else %}
+          <span class="pending-link">Zenodo 공개 준비 중</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <footer class="record-footer{% if album_count > 0 %} record-footer-compact{% endif %}">
+        {% if album_count == 0 %}
+        <p>빈 공간은 향후 기록 위치만 표시하며, 아직 음악 정보가 공개된 것은 아닙니다.</p>
+        {% endif %}
         <a href="#{{ record.id }}" data-record-close>음악 기록 접기 <span aria-hidden="true">↑</span></a>
       </footer>
-      {% endif %}
     </div>
   </details>
   {% endfor %}
