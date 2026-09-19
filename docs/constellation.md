@@ -1,24 +1,24 @@
 ---
 layout: default
-title: 질문의 별자리
+title: 질문 관측소
 permalink: /constellation/
-description: KSI Research Hub의 질문과 연구 성과가 발전하고 연결되는 관계를 살펴봅니다.
+description: 질문이 탐구와 공개 연구로 발전하는 관계를 넓은 관측 화면에서 살펴봅니다.
 extra_css: /assets/css/constellation.css
 extra_js: /assets/js/constellation.js
 ---
 
-<section class="constellation-hero">
+<section class="constellation-hero" aria-labelledby="observatory-title">
   <div>
-    <p class="section-index">Constellation of Inquiries</p>
-    <h1>질문은 서로의 빛을 빌려<br><em>연구가 됩니다.</em></h1>
+    <p class="section-index">Inquiry Observatory · 2026</p>
+    <h1 id="observatory-title">질문의<br><em>별자리</em></h1>
   </div>
-  <p>완성된 성과만 나열하지 않고, 질문이 탐구와 공개 기록으로 발전하는 관계를 보여줍니다. 점을 선택하면 연결된 연구의 정보를 확인할 수 있습니다.</p>
+  <p>질문이 탐구와 공개 기록으로 발전하는 경로를 관측합니다. 별을 선택하면 연결된 연구와 다음 질문을 확인할 수 있습니다.</p>
 </section>
 
 <section class="constellation-section" aria-labelledby="constellation-title">
   <header class="constellation-heading">
     <div>
-      <p class="section-index">01 / Research Map</p>
+      <p class="section-index">Observation Field · 관측 영역</p>
       <h2 id="constellation-title">질문과 연구의 관계도</h2>
     </div>
     <ul class="constellation-legend" aria-label="표시 범례">
@@ -102,5 +102,5 @@ extra_js: /assets/js/constellation.js
     </aside>
   </div>
 
-  <p class="constellation-note">선은 영향과 발전의 방향을 나타냅니다. 하나의 질문은 공개 이후에도 닫히지 않으며, 다음 탐구의 출발점이 될 수 있습니다.</p>
+  <p class="constellation-note">선은 영향과 발전의 방향을 나타냅니다. 위치는 분야의 서열이 아니라 질문 사이의 관계를 보여주기 위한 관측 좌표입니다.</p>
 </section>

@@ -16,8 +16,8 @@
     const byRecordOrder = (a, b) => Number(a.dataset.recordOrder) - Number(b.dataset.recordOrder);
     const comparators = {
       record: byRecordOrder,
-      published: (a, b) => b.dataset.publicationDate.localeCompare(a.dataset.publicationDate) || byRecordOrder(a, b),
-      researcher: (a, b) => a.dataset.researcher.localeCompare(b.dataset.researcher, 'en') || byRecordOrder(a, b)
+      published: (a, b) => b.dataset.publicationDate.localeCompare(a.dataset.publicationDate) || byRecordOrder(a, b)
+    
     };
 
     sortButtons.forEach((button) => {

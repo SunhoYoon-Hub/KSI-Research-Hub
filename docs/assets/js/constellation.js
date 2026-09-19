@@ -1,10 +1,11 @@
 (() => {
   const map = document.querySelector('.constellation-map');
   const inspector = document.querySelector('.constellation-inspector');
-  if (!map || !inspector) return;
+  const svg = map?.querySelector('.constellation-lines');
+  if (!map || !inspector || !svg) return;
 
   const nodes = [...map.querySelectorAll('.constellation-node')];
-  const lines = [...map.querySelectorAll('.constellation-lines line')];
+  const lines = [...svg.querySelectorAll('line')];
   const focusButtons = [...document.querySelectorAll('.constellation-focus [data-focus]')];
   const nodeById = new Map(nodes.map((node) => [node.dataset.node, node]));
   const kind = inspector.querySelector('.inspector-kind');
@@ -16,6 +17,26 @@
     'yoon-s': 'p-equality',
     'ho-yejin': 'p-glp1'
   };
+
+  function drawConnections() {
+    if (window.matchMedia('(max-width: 680px)').matches) return;
+    const mapRect = map.getBoundingClientRect();
+    const width = map.clientWidth;
+    const height = map.clientHeight;
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    lines.forEach((line) => {
+      const fromCore = nodeById.get(line.dataset.from)?.querySelector('.node-core');
+      const toCore = nodeById.get(line.dataset.to)?.querySelector('.node-core');
+      if (!fromCore || !toCore) return;
+      const fromRect = fromCore.getBoundingClientRect();
+      const toRect = toCore.getBoundingClientRect();
+      line.setAttribute('x1', String((fromRect.left + fromRect.right) / 2 - mapRect.left));
+      line.setAttribute('y1', String((fromRect.top + fromRect.bottom) / 2 - mapRect.top));
+      line.setAttribute('x2', String((toRect.left + toRect.right) / 2 - mapRect.left));
+      line.setAttribute('y2', String((toRect.top + toRect.bottom) / 2 - mapRect.top));
+    });
+  }
 
   function selectNode(node) {
     if (!node) return;
@@ -50,6 +71,7 @@
       link.removeAttribute('href');
       link.hidden = true;
     }
+    requestAnimationFrame(drawConnections);
   }
 
   function setFocus(requested, updateUrl = true) {
@@ -84,6 +106,7 @@
     const preferred = nodeById.get(preferredNode[focus]);
     if (preferred) selectNode(preferred);
     else if (focus === 'all') selectNode(nodeById.get('p-equality') || nodes[0]);
+    requestAnimationFrame(drawConnections);
   }
 
   nodes.forEach((node) => {
@@ -99,4 +122,8 @@
 
   const requestedFocus = new URLSearchParams(window.location.search).get('researcher') || 'all';
   setFocus(requestedFocus, false);
+  requestAnimationFrame(drawConnections);
+  window.addEventListener('resize', drawConnections, { passive: true });
+  if ('ResizeObserver' in window) new ResizeObserver(drawConnections).observe(map);
+  if (document.fonts?.ready) document.fonts.ready.then(drawConnections);
 })();

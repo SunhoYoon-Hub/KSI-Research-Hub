@@ -1,0 +1,648 @@
+{
+  "snapshot": "2026-09-19",
+  "source": "Zenodo public record metadata",
+  "records": [
+    {
+      "id": "spacetime",
+      "title": "시·공간은 실재하는가: 과학과 철학, 두 시선에서 본 그 본질",
+      "author": "Yoon, Sunho",
+      "doi": "https://doi.org/10.5281/zenodo.22270214",
+      "keywords": [
+        "spacetime",
+        "reality of space and time",
+        "philosophy of physics",
+        "relativity",
+        "a priori intuition",
+        "substantivalism",
+        "relationism",
+        "시·공간",
+        "시·공간의 실재성",
+        "과학철학",
+        "상대성 이론",
+        "선험적 직관",
+        "실체론",
+        "관계론",
+        "선험-순환적 시·공간 모델"
+      ]
+    },
+    {
+      "id": "nietzsche-education",
+      "title": "낙타의 서열화와 르상티망: 현대 교육 시스템 내 무한 경쟁에 관한 고찰",
+      "author": "Yoon, Sunho",
+      "doi": "https://doi.org/10.5281/zenodo.21222993",
+      "keywords": [
+        "Nietzsche",
+        "education",
+        "meritocracy",
+        "ressentiment",
+        "Zarathustra",
+        "educational dualism",
+        "니체",
+        "교육",
+        "능력주의",
+        "르상티망"
+      ]
+    },
+    {
+      "id": "equality-greatness",
+      "title": "평등의 토대, 위대함의 교육: 롤스와 니체의 관점에서 본 한국 중등교육의 모순",
+      "author": "Yoon, Sunho",
+      "doi": "https://doi.org/10.5281/zenodo.22306643",
+      "keywords": [
+        "한국 중등교육",
+        "롤스",
+        "니체",
+        "교육적 공정성",
+        "자기초극",
+        "메리토크라시",
+        "긴장 조율의 원리",
+        "평등을 토대로 한 자기초극의 교육",
+        "Korean secondary education",
+        "Rawls",
+        "Nietzsche",
+        "educational fairness",
+        "self-overcoming",
+        "meritocracy",
+        "Principle of Tension Coordination",
+        "Education for Self-Overcoming Grounded in Equality"
+      ]
+    },
+    {
+      "id": "glp1",
+      "title": "GLP-1 수용체 작용체가 불러온 비만 치료의 변화 ver.1",
+      "author": "Ho, Yejin",
+      "doi": "https://doi.org/10.5281/zenodo.22538005",
+      "keywords": [
+        "비만",
+        "비만 치료제",
+        "GLP-1 수용체 작용제",
+        "Obesity",
+        "Anti-obesity Medications",
+        "GLP-1 Receptor Agonists"
+      ]
+    },
+    {
+      "id": "pandemic",
+      "title": "철학·교육학적 관점에서 본 팬데믹의 사회적 문제: 혐오·낙인과 교육 격차를 중심으로",
+      "author": "Yoon, Sunho",
+      "doi": "https://doi.org/10.5281/zenodo.22718001",
+      "keywords": [
+        "팬데믹",
+        "혐오표현",
+        "사회적 낙인",
+        "교육 격차",
+        "실질적 평등",
+        "Hate Speech",
+        "Educational Inequality",
+        "Substantive Equality",
+        "Pandemics",
+        "Social Stigma"
+      ]
+    }
+  ],
+  "specimens": [
+    {
+      "accession": "KSI.KW.001",
+      "term": "spacetime",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.002",
+      "term": "reality of space and time",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.003",
+      "term": "philosophy of physics",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.004",
+      "term": "relativity",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.005",
+      "term": "a priori intuition",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.006",
+      "term": "substantivalism",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.007",
+      "term": "relationism",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.008",
+      "term": "시·공간",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.009",
+      "term": "시·공간의 실재성",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.010",
+      "term": "과학철학",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.011",
+      "term": "상대성 이론",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.012",
+      "term": "선험적 직관",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.013",
+      "term": "실체론",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.014",
+      "term": "관계론",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.015",
+      "term": "선험-순환적 시·공간 모델",
+      "record_ids": [
+        "spacetime"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.016",
+      "term": "Nietzsche",
+      "record_ids": [
+        "nietzsche-education",
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.017",
+      "term": "education",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.018",
+      "term": "meritocracy",
+      "record_ids": [
+        "nietzsche-education",
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.019",
+      "term": "ressentiment",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.020",
+      "term": "Zarathustra",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.021",
+      "term": "educational dualism",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.022",
+      "term": "니체",
+      "record_ids": [
+        "nietzsche-education",
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.023",
+      "term": "교육",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.024",
+      "term": "능력주의",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.025",
+      "term": "르상티망",
+      "record_ids": [
+        "nietzsche-education"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.026",
+      "term": "한국 중등교육",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.027",
+      "term": "롤스",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.028",
+      "term": "교육적 공정성",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.029",
+      "term": "자기초극",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.030",
+      "term": "메리토크라시",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.031",
+      "term": "긴장 조율의 원리",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.032",
+      "term": "평등을 토대로 한 자기초극의 교육",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.033",
+      "term": "Korean secondary education",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.034",
+      "term": "Rawls",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.035",
+      "term": "educational fairness",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.036",
+      "term": "self-overcoming",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.037",
+      "term": "Principle of Tension Coordination",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.038",
+      "term": "Education for Self-Overcoming Grounded in Equality",
+      "record_ids": [
+        "equality-greatness"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.039",
+      "term": "비만",
+      "record_ids": [
+        "glp1"
+      ],
+      "authors": [
+        "Ho, Yejin"
+      ]
+    },
+    {
+      "accession": "KSI.KW.040",
+      "term": "비만 치료제",
+      "record_ids": [
+        "glp1"
+      ],
+      "authors": [
+        "Ho, Yejin"
+      ]
+    },
+    {
+      "accession": "KSI.KW.041",
+      "term": "GLP-1 수용체 작용제",
+      "record_ids": [
+        "glp1"
+      ],
+      "authors": [
+        "Ho, Yejin"
+      ]
+    },
+    {
+      "accession": "KSI.KW.042",
+      "term": "Obesity",
+      "record_ids": [
+        "glp1"
+      ],
+      "authors": [
+        "Ho, Yejin"
+      ]
+    },
+    {
+      "accession": "KSI.KW.043",
+      "term": "Anti-obesity Medications",
+      "record_ids": [
+        "glp1"
+      ],
+      "authors": [
+        "Ho, Yejin"
+      ]
+    },
+    {
+      "accession": "KSI.KW.044",
+      "term": "GLP-1 Receptor Agonists",
+      "record_ids": [
+        "glp1"
+      ],
+      "authors": [
+        "Ho, Yejin"
+      ]
+    },
+    {
+      "accession": "KSI.KW.045",
+      "term": "팬데믹",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.046",
+      "term": "혐오표현",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.047",
+      "term": "사회적 낙인",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.048",
+      "term": "교육 격차",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.049",
+      "term": "실질적 평등",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.050",
+      "term": "Hate Speech",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.051",
+      "term": "Educational Inequality",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.052",
+      "term": "Substantive Equality",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.053",
+      "term": "Pandemics",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    },
+    {
+      "accession": "KSI.KW.054",
+      "term": "Social Stigma",
+      "record_ids": [
+        "pandemic"
+      ],
+      "authors": [
+        "Yoon, Sunho"
+      ]
+    }
+  ]
+}

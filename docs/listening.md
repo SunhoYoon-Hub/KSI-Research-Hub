@@ -10,11 +10,10 @@ extra_js: /assets/js/listening-carousel.js
 <section class="listening-hero" aria-labelledby="listening-title">
   <div>
     <p class="section-index">KSI Listening Archive · 2026</p>
-    <h1 id="listening-title">연구 뒤의<br><em>음악</em>을 기록합니다.</h1>
+    <h1 id="listening-title">연구와 함께한<br><em>음악</em></h1>
   </div>
   <div class="listening-intro">
     <p>연구자가 구상·집필·개정 과정에서 실제로 들은 음악을 연구별로 남깁니다.</p>
-    <small>이 기록은 연구의 이론적 근거나 인용 자료가 아니라, 연구 과정의 문화적 주변 기록입니다.</small>
   </div>
 </section>
 
@@ -24,7 +23,6 @@ extra_js: /assets/js/listening-carousel.js
     <div class="archive-sort" role="group" aria-label="음악 기록 정렬">
       <button class="is-active" type="button" data-listening-sort="record" aria-pressed="true">기록순</button>
       <button type="button" data-listening-sort="published" aria-pressed="false">공개일순</button>
-      <button type="button" data-listening-sort="researcher" aria-pressed="false">연구자별</button>
     </div>
   </div>
 
@@ -38,7 +36,6 @@ extra_js: /assets/js/listening-carousel.js
     data-listening-carousel
     data-record-order="{{ record.record_order }}"
     data-publication-date="{{ record.publication_date }}"
-    data-researcher="{{ record.researcher | escape }}"
   >
     <summary class="record-summary">
       <span class="record-summary-copy">
