@@ -11,9 +11,9 @@ extra_js: /assets/js/bulletin-filter.js
 <section class="bulletin-hero" aria-labelledby="bulletin-title">
   <div>
     <p class="section-index">KSI Bulletin · News Archive</p>
-    <h1 id="bulletin-title">연구의 시간을<br><em>기록합니다.</em></h1>
+    <h1 id="bulletin-title">연구의<br><em>연대기</em></h1>
   </div>
-  <p>연구 공개, 커뮤니티 운영과 Research Hub의 변화를 날짜순으로 보존합니다.</p>
+  <p>연구 공개와 기록 공간의 변화를<br>날짜순으로 보존합니다.</p>
   <dl aria-label="KSI 소식 기록 요약">
     <div><dt>기록</dt><dd>{{ bulletin_records | size }}</dd></div>
     <div><dt>첫 기록</dt><dd>2026.07.06</dd></div>
