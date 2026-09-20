@@ -497,3 +497,9 @@
     letter-spacing: -.045em;
   }
 }
+
+
+/* Optical line separation for large Korean display titles. */
+.constellation-hero h1 {
+  line-height: 1.06;
+}

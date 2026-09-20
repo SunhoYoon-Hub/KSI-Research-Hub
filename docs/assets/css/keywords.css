@@ -482,3 +482,9 @@
     letter-spacing: -.045em;
   }
 }
+
+
+/* Optical line separation for large Korean display titles. */
+.keyword-hero h1 {
+  line-height: 1.06;
+}
