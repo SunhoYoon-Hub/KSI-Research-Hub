@@ -21,6 +21,29 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
     <div><dt>연구자</dt><dd>{{ site.data.researchers | size }}</dd></div>
   </dl>
 </section>
+{% assign bulletin_highlights = site.data.bulletins | where: "featured", true %}
+<section class="bulletin-strip" aria-labelledby="bulletin-strip-title">
+  <header class="bulletin-strip-heading">
+    <p>KSI Bulletin</p>
+    <h2 id="bulletin-strip-title">연구 소식</h2>
+  </header>
+  <div class="bulletin-strip-items">
+    {% for item in bulletin_highlights limit:3 %}
+      {% if item.external %}
+        {% assign bulletin_href = item.url %}
+      {% else %}
+        {% assign bulletin_href = item.url | relative_url %}
+      {% endif %}
+      <a href="{{ bulletin_href }}">
+        <span><time datetime="{{ item.date }}">{{ item.date_label }}</time><b>{{ item.kicker }}</b></span>
+        <strong>{{ item.title }}</strong>
+      </a>
+    {% endfor %}
+  </div>
+  <a class="bulletin-strip-all" href="{{ '/bulletin/' | relative_url }}">
+    <span>모든 소식 보기</span><b aria-hidden="true">→</b>
+  </a>
+</section>
 
 <section class="research-section" id="research" aria-labelledby="research-title">
   <header class="section-heading">
