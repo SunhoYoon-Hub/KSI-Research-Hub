@@ -92,7 +92,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   <header class="section-heading light-heading">
     <div>
       <p class="section-index">02 / Publication Record</p>
-      <h2 id="release-log-title">버전·공개 기록</h2>
+      <h2 id="release-log-title">판본·공개 기록</h2>
     </div>
     <p>Zenodo에 공개된 실제 날짜를 기준으로 각 연구의 공개본과 다음 개정 계획을 기록합니다.</p>
   </header>
@@ -111,7 +111,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
           <strong>{{ project.release_version }}</strong>
           <small>{% if project.revision %}{{ project.revision.next }}{% else %}최초 공개본{% endif %}</small>
         </div>
-        <a class="release-doi" href="{{ project.zenodo_url }}">Zenodo 공개본 <span aria-hidden="true">↗</span></a>
+        <a class="release-doi" href="{{ '/versions/' | relative_url }}#{{ project.id }}">판본 기록실 <span aria-hidden="true">→</span></a>
       </div>
       {% if project.revision %}
       <details class="release-plan">

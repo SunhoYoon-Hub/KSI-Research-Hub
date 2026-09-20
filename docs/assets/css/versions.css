@@ -488,3 +488,75 @@
 .version-hero h1 {
   line-height: 1.06;
 }
+
+
+/* Compact edition marks and a denser four-part reading guide. */
+.version-entry {
+  scroll-margin-top: 6rem;
+}
+
+.edition-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .18rem;
+  line-height: 1;
+}
+
+.edition-node small {
+  margin-top: 0;
+  line-height: 1;
+}
+
+.version-guide {
+  grid-template-columns: minmax(220px, .55fr) minmax(0, 1.45fr);
+  align-items: start;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.version-legend {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.version-legend p {
+  min-height: 94px;
+  align-content: center;
+}
+
+.legend-symbol {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin-top: .1rem;
+  color: #f0dfad;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.legend-symbol.is-toggle {
+  border: 1px solid rgba(240, 223, 173, .7);
+  border-radius: 50%;
+  font-family: sans-serif;
+  font-size: .9rem;
+}
+
+@media (max-width: 1100px) {
+  .version-legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .version-legend p:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .version-legend {
+    grid-template-columns: 1fr;
+  }
+}

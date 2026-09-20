@@ -4,6 +4,7 @@ title: 판본 기록실
 permalink: /versions/
 description: KSI 공개 연구의 판본과 다음 개정 계획을 기록합니다.
 extra_css: /assets/css/versions.css
+extra_js: /assets/js/versions.js
 ---
 
 {% assign published_projects = site.data.projects | where: "stage", "published" %}
@@ -40,7 +41,7 @@ extra_css: /assets/css/versions.css
 
   <div class="version-list">
     {% for project in published_projects %}
-    <details class="version-entry"{% if forloop.first %} open{% endif %}>
+    <details class="version-entry" id="{{ project.id }}">
       <summary>
         <span class="version-entry-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
         <span class="version-entry-title">
@@ -100,7 +101,9 @@ extra_css: /assets/css/versions.css
     <h2 id="version-guide-title">판본 읽기</h2>
   </div>
   <div class="version-legend">
-    <p><span class="legend-block is-public"></span><strong>공개 판본</strong><small>Zenodo DOI로 보존된 현재 판본</small></p>
-    <p><span class="legend-block is-planned"></span><strong>준비 판본</strong><small>방향만 공개되었으며 아직 출판되지 않은 판본</small></p>
+    <p><span class="legend-block is-public" aria-hidden="true"></span><strong>공개 판본</strong><small>Zenodo DOI로 보존된 현재 판본</small></p>
+    <p><span class="legend-block is-planned" aria-hidden="true"></span><strong>준비 판본</strong><small>방향만 공개되었으며 아직 출판되지 않은 판본</small></p>
+    <p><span class="legend-symbol is-route" aria-hidden="true">→</span><strong>발전 방향</strong><small>현재 판본에서 다음 판본으로 이어지는 경로</small></p>
+    <p><span class="legend-symbol is-toggle" aria-hidden="true">+</span><strong>판본 안내</strong><small>선택한 연구의 공개본과 개정 방향 열기</small></p>
   </div>
 </section>
