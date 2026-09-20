@@ -1,6 +1,17 @@
 - date: "2026-09-20"
   date_label: "2026.09.20"
   category: archive
+  category_label: "소식 기록"
+  kicker: "NEW"
+  title: "KSI 소식 기록실 공개"
+  summary: "KSI의 연구 공개, 커뮤니티 운영, 연구자 기록과 Research Hub의 변화를 날짜순으로 보존하는 소식 기록실을 열었습니다."
+  featured: true
+  url: "/bulletin/"
+  link_label: "소식 기록실 보기"
+
+- date: "2026-09-20"
+  date_label: "2026.09.20"
+  category: archive
   category_label: "기록실"
   kicker: "UPDATE"
   title: "판본 기록실 공개"
@@ -85,7 +96,6 @@
   kicker: "RELEASE"
   title: "팬데믹의 사회적 문제 연구 v1.0 공개"
   summary: "Yoon, Sunho의 「철학·교육학적 관점에서 본 팬데믹의 사회적 문제」를 Zenodo에 공개하고 KSI에 수록했습니다."
-  featured: true
   url: "https://doi.org/10.5281/zenodo.22718001"
   link_label: "Zenodo 공개본"
   external: true
