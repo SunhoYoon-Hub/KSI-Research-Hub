@@ -30,6 +30,14 @@ extra_js: /assets/js/bulletin-filter.js
     <p>연구 공개일은 Zenodo 공개본을, 허브 변경일은 GitHub 배포 기록을 기준으로 정리했습니다.</p>
   </header>
 
+  <aside class="bulletin-minor-note" aria-label="작은 소식">
+    <div class="bulletin-minor-meta">
+      <span>작은 소식</span>
+      <small>예상 기간 <time datetime="2026-09-20">2026.09.20</time>—<time datetime="2026-10-13">10.13</time></small>
+    </div>
+    <p>시험 준비와 논문 2차 원고 집필로 Research Hub의 새 페이지·기능 업데이트가 잠시 느리게 진행됩니다. 공개된 연구와 기록은 계속 열람할 수 있습니다.</p>
+  </aside>
+
   <div class="bulletin-filters" role="group" aria-label="소식 기록 분류">
     <button class="active" type="button" data-bulletin-filter="all" aria-pressed="true">전체</button>
     <button type="button" data-bulletin-filter="release" aria-pressed="false">연구 공개</button>
