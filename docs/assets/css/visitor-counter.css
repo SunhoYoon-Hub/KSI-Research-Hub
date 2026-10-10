@@ -1,0 +1,14 @@
+.visitor-counter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem;
+  margin-top: .45rem;
+  color: #aeb8c7;
+  font-size: .72rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+.visitor-counter[hidden] { display: none !important; }
+.visitor-counter > span { white-space: nowrap; }
+.visitor-counter b { color: #f0dfad; font-weight: 500; font-variant-numeric: tabular-nums; }

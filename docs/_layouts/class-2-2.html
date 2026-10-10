@@ -8,6 +8,9 @@
     <title>{{ page.title }}</title>
     <link rel="icon" type="image/png" href="{{ '/assets/images/2026-class-2-2-logo.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/class-2-2.css' | relative_url }}?v={{ site.github.build_revision | default: '20260908' }}">
+    {% if site.visitor_counter_enabled %}
+    <link rel="stylesheet" href="{{ '/assets/css/visitor-counter.css' | relative_url }}?v={{ site.github.build_revision }}">
+    {% endif %}
   </head>
   <body>
     <a class="class-skip-link" href="#content">본문으로 건너뛰기</a>
@@ -39,6 +42,7 @@
       <div>
         <strong>2026 Class 2-2 Research Community</strong>
         <span>KSI와 연계된 독립 학급 연구 프로젝트</span>
+        {% include visitor-counter.html %}
       </div>
       <div class="class-footer-links">
         <a href="https://zenodo.org/communities/2026-class-2-2-research/records">Zenodo 2-2</a>
@@ -48,5 +52,8 @@
         <span>2026</span>
       </div>
     </footer>
+    {% if site.visitor_counter_enabled %}
+    <script src="{{ '/assets/js/visitor-counter.js' | relative_url }}?v={{ site.github.build_revision }}" defer></script>
+    {% endif %}
   </body>
 </html>

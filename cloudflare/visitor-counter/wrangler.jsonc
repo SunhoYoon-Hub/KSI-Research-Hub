@@ -1,0 +1,14 @@
+{
+  "name": "ksi-visitor-counter",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-10",
+  "workers_dev": true,
+  "observability": { "enabled": false },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ksi-visits",
+      "database_id": "8433646b-f075-4c6f-87f2-b55d2ae2a3ff"
+    }
+  ]
+}

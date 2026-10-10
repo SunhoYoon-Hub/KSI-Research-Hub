@@ -1,0 +1,7 @@
+{% if site.visitor_counter_enabled %}
+<span class="visitor-counter" data-visitor-counter data-endpoint="{{ site.visitor_counter_endpoint | escape }}" hidden title="같은 브라우저는 한국 날짜당 한 번 집계합니다.">
+  <span>방문 수</span><span aria-hidden="true">·</span>
+  <span>오늘 <b data-visits-today></b>회</span><span aria-hidden="true">·</span>
+  <span>누적 <b data-visits-total></b>회</span>
+</span>
+{% endif %}
