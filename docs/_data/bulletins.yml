@@ -8,6 +8,8 @@
   featured: true
   url: "/privacy/"
   link_label: "집계 기준 보기"
+  home_url: "#visitor-counts"
+  home_link_label: "방문 수 보기 ↓"
 
 - date: "2026-09-20"
   date_label: "2026.09.20"

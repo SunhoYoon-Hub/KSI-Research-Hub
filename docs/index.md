@@ -29,7 +29,9 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   </header>
   <div class="bulletin-strip-items">
     {% for item in bulletin_highlights limit:3 %}
-      {% if item.external %}
+      {% if item.home_url %}
+        {% assign bulletin_href = item.home_url %}
+      {% elsif item.external %}
         {% assign bulletin_href = item.url %}
       {% else %}
         {% assign bulletin_href = item.url | relative_url %}
@@ -37,6 +39,7 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
       <a href="{{ bulletin_href }}">
         <span><time datetime="{{ item.date }}">{{ item.date_label }}</time><b>{{ item.kicker }}</b></span>
         <strong>{{ item.title }}</strong>
+        {% if item.home_link_label %}<small>{{ item.home_link_label }}</small>{% endif %}
       </a>
     {% endfor %}
   </div>

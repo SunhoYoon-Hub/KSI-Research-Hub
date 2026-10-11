@@ -1593,6 +1593,7 @@ a:focus-visible {
 .bulletin-strip-items > a:hover { background: rgba(255, 255, 255, .055); }
 .bulletin-strip-items > a > span { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; }
 .bulletin-strip-items time { color: #9eabba; font-size: .66rem; }
+.bulletin-strip-items small { color: var(--gold-light); font-size: .66rem; }
 .bulletin-strip-items b { color: var(--gold); font-size: .62rem; letter-spacing: .1em; }
 .bulletin-strip-items strong {
   overflow: hidden;
