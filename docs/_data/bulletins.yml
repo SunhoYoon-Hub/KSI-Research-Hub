@@ -1,3 +1,14 @@
+- date: "2026-10-11"
+  date_label: "2026.10.11"
+  category: infrastructure
+  category_label: "방문 기록"
+  kicker: "UPDATE"
+  title: "방문 기록 기능 추가"
+  summary: "KSI와 2-2 허브 하단에 오늘·누적 방문 수를 표시합니다. 같은 브라우저는 한국 날짜당 한 번 집계하며, 누적은 브라우저별 일일 방문의 합입니다."
+  featured: true
+  url: "/privacy/"
+  link_label: "집계 기준 보기"
+
 - date: "2026-09-20"
   date_label: "2026.09.20"
   category: archive

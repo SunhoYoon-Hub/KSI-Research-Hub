@@ -17,7 +17,7 @@ extra_js: /assets/js/bulletin-filter.js
   <dl aria-label="KSI 소식 기록 요약">
     <div><dt>기록</dt><dd>{{ bulletin_records | size }}</dd></div>
     <div><dt>첫 기록</dt><dd>2026.07.06</dd></div>
-    <div><dt>최근 갱신</dt><dd>2026.09.20</dd></div>
+    <div><dt>최근 갱신</dt><dd>{{ bulletin_records.first.date_label }}</dd></div>
   </dl>
 </section>
 
