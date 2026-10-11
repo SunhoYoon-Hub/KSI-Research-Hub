@@ -5,6 +5,6 @@ url: "https://sunhoyoon-hub.github.io"
 baseurl: "/KSI-Research-Hub"
 markdown: kramdown
 contact_email: "ksiresearchhub@gmail.com"
-# Activate only after the Cloudflare schema and Worker are deployed.
-visitor_counter_enabled: false
+# Cloudflare Worker and D1 are installed.
+visitor_counter_enabled: true
 visitor_counter_endpoint: "https://ksi-visitor-counter.ksiresearchhub.workers.dev/v1/visits"
