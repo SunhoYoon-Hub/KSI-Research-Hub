@@ -49,7 +49,7 @@ extra_js: /assets/js/listening-carousel.js
           <span>{% if album_count == 0 %}음악 준비 중{% else %}음악 {{ album_count }}개{% endif %}</span>
         </span>
       </span>
-      <span class="record-summary-covers" aria-hidden="true" style="--summary-columns: {% if album_count == 0 %}1{% elsif album_count > 3 %}3{% else %}{{ album_count }}{% endif %};">
+      <span class="record-summary-covers{% if album_count == 10 %} record-summary-covers-ten{% endif %}" aria-hidden="true" style="--summary-columns: {% if album_count == 0 %}1{% elsif album_count > 3 %}3{% else %}{{ album_count }}{% endif %};">
         {% if album_count == 0 %}
           <span class="record-summary-empty"><b>Reserved</b><small>Listening space</small></span>
         {% else %}
