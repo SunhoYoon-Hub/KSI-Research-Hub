@@ -127,6 +127,12 @@
   transition: opacity .25s ease, transform .25s ease;
 }
 
+/* Keep ten-cover previews compact without changing the expanded record. */
+.listening-record:not([open]) .record-summary-covers-ten {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  max-width: 390px;
+}
+
 .record-summary-covers img {
   display: block;
   width: 100%;
