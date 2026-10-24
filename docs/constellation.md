@@ -64,7 +64,7 @@ extra_js: /assets/js/constellation.js
         <span class="node-core"></span><span class="node-label">롤스 『정의론』<br>독서 탐구</span>
       </button>
 
-      <button class="constellation-node node-published is-active" type="button" style="--x:56.5%;--y:35.7%" data-node="p-equality" data-researcher="yoon-s" data-kind="공개 기록" data-title="평등의 토대, 위대함의 교육" data-description="롤스의 평등과 니체의 자기초극을 연결하여 한국 중등교육의 모순을 분석합니다." data-meta="Yoon, Sunho · 교육철학 · v1.0 공개" data-url="https://doi.org/10.5281/zenodo.22306643" aria-label="공개 연구: 평등의 토대, 위대함의 교육">
+      <button class="constellation-node node-published is-active" type="button" style="--x:56.5%;--y:35.7%" data-node="p-equality" data-researcher="yoon-s" data-kind="공개 기록" data-title="평등의 토대, 위대함의 교육" data-description="롤스의 평등과 니체의 자기초극을 연결하여 한국 중등교육의 모순을 분석합니다." data-meta="Yoon, Sunho · 교육철학 · v2.0 공개" data-url="https://doi.org/10.5281/zenodo.23453266" aria-label="공개 연구: 평등의 토대, 위대함의 교육">
         <span class="node-core"></span><span class="node-label">평등의 토대,<br>위대함의 교육</span>
       </button>
 
@@ -97,8 +97,8 @@ extra_js: /assets/js/constellation.js
       <p class="inspector-kind">공개 기록</p>
       <h3>평등의 토대, 위대함의 교육</h3>
       <p class="inspector-description">롤스의 평등과 니체의 자기초극을 연결하여 한국 중등교육의 모순을 분석합니다.</p>
-      <p class="inspector-meta">Yoon, Sunho · 교육철학 · v1.0 공개</p>
-      <a class="inspector-link" href="https://doi.org/10.5281/zenodo.22306643">기록 열기 <span aria-hidden="true">↗</span></a>
+      <p class="inspector-meta">Yoon, Sunho · 교육철학 · v2.0 공개</p>
+      <a class="inspector-link" href="https://doi.org/10.5281/zenodo.23453266">기록 열기 <span aria-hidden="true">↗</span></a>
     </aside>
   </div>
 
