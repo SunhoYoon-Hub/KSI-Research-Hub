@@ -9,7 +9,10 @@ extra_js: /assets/js/versions.js
 
 {% assign published_projects = site.data.projects | where: "stage", "published" %}
 {% assign revision_count = 0 %}
+{% assign published_edition_count = published_projects | size %}
 {% for project in published_projects %}
+  {% assign previous_edition_count = project.previous_releases | size %}
+  {% assign published_edition_count = published_edition_count | plus: previous_edition_count %}
   {% if project.revision.next %}
     {% assign revision_count = revision_count | plus: 1 %}
   {% endif %}
@@ -24,7 +27,7 @@ extra_js: /assets/js/versions.js
     <p>공개된 성과를 고정된 결과가 아니라 계속 수정되고 확장되는 연구의 판본으로 기록합니다.</p>
     <dl>
       <div><dt>공개 연구</dt><dd>{{ published_projects | size }}</dd></div>
-      <div><dt>공개 판본</dt><dd>{{ published_projects | size }}</dd></div>
+      <div><dt>공개 판본</dt><dd>{{ published_edition_count }}</dd></div>
       <div><dt>개정 준비</dt><dd>{{ revision_count }}</dd></div>
     </dl>
   </div>
@@ -36,7 +39,7 @@ extra_js: /assets/js/versions.js
       <p class="section-index">01 / Version Register</p>
       <h2 id="version-register-title">판본 대장</h2>
     </div>
-    <p>연구를 펼치면 현재 공개본과 다음 개정 방향을 함께 확인할 수 있습니다.</p>
+    <p>연구를 펼치면 현재·이전 공개본과 개정 이력을 확인할 수 있습니다.</p>
   </header>
 
   <div class="version-list">
@@ -68,6 +71,12 @@ extra_js: /assets/js/versions.js
             <div><dt>저자</dt><dd>{{ project.researcher }}</dd></div>
           </dl>
           <p>{{ project.description }}</p>
+          {% if project.release_changes %}
+          <p>{{ project.release_changes | join: " · " }}</p>
+          {% endif %}
+          {% for update in project.file_updates %}
+          <p><time datetime="{{ update.date }}">{{ update.date_label }}</time> · {{ update.description }}</p>
+          {% endfor %}
           <a href="{{ project.zenodo_url }}" target="_blank" rel="noopener noreferrer">Zenodo 공개본 열기 <span aria-hidden="true">↗</span></a>
         </article>
 
@@ -82,6 +91,19 @@ extra_js: /assets/js/versions.js
           </ul>
           <p class="edition-notice">개정 내용과 공개 시점은 집필 과정에서 달라질 수 있습니다.</p>
         </article>
+        {% elsif project.previous_releases %}
+        {% for release in project.previous_releases %}
+        <article class="edition-card is-previous">
+          <p class="edition-label">Previous Edition · 이전 공개 판본</p>
+          <h3>{{ release.version }}</h3>
+          <dl>
+            <div><dt>공개일</dt><dd>{{ release.publication_label }}</dd></div>
+            <div><dt>저자</dt><dd>{{ project.researcher }}</dd></div>
+          </dl>
+          <p>{{ release.description }}</p>
+          <a href="{{ release.zenodo_url }}" target="_blank" rel="noopener noreferrer">이전 공개본 열기 <span aria-hidden="true">↗</span></a>
+        </article>
+        {% endfor %}
         {% else %}
         <article class="edition-card is-unplanned">
           <p class="edition-label">Next Edition · 다음 판본</p>

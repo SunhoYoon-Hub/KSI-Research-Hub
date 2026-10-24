@@ -1,3 +1,26 @@
+- date: "2026-10-24"
+  date_label: "2026.10.24"
+  category: archive
+  category_label: "음악 기록"
+  kicker: "UPDATE"
+  title: "평등의 토대, 위대함의 교육 집필 음악 기록 추가"
+  summary: "집필과 개정 중 들은 앨범 10개를 음악 아카이브에 기록했습니다. Zenodo의 같은 v2.0 공개본에도 음악 부록과 목차를 추가하고 제목 서식을 정리했습니다."
+  featured: true
+  url: "/listening/#foundation-of-equality-education-of-greatness"
+  link_label: "집필 음악 기록 보기"
+
+- date: "2026-10-18"
+  date_label: "2026.10.18"
+  category: release
+  category_label: "개정판 공개"
+  kicker: "RELEASE"
+  title: "평등의 토대, 위대함의 교육 v2.0 공개"
+  summary: "Yoon, Sunho의 교육철학 연구 개정판을 Zenodo에 공개했습니다. 연구 질문과 논증 구조, 선행연구와 공교육 분석을 보강하고 긴장 조율의 원리와 네 교육 원리를 정교화했습니다."
+  featured: true
+  url: "https://doi.org/10.5281/zenodo.23453266"
+  link_label: "Zenodo v2.0 공개본"
+  external: true
+
 - date: "2026-10-11"
   date_label: "2026.10.11"
   category: infrastructure

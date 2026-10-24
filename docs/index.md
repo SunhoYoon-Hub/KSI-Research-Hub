@@ -48,14 +48,6 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
   </a>
 </section>
 
-<aside class="home-minor-note" aria-label="작은 소식">
-  <div class="home-minor-meta">
-    <strong>작은 소식</strong>
-    <small>예상 기간 <time datetime="2026-09-20">2026.09.20</time>—<time datetime="2026-10-13">10.13</time></small>
-  </div>
-  <p>시험 준비와 논문 2차 원고 집필로 Research Hub의 새 페이지·기능 업데이트가 잠시 느리게 진행됩니다. 공개된 연구와 기록은 계속 열람할 수 있습니다.</p>
-</aside>
-
 <section class="research-section" id="research" aria-labelledby="research-title">
   <header class="section-heading">
     <div>
@@ -143,11 +135,11 @@ description: KSI 학생 연구의 진행, 동료평가, 개정과 Zenodo 공개�
         <div class="release-version">
           <span>Released</span>
           <strong>{{ project.release_version }}</strong>
-          <small>{% if project.revision %}{{ project.revision.next }}{% else %}최초 공개본{% endif %}</small>
+          <small>{% if project.revision.next %}{{ project.revision.next }}{% elsif project.previous_releases %}개정판 공개{% else %}최초 공개본{% endif %}</small>
         </div>
         <a class="release-doi" href="{{ '/versions/' | relative_url }}#{{ project.id }}">판본 기록실 <span aria-hidden="true">→</span></a>
       </div>
-      {% if project.revision %}
+      {% if project.revision.next %}
       <details class="release-plan">
         <summary><span>{{ project.revision.next }} 개정 계획</span><b>펼치기</b></summary>
         <div>

@@ -277,6 +277,7 @@
 }
 
 .edition-card.is-next,
+.edition-card.is-previous,
 .edition-card.is-unplanned {
   color: #fff;
   background: #10223b;
@@ -304,6 +305,10 @@
   margin: 0 0 1.6rem;
   border-top: 1px solid rgba(7, 17, 30, .28);
   border-bottom: 1px solid rgba(7, 17, 30, .28);
+}
+
+.edition-card.is-previous dl {
+  border-color: rgba(240, 223, 173, .3);
 }
 
 .edition-card dl div {
@@ -339,6 +344,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.edition-card.is-previous a {
+  color: #f0dfad;
+  border-bottom-color: rgba(240, 223, 173, .48);
 }
 
 .edition-card li {
